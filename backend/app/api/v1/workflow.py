@@ -1,11 +1,49 @@
-from fastapi import APIRouter, Query
+from typing import Annotated
 
+from fastapi import APIRouter, Depends, Query, status
+
+from app.ai_core.llm import provider
+from app.ai_core.orchestrator import registry
+from app.ai_core.orchestrator.engine import WorkflowEngine
 from app.api.deps import DbSession
 from app.models.enums import ApprovalStatus, RunStatus, TaskStatus
-from app.schemas.workflow import ApprovalDecision, ApprovalRead, ArtifactRead, EventPage, RunDetail, RunRead, TaskRead
+from app.schemas.workflow import (
+    ApprovalDecision,
+    ApprovalRead,
+    ArtifactRead,
+    EventPage,
+    RunCreate,
+    RunDetail,
+    RunRead,
+    TaskRead,
+)
+from app.services.run import RunService
 from app.services.workflow_query import WorkflowQueryService
 
 router = APIRouter(tags=["workflow"])
+
+
+def get_engine() -> WorkflowEngine:
+    return registry.default_engine()
+
+
+@router.post("/projects/{project_id}/runs", response_model=RunRead, status_code=status.HTTP_201_CREATED)
+async def create_run(project_id: int, data: RunCreate, db: DbSession,
+                     engine: Annotated[WorkflowEngine, Depends(get_engine)]):
+    run = RunService(db).create(project_id, data.request_text, data.budget_usd)
+    registry.start_run(run.id, engine)
+    return WorkflowQueryService(db).get_run(run.id)
+
+
+@router.post("/runs/{run_id}/cancel", status_code=status.HTTP_204_NO_CONTENT)
+def cancel_run(run_id: int, db: DbSession):
+    RunService(db).cancel(run_id)
+
+
+@router.get("/llm/models", response_model=list[str])
+async def list_llm_models():
+    """Models the configured provider exposes (to pick agent models in Settings)."""
+    return await provider.list_models()
 
 
 @router.get("/runs", response_model=list[RunRead])

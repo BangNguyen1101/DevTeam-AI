@@ -100,6 +100,12 @@ Mỗi agent: `tasks_total`, `tasks_completed`, `tasks_failed`, `current_task_tit
 
 Topic WebSocket hợp lệ: `projects`, `agents`, `approvals`, `settings`, `events`, `runs:<id>`.
 
-## Sắp có
+## Runs (AI engine)
 
-`POST /projects/{id}/runs` (gửi yêu cầu cho AI Manager) cùng Workflow Engine, OpenAI Agents và Execution Engine. Đây là các thành phần sẽ ghi dữ liệu vào những bảng mà các API đọc ở trên đang hiển thị.
+| Endpoint | Mô tả |
+|---|---|
+| `POST /projects/{id}/runs` | Body `{request_text (10–10000 ký tự), budget_usd?}`. 201 `RunDetail` và engine chạy nền. 503 `llm_not_configured` nếu chưa có `LLM_API_KEY` · 404 · 409 nếu dự án lưu trữ hoặc đang có run chưa kết thúc |
+| `POST /runs/{id}/cancel` | 204. 409 nếu run đã kết thúc |
+| `GET /llm/models` | Danh sách model của nhà cung cấp LLM đang cấu hình |
+
+`GET /settings` trả thêm `llm_configured`, `llm_endpoint` (hostname). `limits.require_command_approval` (mặc định `true`) quyết định có phải phê duyệt trước khi chạy test hay không.

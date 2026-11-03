@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import {
   Bot,
@@ -15,9 +15,12 @@ import {
   Radio,
   Sparkles,
   TriangleAlert,
+  X,
 } from 'lucide-react'
+import { toast } from 'sonner'
 
 import { Ring } from '@/components/common/charts'
+import { Markdown } from '@/components/common/markdown'
 import { AgentAvatar, EmptyState, ErrorNote, LoadingBlock, ProgressBar, Section } from '@/components/common/page'
 import { Pill, StatusBadge } from '@/components/common/status-badge'
 import { Button } from '@/components/ui/button'
@@ -125,7 +128,13 @@ function Overview({ project, run }: { project: Project; run: RunDetail | null })
 
   return (
     <div className="grid gap-6">
-      <RequestBox />
+      <RequestBox project={project} run={run} />
+      {run?.summary && (
+        <Section title="Kết quả từ AI Manager" icon={Sparkles}>
+          <Markdown>{run.summary}</Markdown>
+        </Section>
+      )}
+      {run?.error && <ErrorNote message={`Run #${run.id}: ${run.error}`} />}
       <div className="grid gap-6 xl:grid-cols-[300px_1fr_380px]">
         <Section title="Tiến độ run mới nhất" className="content-start">
           {!run ? (
@@ -205,33 +214,96 @@ function Overview({ project, run }: { project: Project; run: RunDetail | null })
   )
 }
 
-function RequestBox() {
+const ACTIVE_RUN: RunDetail['status'][] = ['pending', 'planning', 'running', 'waiting_approval']
+
+function RequestBox({ project, run }: { project: Project; run: RunDetail | null }) {
+  const settings = useApi(() => api.settings.get(), [], ['settings'])
   const [text, setText] = useState('')
+  const [budget, setBudget] = useState('')
+  const [busy, setBusy] = useState(false)
+  const active = run && ACTIVE_RUN.includes(run.status)
+  const configured = settings.data?.llm_configured
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault()
+    setBusy(true)
+    try {
+      const created = await api.runs.create(project.id, {
+        request_text: text.trim(),
+        budget_usd: budget.trim() ? Number(budget) : null,
+      })
+      toast.success(`Đã gửi yêu cầu — Run #${created.id}`)
+      setText('')
+    } catch (err) {
+      toast.error(errorMessage(err))
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const cancel = async () => {
+    if (!run) return
+    try {
+      await api.runs.cancel(run.id)
+      toast.success('Đã gửi yêu cầu hủy run')
+    } catch (err) {
+      toast.error(errorMessage(err))
+    }
+  }
+
   return (
-    <div className="panel flex flex-col gap-3 p-4">
+    <form onSubmit={submit} className="panel flex flex-col gap-3 p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="flex items-center gap-2 text-headline-sm font-semibold">
           <Sparkles className="size-4 text-brand" /> Gửi yêu cầu cho AI Manager
         </h2>
-        <Pill tone="warning">AI engine chưa kích hoạt</Pill>
+        {active ? (
+          <Pill tone="processing" pulse>Run #{run.id} đang chạy</Pill>
+        ) : configured === false ? (
+          <Pill tone="warning">Chưa cấu hình LLM_API_KEY</Pill>
+        ) : configured ? (
+          <Pill tone="success">{settings.data?.llm_endpoint}</Pill>
+        ) : null}
       </div>
       <Textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={3}
-        placeholder="Mô tả phần mềm bạn muốn đội AI xây dựng, ví dụ: Ứng dụng quản lý thư viện cho phép mượn/trả sách…"
+        minLength={10}
+        maxLength={10000}
+        disabled={!!active}
+        placeholder="Mô tả phần mềm bạn muốn đội AI xây dựng, ví dụ: API quản lý thư viện cho phép thêm sách, mượn và trả sách, kèm trang web đơn giản…"
         className="bg-surface-lowest"
       />
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="flex items-center gap-1.5 text-body-sm text-outline">
           <TriangleAlert className="size-4 text-warning" />
-          Workflow Engine và OpenAI Agents chưa được triển khai nên chưa thể bắt đầu một run.
+          {configured === false
+            ? 'Thêm LLM_API_KEY vào backend/.env rồi khởi động lại backend.'
+            : 'AI Manager lập kế hoạch → BA → Architect → Backend ∥ Frontend → QA ↔ Reviewer. Chạy test cần bạn phê duyệt.'}
         </p>
-        <Button disabled title="Cần AI engine">
-          <Sparkles /> Bắt đầu phát triển bằng AI
-        </Button>
+        <div className="flex items-center gap-2">
+          <input
+            type="number"
+            min={0}
+            step="0.01"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+            placeholder={`Ngân sách $ (mặc định ${settings.data?.limits.default_run_budget_usd ?? '—'})`}
+            className="w-52 rounded-md bg-surface-lowest px-3 py-1.5 font-mono text-label-sm outline-none placeholder:text-outline"
+          />
+          {active ? (
+            <Button type="button" variant="destructive" onClick={cancel}>
+              <X /> Hủy run
+            </Button>
+          ) : (
+            <Button type="submit" disabled={busy || !configured || text.trim().length < 10}>
+              <Sparkles /> {busy ? 'Đang gửi…' : 'Bắt đầu phát triển bằng AI'}
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+    </form>
   )
 }
 

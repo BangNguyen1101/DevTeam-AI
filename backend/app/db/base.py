@@ -15,7 +15,19 @@ NAMING_CONVENTION = {
 
 # SQL Server specific column types used across models
 DateTime2 = mssql.DATETIME2
-JsonText = mssql.JSON  # stored as NVARCHAR(MAX); pair with an ISJSON check
+
+
+class JsonText(mssql.JSON):
+    """NVARCHAR(MAX) JSON; pair with an ISJSON check.
+
+    Python None must become SQL NULL: the default would store the JSON literal
+    'null', which SQL Server's ISJSON() rejects.
+    """
+
+    cache_ok = True
+
+    def __init__(self, none_as_null: bool = True):
+        super().__init__(none_as_null=none_as_null)
 
 
 class Base(DeclarativeBase):

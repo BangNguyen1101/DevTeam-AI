@@ -61,7 +61,7 @@ export function AgentEditDialog({ agent, trigger }: { agent: Agent; trigger?: Re
           </DialogHeader>
           <div className="grid gap-2">
             <Label htmlFor="agent-model">Model OpenAI</Label>
-            <Input id="agent-model" value={model} onChange={(e) => setModel(e.target.value)} required maxLength={100} className="font-mono" />
+            <Input id="agent-model" list="llm-models" value={model} onChange={(e) => setModel(e.target.value)} required maxLength={100} className="font-mono" />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="agent-tokens">Max output tokens</Label>

@@ -11,6 +11,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import text
 from sqlalchemy.orm import Session, sessionmaker
 
+from app.ai_core.orchestrator import registry
 from app.ai_core.workspace.manager import WorkspaceManager
 from app.api.deps import get_workspace_manager
 from app.core.config import get_settings
@@ -20,6 +21,18 @@ from app.main import app
 settings = get_settings()
 test_engine = build_engine(settings.database_url(settings.db_test_name))
 TestSession = sessionmaker(bind=test_engine, autoflush=False, expire_on_commit=False)
+registry.RECOVER_ON_STARTUP = False
+
+
+@pytest.fixture
+def restore_settings() -> Iterator[None]:
+    with test_engine.connect() as conn:
+        saved = conn.execute(text("SELECT [key], value FROM app_settings")).all()
+    yield
+    with test_engine.begin() as conn:
+        conn.execute(text("DELETE FROM app_settings"))
+        for key, value in saved:
+            conn.execute(text("INSERT INTO app_settings ([key], value) VALUES (:k, :v)"), {"k": key, "v": value})
 
 
 @pytest.fixture(scope="session", autouse=True)

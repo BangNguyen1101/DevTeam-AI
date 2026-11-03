@@ -3,7 +3,7 @@
 from decimal import Decimal
 
 import pytest
-from sqlalchemy import select, text
+from sqlalchemy import select
 
 from app.models import Agent, Approval, ExecutionEvent, LlmUsage, Task, TaskDependency, WorkflowRun
 
@@ -32,19 +32,6 @@ def run_data(client, db):
     ])
     db.commit()
     return {"project": project, "run_id": run.id, "ba": ba.id, "arch": arch.id}
-
-
-@pytest.fixture
-def restore_settings():
-    from tests.conftest import test_engine
-
-    with test_engine.connect() as conn:
-        saved = conn.execute(text("SELECT [key], value FROM app_settings")).all()
-    yield
-    with test_engine.begin() as conn:
-        conn.execute(text("DELETE FROM app_settings"))
-        for key, value in saved:
-            conn.execute(text("INSERT INTO app_settings ([key], value) VALUES (:k, :v)"), {"k": key, "v": value})
 
 
 def test_run_detail_includes_tasks_dependencies_and_tokens(client, run_data):

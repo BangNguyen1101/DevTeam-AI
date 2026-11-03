@@ -41,11 +41,11 @@ export function SettingsPage() {
       <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
         <StatCard label="Agent đang bật" value={agents.data ? `${agents.data.filter((a) => a.is_enabled).length}/${agents.data.length}` : '—'} icon={Bot} />
         <StatCard
-          label="OpenAI API key"
-          value={settings.data ? (settings.data.openai_key_configured ? 'Đã cấu hình' : 'Chưa có') : '—'}
+          label="LLM API key"
+          value={settings.data ? (settings.data.llm_configured ? 'Đã cấu hình' : 'Chưa có') : '—'}
           icon={KeyRound}
-          accent={settings.data?.openai_key_configured ? 'text-success' : 'text-warning'}
-          hint="Đọc từ backend/.env, không gửi về trình duyệt"
+          accent={settings.data?.llm_configured ? 'text-success' : 'text-warning'}
+          hint={settings.data ? `${settings.data.llm_endpoint} · key nằm trong backend/.env` : undefined}
         />
         <StatCard label="Guardrails" value={settings.data ? `${settings.data.limits.max_task_attempts} lần thử` : '—'} icon={ShieldCheck} hint={settings.data ? `Timeout lệnh ${settings.data.limits.command_timeout_seconds}s` : undefined} />
         <StatCard label="Model có bảng giá" value={settings.data ? Object.keys(settings.data.pricing).length : '—'} icon={Receipt} />
@@ -68,7 +68,8 @@ export function SettingsPage() {
       {!settings.data || !agents.data ? (
         <LoadingBlock className="h-64" />
       ) : tab === 'models' ? (
-        <Section title="Model theo từng agent" icon={Bot} description="Tên model phải là model mà API key OpenAI của bạn có quyền dùng.">
+        <Section title="Model theo từng agent" icon={Bot} description={`Tên model phải là model mà nhà cung cấp ${settings.data.llm_endpoint} cho phép key của bạn dùng.`}>
+          {settings.data.llm_configured && <AvailableModels />}
           <div className="grid gap-2">
             {agents.data.map((a) => (
               <div key={a.id} className="panel-raised flex flex-wrap items-center gap-3 p-3">
@@ -96,7 +97,8 @@ export function SettingsPage() {
               ['Database', health?.database.ok ? 'SQL Server — online' : 'Không kết nối được'],
               ['Phiên bản SQL Server', health?.database.server_version ?? '—'],
               ['Migration hiện tại', health?.database.migration ?? '—'],
-              ['OpenAI API key', settings.data.openai_key_configured ? 'Đã cấu hình trong backend/.env' : 'Chưa cấu hình — thêm OPENAI_API_KEY vào backend/.env'],
+              ['Nhà cung cấp LLM', settings.data.llm_endpoint],
+              ['LLM API key', settings.data.llm_configured ? 'Đã cấu hình trong backend/.env' : 'Chưa cấu hình — thêm LLM_API_KEY vào backend/.env rồi khởi động lại backend'],
               ['Xác thực người dùng', 'Chế độ 1 người dùng (chưa bật đăng nhập)'],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-wrap justify-between gap-2 rounded bg-surface-container px-3 py-2">
@@ -108,6 +110,25 @@ export function SettingsPage() {
         </Section>
       )}
     </div>
+  )
+}
+
+function AvailableModels() {
+  const models = useApi(() => api.llm.models(), [])
+  if (models.error) return <ErrorNote message={`Không lấy được danh sách model: ${models.error}`} />
+  if (!models.data) return <LoadingBlock className="h-10" />
+  return (
+    <details className="rounded-md bg-surface-lowest p-3">
+      <summary className="cursor-pointer text-label-md">Model khả dụng từ nhà cung cấp ({models.data.length})</summary>
+      <datalist id="llm-models">
+        {models.data.map((m) => <option key={m} value={m} />)}
+      </datalist>
+      <div className="mt-2 flex flex-wrap gap-1">
+        {models.data.map((m) => (
+          <span key={m} className="rounded bg-surface-high px-1.5 font-mono text-label-sm text-on-surface-variant">{m}</span>
+        ))}
+      </div>
+    </details>
   )
 }
 
@@ -137,11 +158,15 @@ function LimitsForm({ settings }: { settings: Settings }) {
     command_timeout_seconds: String(l.command_timeout_seconds),
     default_run_budget_usd: String(l.default_run_budget_usd),
     monthly_budget_usd: l.monthly_budget_usd?.toString() ?? '',
+    require_command_approval: l.require_command_approval,
+    mandatory_review: l.mandatory_review,
   })
   const [form, setForm] = useState(toForm(settings.limits))
   const [saving, setSaving] = useState(false)
   useEffect(() => setForm(toForm(settings.limits)), [settings.limits])
-  const set = (k: keyof typeof form) => (v: string) => setForm((f) => ({ ...f, [k]: v }))
+  type Flag = 'require_command_approval' | 'mandatory_review'
+  const set = (k: Exclude<keyof typeof form, Flag>) => (v: string) => setForm((f) => ({ ...f, [k]: v }))
+  const toggle = (k: Flag) => (e: React.ChangeEvent<HTMLInputElement>) => setForm((f) => ({ ...f, [k]: e.target.checked }))
 
   const submit = async (e: FormEvent) => {
     e.preventDefault()
@@ -153,6 +178,8 @@ function LimitsForm({ settings }: { settings: Settings }) {
         command_timeout_seconds: Number(form.command_timeout_seconds),
         default_run_budget_usd: Number(form.default_run_budget_usd),
         monthly_budget_usd: form.monthly_budget_usd.trim() ? Number(form.monthly_budget_usd) : null,
+        require_command_approval: form.require_command_approval,
+        mandatory_review: form.mandatory_review,
       })
       toast.success('Đã lưu giới hạn')
     } catch (err) {
@@ -171,6 +198,24 @@ function LimitsForm({ settings }: { settings: Settings }) {
           <NumberField id="timeout" label="Timeout mỗi lệnh (giây)" hint="Execution Engine dừng lệnh chạy quá thời gian." value={form.command_timeout_seconds} onChange={set('command_timeout_seconds')} min={5} max={1800} />
           <NumberField id="run-budget" label="Ngân sách mặc định mỗi run (USD)" hint="Run dừng lại khi chi phí vượt ngưỡng." value={form.default_run_budget_usd} onChange={set('default_run_budget_usd')} min={0} max={1000} step={0.01} />
           <NumberField id="month-budget" label="Ngân sách tháng (USD, để trống = không giới hạn)" hint="Hiển thị cảnh báo ở trang Phân tích chi phí." value={form.monthly_budget_usd} onChange={set('monthly_budget_usd')} min={0} max={100000} step={0.01} />
+          <label className="flex items-start gap-3 rounded-md border border-warning/30 bg-warning/5 p-3">
+            <input type="checkbox" checked={form.require_command_approval} onChange={toggle('require_command_approval')} className="mt-1 size-4 accent-brand-strong" />
+            <span>
+              <span className="text-label-md font-semibold">Bắt buộc phê duyệt trước khi chạy test</span>
+              <span className="block text-body-sm text-outline">
+                Test do AI viết được thực thi trên máy này với quyền của tài khoản chạy backend. Khuyến nghị luôn bật.
+              </span>
+            </span>
+          </label>
+          <label className="flex items-start gap-3 rounded-md border border-white/10 bg-surface-container p-3">
+            <input type="checkbox" checked={form.mandatory_review} onChange={toggle('mandatory_review')} className="mt-1 size-4 accent-brand-strong" />
+            <span>
+              <span className="text-label-md font-semibold">Code review bắt buộc sau khi test đạt</span>
+              <span className="block text-body-sm text-outline">
+                Code Reviewer rà soát bảo mật (XSS, validate input), nghiệp vụ và xử lý lỗi; nếu sửa code, QA kiểm thử lại.
+              </span>
+            </span>
+          </label>
         </div>
         <div className="flex justify-end gap-2">
           <Button type="button" variant="secondary" onClick={() => setForm(toForm(settings.limits))}><RotateCcw /> Hoàn tác</Button>

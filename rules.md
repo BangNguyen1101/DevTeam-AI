@@ -9,7 +9,7 @@ Tài liệu này là "luật" bắt buộc cho mọi người (và mọi AI) tha
 | Frontend | React, TypeScript, Vite, Tailwind CSS, shadcn/ui |
 | Backend | Python 3.11, FastAPI, Pydantic v2 |
 | Database | **Microsoft SQL Server** (duy nhất), SQLAlchemy 2.x, Alembic, pyodbc, Microsoft ODBC Driver for SQL Server |
-| AI | OpenAI API, OpenAI Agents SDK |
+| AI | OpenAI Agents SDK, gọi qua endpoint tương thích OpenAI Chat Completions (`LLM_BASE_URL`). Môi trường phát triển dùng Gemini API free tier (quyết định 2026-11-03); đổi sang OpenAI API chỉ cần đổi `.env` |
 | Realtime | WebSocket |
 
 - Không dùng SQLite/PostgreSQL/MySQL, kể cả cho test. Test chạy trên database SQL Server riêng (`DevTeamAI_Test`).

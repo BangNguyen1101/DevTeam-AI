@@ -101,6 +101,10 @@ class Limits(BaseModel):
     command_timeout_seconds: int = Field(ge=5, le=1800)
     default_run_budget_usd: float = Field(ge=0, le=1000)
     monthly_budget_usd: float | None = Field(default=None, ge=0, le=100000)
+    # Running AI-generated code (tests) on this machine requires a human approval
+    require_command_approval: bool = True
+    # Code Reviewer always audits the code once tests pass (QA re-tests any change)
+    mandatory_review: bool = True
 
 
 class ModelPrice(BaseModel):
@@ -114,4 +118,5 @@ class ModelPrice(BaseModel):
 class SettingsRead(BaseModel):
     limits: Limits
     pricing: dict[str, ModelPrice]
-    openai_key_configured: bool
+    llm_configured: bool
+    llm_endpoint: str

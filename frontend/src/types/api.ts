@@ -200,6 +200,8 @@ export interface Limits {
   command_timeout_seconds: number
   default_run_budget_usd: number
   monthly_budget_usd: number | null
+  require_command_approval: boolean
+  mandatory_review: boolean
 }
 
 export interface ModelPrice {
@@ -211,7 +213,8 @@ export interface ModelPrice {
 export interface Settings {
   limits: Limits
   pricing: Record<string, ModelPrice>
-  openai_key_configured: boolean
+  llm_configured: boolean
+  llm_endpoint: string
 }
 
 export interface FileEntry {

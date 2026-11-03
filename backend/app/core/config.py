@@ -31,7 +31,13 @@ class Settings(BaseSettings):
 
     workspaces_root: Path = Field(default=Path("../workspaces"))
 
+    llm_base_url: str = ""
+    llm_api_key: SecretStr = SecretStr("")
     openai_api_key: SecretStr = SecretStr("")
+
+    @property
+    def llm_key(self) -> str:
+        return self.llm_api_key.get_secret_value() or self.openai_api_key.get_secret_value()
 
     @property
     def cors_origin_list(self) -> list[str]:

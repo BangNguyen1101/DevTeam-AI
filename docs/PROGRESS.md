@@ -2,6 +2,103 @@
 
 > Từ 2026-11-03 dự án không chia theo tuần nữa; tiến độ ghi theo từng mốc chức năng.
 
+## Review bắt buộc + quét bảo mật tĩnh + hỗ trợ cải tiến lặp · ✅ code & test (2026-11-03)
+
+### Đã làm
+| Hạng mục | Chi tiết |
+|---|---|
+| Review bắt buộc | Lần đầu test đạt → task `review` (Code Reviewer, checklist bảo mật/nghiệp vụ/xử lý lỗi); sửa file → `retest_review`. Công tắc trong Cài đặt (mặc định bật) |
+| Quét tĩnh | `static_checks.py` chạy trước/sau review; còn lỗi → thử lại kèm danh sách; hết lượt → "CHƯA XỬ LÝ" + `security.unresolved` |
+| Cải tiến lặp | Agent thấy danh sách file hiện có; Dev agent thấy code hiện có của vùng mình; `FileChange.delete` để xóa file lỗi thời |
+| Ổn định | Client LLM không tự retry (timeout 120s); hủy/thất bại run tự đóng phê duyệt đang chờ |
+
+`pytest`: **63/63**.
+
+### Chạy thật (dự án "Quản lý thư viện")
+| Run | Yêu cầu | Kết quả | Phát hiện → sửa |
+|---|---|---|---|
+| #6 | Làm lại từ đầu | ✅ 10 task, 2 vòng fix, 14 test đạt | Test cũ của run #5 còn sót → agent được xóa file; review LLM nêu XSS nhưng không sửa → thêm quét tĩnh |
+| #7 | Cải tiến: lỗi trả sách chưa mượn, validate rỗng, hiển thị lỗi | ✅ 11 task, 2 vòng fix (422→400), review sửa 2 file, retest đạt, 10 test | Quét tĩnh bản đầu bỏ sót `innerHTML = books.map(...)` → đổi sang allow-list |
+| #8 | Thêm thống kê | ❌ đã hủy | Frontend Dev viết lại app.js từ đầu, mất danh sách/mượn/trả (không thấy code hiện có) → Dev agent nhận code vùng của mình; phê duyệt treo sau khi hủy → tự đóng |
+| #9 | Khôi phục trang web đầy đủ + thống kê | ✅ 7 task, test đạt, quét tĩnh phát hiện XSS → review sửa ngay lần đầu (createElement + textContent) → retest đạt | Không còn file bị từ chối nhờ Dev agent thấy code hiện có |
+
+### Chạy thử ứng dụng do đội AI tạo (sau run #9)
+`library-api` (uvicorn :8001) + `library-web` (http.server :8002) trong `.claude/launch.json`, thao tác trên trình duyệt:
+
+| Kịch bản | Kết quả |
+|---|---|
+| Trang tải: thống kê, form, bảng sách, nút Mượn/Trả | ✅ không lỗi console |
+| Thêm sách tên rỗng | ✅ hiện "Tiêu đề và tác giả không được để trống" (400) |
+| Thêm sách tên `<img src=x onerror=alert('XSS')>` | ✅ hiển thị dạng chữ, 0 alert, 0 thẻ img → XSS đã chặn |
+| Mượn sách 1 / trả sách 2 qua UI | ✅ trạng thái và thống kê cập nhật |
+| API: mượn sách đang mượn / trả sách chưa mượn | ✅ 400 kèm thông báo tiếng Việt |
+
+### Hạn chế còn lại
+- Workspace chưa có lịch sử phiên bản: run #8 ghi đè frontend tốt. Nên snapshot/git trong workspace trước mỗi run.
+- QA chỉ kiểm thử backend; frontend chỉ được quét tĩnh.
+
+## Chạy thật với Gemini · ✅ (2026-11-03)
+
+Yêu cầu (dự án "Quản lý thư viện", run #5): *API quản lý thư viện nhỏ: thêm sách, xem danh sách, mượn/trả, không cho mượn sách đang được mượn; kèm trang web đơn giản.*
+
+| Bước | Agent / model | Thời gian | Kết quả |
+|---|---|---|---|
+| Lập kế hoạch | Manager / gemini-3.1-flash-lite | 3s | 5 task: BA → Architect → Backend ∥ Frontend → QA |
+| Đặc tả | BA / gemini-flash-lite-latest | 15s | `docs/SRS.md` |
+| Thiết kế | Architect / gemini-3.5-flash-lite | 12s | `docs/DESIGN.md` |
+| Code (song song) | Backend / gemini-3.5-flash-lite, Frontend / gemini-3.1-flash-lite | 21s | `backend/app/main.py` (4 endpoint), `frontend/index.html, app.js, styles.css`; 7 file ngoài vùng của backend bị bỏ qua |
+| Kiểm thử | QA / gemini-flash-lite-latest | 5s + chờ duyệt | `tests/test_main.py`, sau khi phê duyệt: **pytest 7 passed** (exit 0, 1,2s) |
+| Tổng hợp | Manager | 2s | Bản tóm tắt Markdown hiển thị trong Không gian dự án |
+
+Tổng 9.986 token vào / 7.782 token ra, $0 (gói free). Run #2–#4 thất bại và đã dẫn tới các sửa đổi dưới đây; chúng vẫn được giữ trong Lịch sử thực thi.
+
+### Sửa sau khi chạy thật
+| Vấn đề quan sát | Sửa | Test |
+|---|---|---|
+| Gemini free trả 503/429 → task hết lượt thử ngay | Backoff 5/15/30/60/90s trong `call_agent`, không tính vào lượt thử của task; sự kiện `llm.retry` | ✅ |
+| `gemini-3.5-flash` free chỉ 20 request/ngày/model | Phát hiện quota ngày (`PerDay`) → dừng run với thông báo đổi model; chia agent ra nhiều model flash-lite | ✅ |
+| Hủy run khi đang backoff vẫn gọi LLM | Kiểm tra hủy ở đầu mỗi lượt thử và trong backoff | ✅ |
+| Backend Dev kèm file `docs/`, `tests/` → cả change set bị loại | Chỉ bỏ file ngoài vùng (`files.rejected`); path thoát workspace vẫn chặn cả change set | ✅ |
+| Agent không biết vì sao bị từ chối | Lỗi lần trước được đưa vào prompt lần sau | ✅ |
+| Run bị hủy khi engine đã dừng để lại task "running" | Hủy đóng luôn task dở; khởi động dọn task kẹt | ✅ |
+| Tóm tắt Markdown hiện thô | `react-markdown` (không render HTML thô) | trình duyệt ✅ |
+
+`pytest`: **50/50**.
+
+### Nhận xét chất lượng code sinh ra (chưa sửa)
+- `frontend/app.js` chèn `book.title` bằng `innerHTML` → có thể XSS nếu tên sách chứa HTML. Code Reviewer chỉ được gọi khi test lỗi nên chưa phát hiện; nên thêm bước review bắt buộc.
+- Trả sách chưa được mượn vẫn báo thành công (yêu cầu gốc không nói rõ).
+
+## AI engine: AI Manager + 6 Agents + Workflow/Execution Engine · ✅ (2026-11-03)
+
+### Quyết định
+- Nhà cung cấp LLM: **Gemini API free tier**, gọi qua endpoint tương thích OpenAI. Vẫn dùng OpenAI Agents SDK; đổi sang OpenAI chỉ cần sửa `.env` (`LLM_BASE_URL`, `LLM_API_KEY`). Đã ghi vào `rules.md`.
+- Agent trả output có cấu trúc. Engine ghi file và chạy lệnh, agent không có tool. Chi tiết ở `docs/AI_AGENT_DESIGN.md`.
+
+### Đã làm
+| Hạng mục | Chi tiết |
+|---|---|
+| Phụ thuộc | `openai-agents==0.22.3`, `openai==3.42.1`; nâng `fastapi` 0.115.6 → 0.160.0 vì openai-agents yêu cầu starlette 1.x (`pip check` sạch) |
+| AI core | provider, outputs, prompts, runner, `validate_plan`, `WorkflowEngine`, Execution Engine (allowlist `pytest`), registry chạy nền + đánh dấu run dở dang khi khởi động lại |
+| API | `POST /projects/{id}/runs`, `POST /runs/{id}/cancel`, `GET /llm/models`; settings có `llm_configured`, `llm_endpoint`, `require_command_approval` |
+| UI | Hộp gửi yêu cầu trong Không gian dự án (ngân sách, hủy run, kết quả tổng hợp), Cài đặt: trạng thái LLM, danh sách model khả dụng, công tắc bắt buộc phê duyệt |
+
+### Kiểm thử
+| Kiểm tra | Kết quả |
+|---|---|
+| `pytest` toàn bộ (SQL Server `DevTeamAI_Test`) | ✅ 44/44 (10 test engine mới với `FakeModel`; pytest thật chạy trên code sinh ra) |
+| `tsc -b`, `npm run lint` | ✅ 0 lỗi |
+| Trình duyệt: Không gian dự án khi chưa có key | ✅ hiện "Chưa cấu hình LLM_API_KEY", nút bị khóa |
+| Chạy với Gemini thật | ⏳ chờ người dùng thêm `LLM_API_KEY` |
+
+### Phát hiện kỹ thuật
+- Kiểu JSON của SQLAlchemy lưu `None` thành chuỗi `'null'`, bị `ISJSON()` từ chối → `JsonText(none_as_null=True)`.
+- `openai-agents` 0.22 kéo `starlette` 1.x, không tương thích FastAPI 0.115 → nâng FastAPI.
+
+### Còn lại
+- Sau khi có key: đổi model của 7 agent sang model Gemini khả dụng (xem `GET /llm/models`), chạy thử end-to-end, tinh chỉnh prompt.
+- Sandbox cho code sinh ra.
+
 ## Giao diện theo thiết kế Stitch + API đọc dữ liệu · ✅ (2026-11-03)
 
 ### Đã làm

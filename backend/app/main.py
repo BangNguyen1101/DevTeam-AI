@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.ai_core.orchestrator import registry
 from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.core.exceptions import AppError, app_error_handler
@@ -16,6 +17,7 @@ from app.realtime.routes import router as ws_router
 async def lifespan(_: FastAPI):
     hub.bind_loop(asyncio.get_running_loop())
     get_settings().workspaces_path.mkdir(parents=True, exist_ok=True)
+    registry.mark_interrupted_runs()
     yield
 
 

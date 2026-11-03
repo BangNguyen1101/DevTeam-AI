@@ -85,7 +85,13 @@ export const api = {
     stats: () => request<AgentStats[]>('/agents/stats'),
     update: (id: number, data: AgentUpdate) => send<Agent>('PATCH', `/agents/${id}`, data),
   },
+  llm: {
+    models: () => request<string[]>('/llm/models'),
+  },
   runs: {
+    create: (projectId: number, data: { request_text: string; budget_usd?: number | null }) =>
+      send<Run>('POST', `/projects/${projectId}/runs`, data),
+    cancel: (id: number) => send<null>('POST', `/runs/${id}/cancel`),
     list: (params: { project_id?: number; status?: RunStatus; limit?: number } = {}) => request<Run[]>(`/runs${qs(params)}`),
     get: (id: number) => request<RunDetail>(`/runs/${id}`),
     artifacts: (id: number) => request<Artifact[]>(`/runs/${id}/artifacts`),

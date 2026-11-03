@@ -60,8 +60,9 @@ Xem chi tiết tại [AI_AGENT_DESIGN.md](AI_AGENT_DESIGN.md). Tóm tắt:
 | Bí mật trong `backend/.env`, không commit | ✅ |
 | Frontend không chứa thông tin backend/DB | ✅ (proxy Vite) |
 | Workspace Guard: chặn path traversal, đường dẫn tuyệt đối, UNC | ✅ (`ai_core/workspace/manager.py`, có test) |
-| Quyền theo Agent (`agent_permissions`) | ✅ dữ liệu; áp dụng khi cấp tool ở tuần 2 |
-| Execution Engine allowlist, `shell=False`, timeout | Tuần 3 |
-| Approval cho thao tác nguy hiểm | Tuần 3 |
-| Giới hạn retry/vòng sửa lỗi/ngân sách (`app_settings.limits`) | Dữ liệu ✅, áp dụng tuần 2–3 |
+| Quyền theo Agent (`agent_permissions` → vùng ghi `fs.write:<area>`) | ✅ engine kiểm tra mọi file trước khi ghi |
+| Execution Engine allowlist, `shell=False`, timeout, env không chứa bí mật | ✅ |
+| Phê duyệt trước khi chạy code do AI sinh ra | ✅ mặc định bật |
+| Giới hạn retry / vòng sửa lỗi / ngân sách run | ✅ |
+| Sandbox/container cho code sinh ra | ❌ chưa có (rủi ro đã biết, xem AI_AGENT_DESIGN.md §5) |
 | WebSocket whitelist topic | ✅ |

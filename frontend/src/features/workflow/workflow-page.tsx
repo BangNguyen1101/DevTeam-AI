@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Cpu, Network, ShieldCheck, Timer, Workflow } from 'lucide-react'
 
+import { Markdown } from '@/components/common/markdown'
 import { AgentAvatar, EmptyState, ErrorNote, LoadingBlock, PageHeader, Section, StatCard } from '@/components/common/page'
 import { Pill, StatusBadge } from '@/components/common/status-badge'
 import { EventLogLine } from '@/features/history/event-item'
@@ -106,7 +107,12 @@ function RunView({ run, taskId, onSelect }: { run: RunDetail; taskId: number | n
         <p className="micro-label">Yêu cầu gốc</p>
         <p className="mt-1 text-body-md">{run.request_text}</p>
         {run.error && <p className="mt-2 font-mono text-label-sm text-danger">{run.error}</p>}
-        {run.summary && <p className="mt-2 text-body-md text-success">{run.summary}</p>}
+        {run.summary && (
+          <details className="mt-3 rounded-md bg-surface-lowest p-3">
+            <summary className="cursor-pointer text-label-md text-success">Kết quả tổng hợp của AI Manager</summary>
+            <Markdown className="mt-2">{run.summary}</Markdown>
+          </details>
+        )}
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1fr_400px]">

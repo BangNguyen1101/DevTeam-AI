@@ -101,5 +101,10 @@ class ApprovalRead(BaseModel):
     created_at: datetime
 
 
+class RunCreate(BaseModel):
+    request_text: str = Field(min_length=10, max_length=10_000)
+    budget_usd: float | None = Field(default=None, ge=0, le=1000)
+
+
 class ApprovalDecision(BaseModel):
     note: str | None = Field(default=None, max_length=2000)

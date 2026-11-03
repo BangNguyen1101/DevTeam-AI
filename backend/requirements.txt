@@ -1,11 +1,15 @@
-fastapi==0.115.6
+fastapi==0.160.0
 uvicorn[standard]==0.34.0
-pydantic==2.10.4
+pydantic==2.14.2
 pydantic-settings==2.7.1
 SQLAlchemy==2.0.36
 alembic==1.14.0
 pyodbc==5.2.0
 
-# dev / test
+# AI
+openai==3.42.1
+openai-agents==0.22.3
+
+# dev / test (pytest + httpx are also what generated projects are tested with)
 pytest==8.3.4
 httpx==0.28.1

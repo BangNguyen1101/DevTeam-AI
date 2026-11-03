@@ -1,4 +1,5 @@
 from typing import Any
+from urllib.parse import urlparse
 
 from sqlalchemy.orm import Session
 
@@ -33,10 +34,12 @@ class SettingsService:
         return {model: ModelPrice.model_validate(p) for model, p in self._get(PRICING_KEY, {}).items()}
 
     def read(self) -> SettingsRead:
+        config = get_settings()
         return SettingsRead(
             limits=self.limits(),
             pricing=self.pricing(),
-            openai_key_configured=bool(get_settings().openai_api_key.get_secret_value()),
+            llm_configured=bool(config.llm_key),
+            llm_endpoint=urlparse(config.llm_base_url).hostname or "api.openai.com",
         )
 
     def update_limits(self, limits: Limits) -> SettingsRead:
