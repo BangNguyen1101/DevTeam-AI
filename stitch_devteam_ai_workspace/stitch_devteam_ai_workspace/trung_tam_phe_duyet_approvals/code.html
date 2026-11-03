@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#001a42","on-surface-variant":"#c2c6d6","error":"#ffb4ab","on-secondary":"#1000a9","inverse-on-surface":"#2c3039","tertiary-fixed":"#acedff","secondary-container":"#3131c0","error-container":"#93000a","on-surface":"#dfe2ee","outline":"#8c909f","primary-fixed":"#d8e2ff","primary-fixed-dim":"#adc6ff","primary-container":"#4d8eff","on-primary":"#002e6a","inverse-primary":"#005ac2","secondary-fixed":"#e1e0ff","surface-container-high":"#262a33","on-background":"#dfe2ee","on-error":"#690005","surface-tint":"#adc6ff","on-error-container":"#ffdad6","surface-variant":"#31353e","surface-container-lowest":"#0a0e16","primary":"#adc6ff","background":"#0f131c","on-tertiary-fixed":"#001f26","on-tertiary-container":"#002f38","on-secondary-fixed-variant":"#2f2ebe","secondary":"#c0c1ff","on-secondary-container":"#b0b2ff","on-primary-container":"#00285d","on-tertiary-fixed-variant":"#004e5c","tertiary":"#4cd7f6","on-primary-fixed-variant":"#004395","surface-container-low":"#181c24","tertiary-container":"#009eb9","inverse-surface":"#dfe2ee","surface":"#0f131c","surface-dim":"#0f131c","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c2028","secondary-fixed-dim":"#c0c1ff","on-tertiary":"#003640","surface-bright":"#353942","surface-container-highest":"#31353e","outline-variant":"#424754"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","margin":"1rem","space-xs":"0.25rem","space-md":"0.75rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-desktop":"1.5rem"},fontFamily:{"body-md":["Inter"],"display-lg":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-mono":["JetBrains Mono"],"label-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-sm":["Inter"]},fontSize:{"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-xl":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-mono":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"500"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"400"}],"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-[1024px]" data-mode="connect" data-stitch-vh="min-h-[1024px]===min-h-screen"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="DevTeam AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMVQYBDBjnqtSP-LFHw8UcfA1enxprIJuC9ORDuNED4tKFikZbdn_bvEk8_rs_wBclZyd1YRWnYRX1lQsr-CxwQs1m_2FfLgZjOf2p8nPyGsr5QcNWxVO79x_nceC1qFltC8fz9YTGUNL7DNPO3lgd_WoXPb3ti-cX8PhvR7FYIkhsohtE1vkBw8l_APZvHwXmNRSKXnLoAWK3ft3IFBVBXIhRhZtOFnihytAsDBc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">DevTeam AI</span><span class="font-label-mono text-label-mono text-primary leading-none mt-1">v2.4 Enterprise</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="font-label-md text-label-md">Tổng quan</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="font-label-md text-label-md">Dự án</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workspace" href="#"><span class="font-label-md text-label-md">Không gian Dự án</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-agents" href="#"><span class="font-label-md text-label-md">Quản lý AI Agent</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workflow" href="#"><span class="font-label-md text-label-md">Quy trình Phối hợp</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tasks" href="#"><span class="font-label-md text-label-md">Quản lý Tác vụ</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-colors bg-surface-container-high text-on-surface font-headline-sm" data-path="approvals" href="#"><span class="font-label-md text-label-md">Trung tâm Phê duyệt</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="history" href="#"><span class="font-label-md text-label-md">Lịch sử Thực thi</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="font-label-md text-label-md">Phân tích &amp; Chi phí</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="font-label-md text-label-md">Cài đặt Hệ thống</span></a></nav></div><div class="flex flex-col gap-space-sm p-space-sm bg-surface-container-lowest"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-label-mono text-label-mono leading-tight">Engine: 7 Agents Online</span></div><div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Bằng Nguyễn</span><span class="font-label-mono text-label-mono text-on-surface-variant leading-none">Tech Lead</span></div></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button class="hover:text-on-surface p-1 rounded-DEFAULT hover:bg-surface-container" title="Settings" type="button"><span class="material-symbols-outlined text-[1rem]">settings</span></button><button class="hover:text-error p-1 rounded-DEFAULT hover:bg-surface-container" title="Logout" type="button"><span class="material-symbols-outlined text-[1rem]">logout</span></button></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant"><span class="material-symbols-outlined text-[1rem]">dashboard</span><span>/</span><span class="text-on-surface font-headline-sm text-headline-sm">Workspace Matrix</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest cursor-pointer"><span class="material-symbols-outlined text-primary text-[1.125rem]">domain</span><span class="font-label-md text-label-md">E-commerce Microservices (Prod)</span><span class="material-symbols-outlined text-on-surface-variant text-[1rem]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[1.125rem]">search</span><input class="w-80 h-9 pl-9 pr-12 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tìm dự án, mã tác vụ, Agent hoặc logs..." type="text"/><span class="absolute right-2 font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-surface-variant">⌘K</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container font-label-mono text-label-mono text-tertiary-fixed"><span class="material-symbols-outlined text-tertiary text-[1rem]">toll</span><span>125K / 500K Tokens ($2.45)</span></div><button class="relative p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" title="Notifications" type="button"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container"></span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors" type="button"><span class="material-symbols-outlined text-[1.125rem]">add_circle</span><span>+ Yêu cầu Tính năng</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"/></div></header><main class="relative pt-16 bg-surface min-h-[1024px] w-full px-space-lg" data-stitch-vh="min-h-[1024px]===min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full py-space-xl flex flex-col gap-space-xl">
+<!-- Top Bar / Page Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container-high text-primary shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</span>
+<span class="font-label-mono text-label-mono tracking-wider uppercase text-primary">Security Gate • HITL Controller</span>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container-high font-label-mono text-label-mono text-tertiary">Real-time Stream</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Trung tâm Phê duyệt An toàn (Human-in-the-Loop)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Kiểm soát các hành động nhạy cảm và rủi ro cao do AI Agents đề xuất trước khi áp dụng vào môi trường thực tế. Ngăn chặn triệt để hallucination và thay đổi ngoài ý muốn.
+        </p>
+</div>
+<!-- Quick Action / Mode Switch -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<div class="px-space-md py-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-md shadow-sm">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Policy: Strictest Enforce</span>
+</div>
+<button class="px-space-sm py-1 rounded-DEFAULT bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[1rem]">tune</span>
+<span>Cấu hình Ngưỡng</span>
+</button>
+</div>
+</div>
+</div>
+<!-- KPI Summary Banner (4 Columns Bento) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-error/5 rounded-full blur-xl group-hover:bg-error/10 transition-all pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Chờ phê duyệt</span>
+<span class="w-6 h-6 rounded-DEFAULT bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[1rem]">pending_actions</span>
+</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold tracking-tight">03</span>
+<span class="font-label-md text-label-md text-error flex items-center">
+<span class="material-symbols-outlined text-[0.875rem]">priority_high</span> Yêu cầu cần xử lý
+          </span>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-mono text-label-mono text-outline">
+<span>Thời gian phản hồi TB</span>
+<span class="text-on-surface">3.4 phút</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary/5 rounded-full blur-xl group-hover:bg-tertiary/10 transition-all pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Đã duyệt tuần này</span>
+<span class="w-6 h-6 rounded-DEFAULT bg-surface-container-highest text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[1rem]">check_circle</span>
+</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold tracking-tight">24</span>
+<span class="font-label-md text-label-md text-tertiary flex items-center">
+<span class="material-symbols-outlined text-[0.875rem]">trending_up</span> +18.5%
+          </span>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-mono text-label-mono text-outline">
+<span>Thực thi tự động</span>
+<span class="text-on-surface">100% không lỗi</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Đã từ chối / Hủy bỏ</span>
+<span class="w-6 h-6 rounded-DEFAULT bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[1rem]">cancel</span>
+</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold tracking-tight">02</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Lần sửa đổi yêu cầu</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-mono text-label-mono text-outline">
+<span>Tỷ lệ rủi ro chặn đứng</span>
+<span class="text-on-surface">7.6% tổng tác vụ</span>
+</div>
+</div>
+<!-- KPI 4 (Guards & Telemetry Chart) -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-wider">Zero-Hallucination Guardrail</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-primary-container/20 text-primary">v2.4 Live</span>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold tracking-tight">99.8%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hàng rào an toàn kích hoạt</span>
+</div>
+<!-- Inline Sparkline / Ring graphic -->
+<div class="w-12 h-12 relative flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-tertiary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="99.8, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="material-symbols-outlined text-[1rem] absolute text-tertiary">verified_user</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-mono text-label-mono text-outline">
+<span>Giám sát thời gian thực</span>
+<span class="text-tertiary">7 Agent Node Sync</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Controls Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs font-label-md text-label-md">
+<span class="text-on-surface-variant mr-1 flex items-center gap-1 font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[1rem]">filter_list</span> MỨC RỦI RO:
+        </span>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-highest text-on-surface shadow-sm transition-colors" type="button">Tất cả (3)</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-error transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Rủi ro cao (2)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Rủi ro trung bình (1)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Rủi ro thấp (0)
+        </button>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 md:w-56">
+<select aria-label="Loại hành động tác vụ" class="w-full h-9 pl-3 pr-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:bg-surface-container-high cursor-pointer">
+<option>Tất cả loại hành động</option>
+<option>Database Migration</option>
+<option>Cài đặt thư viện (npm/pnpm)</option>
+<option>Phân quyền IAM/Cloud</option>
+<option>Sửa đổi tệp lõi</option>
+<option>Triển khai Staging/Prod</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[1.125rem]">expand_more</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Làm mới hàng đợi" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Approval Feed Container -->
+<div class="flex flex-col gap-space-lg">
+<!-- CARD 1: DATABASE MIGRATION (RỦI RO CAO) -->
+<article class="p-space-xl rounded-xl bg-surface-container-low shadow-md flex flex-col gap-space-lg relative overflow-hidden transition-all hover:bg-surface-container/70">
+<!-- High-priority left accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-error-container/40 text-error font-label-mono text-label-mono flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">crisis_alert</span>
+                RỦI RO CAO • CRITICAL
+              </span>
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container-high text-primary font-label-mono text-label-mono">
+                MÃ: APV-9821
+              </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span> 12 phút trước
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+              Cấp quyền chạy DB Migration trên Production Database
+            </h2>
+</div>
+<!-- Initiator Agent Badges -->
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center -space-x-2">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-label-mono text-label-mono flex items-center justify-center shadow-sm" title="Software Architect AI">
+                SA
+              </span>
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-tertiary font-label-mono text-label-mono flex items-center justify-center shadow-sm" title="Backend Developer AI">
+                BE
+              </span>
+</div>
+<div class="flex flex-col font-label-mono text-label-mono">
+<span class="text-on-surface">Architect AI &amp; BE AI</span>
+<span class="text-outline">Đồng kiến nghị</span>
+</div>
+</div>
+</div>
+<!-- Impact Assessment & Specs Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-md rounded-lg bg-surface-container shadow-inner">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Tệp tác động</span>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm text-on-surface font-medium truncate">
+<span class="material-symbols-outlined text-[1rem] text-primary">terminal</span>
+<span class="text-tertiary">migrations/0042_add_billing_indexes.sql</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant">+42 dòng • ALTER TABLE orders</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Đánh giá tác động &amp; Lock</span>
+<span class="font-body-sm text-body-sm text-on-surface">Tối ưu index đơn hàng (2M+ records)</span>
+<span class="font-label-mono text-label-mono text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">lock_clock</span> Khóa bảng dự kiến: ~1.2 giây
+            </span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Môi trường &amp; Phương án Backout</span>
+<span class="font-body-sm text-body-sm text-error font-medium">AWS RDS PostgreSQL (Production-Primary)</span>
+<span class="font-label-mono text-label-mono text-tertiary">Rollback script: 0042_revert.sql đã sẵn sàng</span>
+</div>
+</div>
+<!-- Collapsible Code Diff Viewer Section -->
+<div class="flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="h-9 px-space-md bg-surface-container-high flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[1rem] text-on-surface">code</span>
+<span class="text-on-surface font-medium">Bản xem trước SQL Migration (Diff Spec)</span>
+<span class="text-outline">CONCURRENTLY Mode Enabled</span>
+</div>
+<span class="text-outline">UTF-8 • SQL Dialect</span>
+</div>
+<div class="p-space-md font-code-md text-code-md overflow-x-auto text-on-surface leading-relaxed">
+<div class="flex items-start gap-4 text-outline py-0.5">
+<span class="select-none w-8 text-right text-surface-variant">01</span>
+<span class="text-outline">-- Transaction-safe index creation to prevent extensive full-table lock</span>
+</div>
+<div class="flex items-start gap-4 text-outline py-0.5">
+<span class="select-none w-8 text-right text-surface-variant">02</span>
+<span>BEGIN;</span>
+</div>
+<div class="flex items-start gap-4 bg-tertiary-container/10 text-tertiary py-0.5">
+<span class="select-none w-8 text-right text-tertiary font-bold">+03</span>
+<span>CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_orders_billing_state_user</span>
+</div>
+<div class="flex items-start gap-4 bg-tertiary-container/10 text-tertiary py-0.5">
+<span class="select-none w-8 text-right text-tertiary font-bold">+04</span>
+<span>  ON orders (billing_status, created_at DESC)</span>
+</div>
+<div class="flex items-start gap-4 bg-tertiary-container/10 text-tertiary py-0.5">
+<span class="select-none w-8 text-right text-tertiary font-bold">+05</span>
+<span>  WHERE deleted_at IS NULL;</span>
+</div>
+<div class="flex items-start gap-4 bg-error-container/20 text-error py-0.5">
+<span class="select-none w-8 text-right text-error font-bold">-06</span>
+<span>-- REMOVED: LOCK TABLE orders IN ACCESS EXCLUSIVE MODE; (Nguy hiểm)</span>
+</div>
+<div class="flex items-start gap-4 text-outline py-0.5">
+<span class="select-none w-8 text-right text-surface-variant">07</span>
+<span>COMMIT;</span>
+</div>
+</div>
+</div>
+<!-- Card Action Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-outline">
+<span class="material-symbols-outlined text-[1rem]">verified</span>
+<span>Agent đã vượt qua 14 bài kiểm tra Static Analysis</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-error font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+<span>Từ chối</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">edit_note</span>
+<span>Yêu cầu Agent sửa lại</span>
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-all flex items-center gap-2 shadow-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>Phê duyệt thực thi (Approve)</span>
+<kbd class="px-1.5 py-0.5 rounded-DEFAULT bg-on-primary-fixed/15 font-label-mono text-label-mono text-on-primary-fixed">⌘↵</kbd>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2: DEPENDENCY INJECTION (RỦI RO TRUNG BÌNH) -->
+<article class="p-space-xl rounded-xl bg-surface-container-low shadow-md flex flex-col gap-space-lg relative overflow-hidden transition-all hover:bg-surface-container/70">
+<!-- Medium risk accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-secondary-container/30 text-secondary font-label-mono text-label-mono flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">warning</span>
+                RỦI RO TRUNG BÌNH • MEDIUM
+              </span>
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container-high text-primary font-label-mono text-label-mono">
+                MÃ: APV-9820
+              </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span> 35 phút trước
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+              Cài đặt thư viện redis@7.2 và cấu hình kết nối Cache Cluster
+            </h2>
+</div>
+<!-- Initiator Agent Badges -->
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-tertiary font-label-mono text-label-mono flex items-center justify-center shadow-sm" title="Backend Developer AI">
+              BE
+            </span>
+<div class="flex flex-col font-label-mono text-label-mono">
+<span class="text-on-surface">Backend Developer AI</span>
+<span class="text-outline">Độc lập đề xuất</span>
+</div>
+</div>
+</div>
+<!-- Impact Assessment & Specs Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-md rounded-lg bg-surface-container shadow-inner">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Tệp tác động</span>
+<span class="font-code-sm text-code-sm text-on-surface truncate">package.json, pnpm-lock.yaml</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">+1 package phụ thuộc trực tiếp</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Lý do &amp; Khả năng tương thích</span>
+<span class="font-body-sm text-body-sm text-on-surface">Phục vụ rate-limiting &amp; idempotency Stripe</span>
+<span class="font-label-mono text-label-mono text-tertiary">Zero-vulnerability CVE verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono text-outline uppercase">Dung lượng &amp; Tài nguyên</span>
+<span class="font-body-sm text-body-sm text-on-surface">Tăng Docker Image: +4.2 MB</span>
+<span class="font-label-mono text-label-mono text-outline">Network I/O: Kết nối nội bộ VPC</span>
+</div>
+</div>
+<!-- Dependency snippet detail box -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-code-sm text-code-sm">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[1.125rem]">inventory_2</span>
+<span>+ "ioredis": "^5.3.2"  [Tarball Hash: sha512-b2a8...]</span>
+</div>
+<span class="font-label-mono text-label-mono text-outline">Quyền hạn Sandbox: Socket TCP (Port 6379)</span>
+</div>
+<!-- Card Action Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-outline">
+<span class="material-symbols-outlined text-[1rem]">timer</span>
+<span>Tự động hết hạn sau 2 giờ nếu không phản hồi</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-error font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+<span>Từ chối</span>
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[1rem]">check</span>
+<span>Phê duyệt cài đặt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 3: AWS S3 BUCKET POLICY (RỦI RO BẢO MẬT CAO) -->
+<article class="p-space-xl rounded-xl bg-surface-container-low shadow-md flex flex-col gap-space-lg relative overflow-hidden transition-all hover:bg-surface-container/70">
+<!-- Security High-risk accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-error-container/40 text-error font-label-mono text-label-mono flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">security</span>
+                BẢO MẬT &amp; IAM • SECURITY CRITICAL
+              </span>
+<span class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container-high text-primary font-label-mono text-label-mono">
+                MÃ: APV-9818
+              </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span> 1 giờ trước
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+              Yêu cầu cập nhật AWS S3 Bucket Policy cho bucket <span class="font-code-md text-code-md text-primary">ecom-assets-prod</span>
+</h2>
+</div>
+<!-- Initiator Agent Badges -->
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center -space-x-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary font-label-mono text-label-mono flex items-center justify-center shadow-sm" title="Code Reviewer AI">
+                CR
+              </span>
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-label-mono text-label-mono flex items-center justify-center shadow-sm" title="DevOps Agent">
+                DO
+              </span>
+</div>
+<div class="flex flex-col font-label-mono text-label-mono">
+<span class="text-on-surface">Reviewer &amp; DevOps</span>
+<span class="text-outline">Đồng kiến nghị</span>
+</div>
+</div>
+</div>
+<!-- Security Alert Banner within card -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-start gap-space-md">
+<span class="material-symbols-outlined text-error text-[1.5rem] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-error">Phát hiện cấu hình tiềm ẩn nguy cơ Public Read</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Agent phát hiện rule cũ cho phép wildcard <code class="text-error font-code-sm">"Principal": "*"</code> đối với đường dẫn invoice hóa đơn khách hàng. Đề xuất siết chặt IAM Role ARN, giới hạn duy nhất cho CloudFront OAI và Lambda Service Role.
+            </p>
+</div>
+</div>
+<!-- Policy Comparison Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Current Loose Rule -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-mono text-label-mono">
+<span class="text-error flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">remove_circle</span> CHÍNH SÁCH HIỆN TẠI (LỎNG LẺO)
+              </span>
+<span class="text-outline">aws_s3_policy.tf:24</span>
+</div>
+<pre class="font-code-sm text-code-sm text-outline overflow-x-auto p-space-sm bg-surface-container-low rounded-DEFAULT mt-1"><code>"Principal": "*",
+"Action": "s3:GetObject",
+"Resource": "arn:aws:s3:::ecom-assets/*"</code></pre>
+</div>
+<!-- Proposed Hardened Rule -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-mono text-label-mono">
+<span class="text-tertiary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">add_circle</span> CHÍNH SÁCH ĐỀ XUẤT (SIẾT CHẶT)
+              </span>
+<span class="text-primary font-label-mono text-label-mono">KHUYẾN NGHỊ</span>
+</div>
+<pre class="font-code-sm text-code-sm text-tertiary overflow-x-auto p-space-sm bg-surface-container-low rounded-DEFAULT mt-1"><code>"Principal": { "AWS": "arn:aws:iam::102938:role/CloudFrontOAI" },
+"Action": [ "s3:GetObject" ],
+"Resource": "arn:aws:s3:::ecom-assets-prod/public/*"</code></pre>
+</div>
+</div>
+<!-- Card Action Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-tertiary">
+<span class="material-symbols-outlined text-[1rem]">lock_reset</span>
+<span>Tự động kích hoạt CloudWatch Alarm sau khi áp dụng</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-error font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+<span>Từ chối</span>
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-all flex items-center gap-2 shadow-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">enhanced_encryption</span>
+<span>Phê duyệt áp dụng chính sách chặt</span>
+<kbd class="px-1.5 py-0.5 rounded-DEFAULT bg-on-primary-fixed/15 font-label-mono text-label-mono text-on-primary-fixed">⌘↵</kbd>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Collapsible Audit History Section (Lịch sử các phê duyệt gần đây) -->
+<section class="mt-space-lg rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">history</span>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lịch sử Phê duyệt Gần đây (Audit Log)</h3>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Nhật ký kiểm toán bất biến &amp; chữ ký người phê duyệt</span>
+</div>
+</div>
+<button class="flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-2 py-1 rounded-DEFAULT hover:bg-surface-container transition-colors" id="toggle-history-btn" type="button">
+<span>Xem tất cả 24 bản ghi</span>
+<span class="material-symbols-outlined text-[1.125rem]" id="history-arrow-icon">expand_more</span>
+</button>
+</div>
+<!-- Audit Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high/60 font-label-mono text-label-mono text-on-surface-variant">
+<th class="py-2.5 px-space-md rounded-l-DEFAULT">MÃ TÁC VỤ</th>
+<th class="py-2.5 px-space-md">HÀNH ĐỘNG ĐƯỢC DUYỆT</th>
+<th class="py-2.5 px-space-md">AGENT ĐỀ XUẤT</th>
+<th class="py-2.5 px-space-md">NGƯỜI DUYỆT (APPROVER)</th>
+<th class="py-2.5 px-space-md">THỜI GIAN</th>
+<th class="py-2.5 px-space-md rounded-r-DEFAULT text-right">KẾT QUẢ DEPLOY</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-space-md font-code-sm text-code-sm text-primary font-medium">APV-9815</td>
+<td class="py-3 px-space-md text-on-surface">Tăng giới hạn concurrency cho Lambda Payment Service</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container-high font-label-mono text-label-mono text-on-surface-variant">DevOps Agent</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-label-mono text-label-mono flex items-center justify-center text-[0.625rem]">HM</span>
+<span class="text-on-surface font-medium">Hoàng Minh (Tech Lead)</span>
+</div>
+</td>
+<td class="py-3 px-space-md font-label-mono text-label-mono text-outline">Hôm nay, 10:14</td>
+<td class="py-3 px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono text-tertiary">
+<span class="material-symbols-outlined text-[0.875rem]">check_circle</span> Thành công (0s downtime)
+                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-space-md font-code-sm text-code-sm text-primary font-medium">APV-9812</td>
+<td class="py-3 px-space-md text-on-surface">Cập nhật Stripe Webhook Signature Key trong Vault</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container-high font-label-mono text-label-mono text-on-surface-variant">Backend Agent</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-label-mono text-label-mono flex items-center justify-center text-[0.625rem]">HM</span>
+<span class="text-on-surface font-medium">Hoàng Minh (Tech Lead)</span>
+</div>
+</td>
+<td class="py-3 px-space-md font-label-mono text-label-mono text-outline">Hôm qua, 18:42</td>
+<td class="py-3 px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono text-tertiary">
+<span class="material-symbols-outlined text-[0.875rem]">check_circle</span> Đồng bộ Hash Vault OK
+                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-space-md font-code-sm text-code-sm text-primary font-medium">APV-9804</td>
+<td class="py-3 px-space-md text-on-surface">Xóa bỏ cụm Redis v6.0 cũ đã deprecated</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container-high font-label-mono text-label-mono text-on-surface-variant">Database Agent</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface font-label-mono text-label-mono flex items-center justify-center text-[0.625rem]">BN</span>
+<span class="text-on-surface font-medium">Bằng Nguyễn (Principal)</span>
+</div>
+</td>
+<td class="py-3 px-space-md font-label-mono text-label-mono text-outline">16/05/2025</td>
+<td class="py-3 px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono text-tertiary">
+<span class="material-symbols-outlined text-[0.875rem]">check_circle</span> Giải phóng 16GB RAM
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Simple interaction for expanding audit history
+  const toggleBtn = document.getElementById('toggle-history-btn');
+  const arrowIcon = document.getElementById('history-arrow-icon');
+  if (toggleBtn && arrowIcon) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = arrowIcon.textContent === 'expand_less';
+      arrowIcon.textContent = isExpanded ? 'expand_more' : 'expand_less';
+    });
+  }
+</script></main></div></body></html>

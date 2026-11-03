@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#001a42","on-surface-variant":"#c2c6d6","error":"#ffb4ab","on-secondary":"#1000a9","inverse-on-surface":"#2c3039","tertiary-fixed":"#acedff","secondary-container":"#3131c0","error-container":"#93000a","on-surface":"#dfe2ee","outline":"#8c909f","primary-fixed":"#d8e2ff","primary-fixed-dim":"#adc6ff","primary-container":"#4d8eff","on-primary":"#002e6a","inverse-primary":"#005ac2","secondary-fixed":"#e1e0ff","surface-container-high":"#262a33","on-background":"#dfe2ee","on-error":"#690005","surface-tint":"#adc6ff","on-error-container":"#ffdad6","surface-variant":"#31353e","surface-container-lowest":"#0a0e16","primary":"#adc6ff","background":"#0f131c","on-tertiary-fixed":"#001f26","on-tertiary-container":"#002f38","on-secondary-fixed-variant":"#2f2ebe","secondary":"#c0c1ff","on-secondary-container":"#b0b2ff","on-primary-container":"#00285d","on-tertiary-fixed-variant":"#004e5c","tertiary":"#4cd7f6","on-primary-fixed-variant":"#004395","surface-container-low":"#181c24","tertiary-container":"#009eb9","inverse-surface":"#dfe2ee","surface":"#0f131c","surface-dim":"#0f131c","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c2028","secondary-fixed-dim":"#c0c1ff","on-tertiary":"#003640","surface-bright":"#353942","surface-container-highest":"#31353e","outline-variant":"#424754"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","margin":"1rem","space-xs":"0.25rem","space-md":"0.75rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-desktop":"1.5rem"},fontFamily:{"body-md":["Inter"],"display-lg":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-mono":["JetBrains Mono"],"label-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-sm":["Inter"]},fontSize:{"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-xl":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-mono":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"500"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"400"}],"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-[1024px]" data-mode="connect" data-stitch-vh="min-h-[1024px]===min-h-screen"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="DevTeam AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMVQYBDBjnqtSP-LFHw8UcfA1enxprIJuC9ORDuNED4tKFikZbdn_bvEk8_rs_wBclZyd1YRWnYRX1lQsr-CxwQs1m_2FfLgZjOf2p8nPyGsr5QcNWxVO79x_nceC1qFltC8fz9YTGUNL7DNPO3lgd_WoXPb3ti-cX8PhvR7FYIkhsohtE1vkBw8l_APZvHwXmNRSKXnLoAWK3ft3IFBVBXIhRhZtOFnihytAsDBc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">DevTeam AI</span><span class="font-label-mono text-label-mono text-primary leading-none mt-1">v2.4 Enterprise</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="font-label-md text-label-md">Tổng quan</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="font-label-md text-label-md">Dự án</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workspace" href="#"><span class="font-label-md text-label-md">Không gian Dự án</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-agents" href="#"><span class="font-label-md text-label-md">Quản lý AI Agent</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workflow" href="#"><span class="font-label-md text-label-md">Quy trình Phối hợp</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-colors bg-surface-container-high text-on-surface font-headline-sm" data-path="tasks" href="#"><span class="font-label-md text-label-md">Quản lý Tác vụ</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="approvals" href="#"><span class="font-label-md text-label-md">Trung tâm Phê duyệt</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="history" href="#"><span class="font-label-md text-label-md">Lịch sử Thực thi</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="font-label-md text-label-md">Phân tích &amp; Chi phí</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="font-label-md text-label-md">Cài đặt Hệ thống</span></a></nav></div><div class="flex flex-col gap-space-sm p-space-sm bg-surface-container-lowest"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-label-mono text-label-mono leading-tight">Engine: 7 Agents Online</span></div><div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Bằng Nguyễn</span><span class="font-label-mono text-label-mono text-on-surface-variant leading-none">Tech Lead</span></div></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button class="hover:text-on-surface p-1 rounded-DEFAULT hover:bg-surface-container" title="Settings" type="button"><span class="material-symbols-outlined text-[1rem]">settings</span></button><button class="hover:text-error p-1 rounded-DEFAULT hover:bg-surface-container" title="Logout" type="button"><span class="material-symbols-outlined text-[1rem]">logout</span></button></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant"><span class="material-symbols-outlined text-[1rem]">dashboard</span><span>/</span><span class="text-on-surface font-headline-sm text-headline-sm">Workspace Matrix</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest cursor-pointer"><span class="material-symbols-outlined text-primary text-[1.125rem]">domain</span><span class="font-label-md text-label-md">E-commerce Microservices (Prod)</span><span class="material-symbols-outlined text-on-surface-variant text-[1rem]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[1.125rem]">search</span><input class="w-80 h-9 pl-9 pr-12 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tìm dự án, mã tác vụ, Agent hoặc logs..." type="text"/><span class="absolute right-2 font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-surface-variant">⌘K</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container font-label-mono text-label-mono text-tertiary-fixed"><span class="material-symbols-outlined text-tertiary text-[1rem]">toll</span><span>125K / 500K Tokens ($2.45)</span></div><button class="relative p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" title="Notifications" type="button"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container"></span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors" type="button"><span class="material-symbols-outlined text-[1.125rem]">add_circle</span><span>+ Yêu cầu Tính năng</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"/></div></header><main class="relative pt-16 bg-surface min-h-[1024px] w-full px-space-lg" data-stitch-vh="min-h-[1024px]===min-h-screen"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Control Header & Filters Toolbar -->
+<section class="flex flex-col gap-space-md py-space-md">
+<!-- Top Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-tertiary">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span>
+<span>AUTONOMOUS SWARM ORCHESTRATION</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Quản lý Tác vụ Đa Tác nhân <span class="text-on-surface-variant font-headline-lg font-normal">— Task Kanban</span>
+</h1>
+</div>
+<!-- Action Group -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- View Toggle (Kanban / List) -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-high">
+<button class="flex items-center gap-space-xs px-space-md py-1 rounded-DEFAULT bg-surface text-primary font-label-md text-label-md shadow-sm" id="view-kanban-btn">
+<span class="material-symbols-outlined text-[1rem]">view_kanban</span>
+<span>Bảng Kanban</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1 rounded-DEFAULT text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" id="view-list-btn">
+<span class="material-symbols-outlined text-[1rem]">format_list_bulleted</span>
+<span>Danh sách</span>
+</button>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]">tune</span>
+<span>Tùy chỉnh cột</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed hover:bg-primary-fixed-dim font-label-md text-label-md transition-all shadow-md">
+<span class="material-symbols-outlined text-[1.125rem]">add_task</span>
+<span>+ Tạo Tác vụ Mới</span>
+</button>
+</div>
+</div>
+<!-- Filter Multi-bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm flex-1 min-w-[280px]">
+<!-- Search Input -->
+<div class="relative flex items-center min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[1.125rem]">search</span>
+<input class="w-full h-8 pl-9 pr-8 rounded-DEFAULT bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" id="kanban-search" placeholder="Tìm theo ID, mô tả kỹ thuật, commit..." type="text"/>
+<span class="absolute right-2 font-label-mono text-label-mono text-outline-variant">/</span>
+</div>
+<!-- Project Selector Chip -->
+<div class="flex items-center gap-1.5 px-space-sm h-8 rounded-DEFAULT bg-surface-container text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary text-[1rem]">deployed_code</span>
+<span class="font-medium">E-commerce Microservices</span>
+<span class="material-symbols-outlined text-outline text-[1rem]">keyboard_arrow_down</span>
+</div>
+<!-- Agent Segmented Filter Pills -->
+<div class="flex items-center gap-1 overflow-x-auto py-0.5">
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container-highest text-primary font-label-mono text-label-mono" data-agent="all">Tất cả Agent (7)</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="ba">BA AI</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="arch">Architect AI</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="backend">Backend AI</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="frontend">Frontend AI</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="qa">QA Tester AI</button>
+<button class="agent-filter-btn px-2.5 h-7 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono" data-agent="reviewer">Reviewer AI</button>
+</div>
+</div>
+<!-- Priority Selector -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Độ ưu tiên:</span>
+<select class="h-8 px-2 rounded-DEFAULT bg-surface-container font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option>Tất cả mức độ</option>
+<option>P0 - Khẩn cấp (Critical)</option>
+<option>P1 - Cao (High)</option>
+<option>P2 - Trung bình (Medium)</option>
+<option>P3 - Thấp (Low)</option>
+</select>
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Xóa bộ lọc">
+<span class="material-symbols-outlined text-[1.125rem]">filter_alt_off</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Swarm Telemetry Spark Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md p-space-sm mb-space-md rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-mono text-label-mono text-on-surface">Auto-Orchestrator: ACTIVE</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[1rem]">bolt</span>
+<span>Tác vụ hoạt động đồng thời: <strong class="text-tertiary">4 Threads</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[1rem]">token</span>
+<span>Tổng Token Sprint 4: <strong class="text-on-surface">148,650</strong> (~$2.97)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-error text-[1rem]">warning</span>
+<span>Chờ Human-gate: <strong class="text-error font-semibold">2 Yêu cầu</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant">
+<span>Sprint 4 (12 Thg 5 - 26 Thg 5)</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-high text-primary font-semibold">Ngày 8/14</span>
+</div>
+</div>
+<!-- Kanban Columns Grid Canvas (5 Columns) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-space-md items-start w-full overflow-x-auto pb-space-lg">
+<!-- ==================== CỘT 1: CẦN LÀM (TO DO) ==================== -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest min-w-[290px] shadow-sm">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Cần làm</h2>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container font-label-mono text-label-mono text-on-surface-variant">3</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded-DEFAULT hover:bg-surface-container text-outline hover:text-on-surface" title="Thêm tác vụ nhanh">
+<span class="material-symbols-outlined text-[1rem]">add</span>
+</button>
+<button class="p-1 rounded-DEFAULT hover:bg-surface-container text-outline hover:text-on-surface" title="Tùy chọn cột">
+<span class="material-symbols-outlined text-[1rem]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Task Card 1.1 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-112</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-error font-medium">P1 High</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[1.125rem]">drag_indicator</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Thiết kế Schema OpenSearch cho Catalog Tìm kiếm Nâng cao
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Định nghĩa mapping index sản phẩm có phân cấp đa danh mục và tokenizer cho tiếng Việt có dấu.
+        </p>
+<!-- Sub-task progress bar -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Checklist</span>
+<span>0/4 (0%)</span>
+</div>
+<div class="w-full h-1 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-outline" style="width: 0%;"></div>
+</div>
+</div>
+<!-- Meta Footer -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<img alt="Architect AI Avatar" class="w-5 h-5 rounded-full object-cover" data-alt="Cybernetic minimal vector icon badge of an AI Database Architect agent rendered with blue luminous circuits on dark metallic charcoal backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC86ZofBOYBmzZ4zcIH3aXcmZEUoCKvfD87QQGEIud-jXu-luW1ppNVWMpKhtMiju9t4StB4kkx7obacb4r2ScT50jQKczA1f7ux68PyO2qYccSJGYF9N9i9jHMlDOGKi1RGUrawjuqRrdU1eJAS5GFN-v92GHyvyTeABcIx6yOcyZaZnZo0rrekf-mxzghnFArsU8rXQ2Yu9pMeoRR9QLfcZCrIYChR-t78S8zrDI"/>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Architect AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-outline">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[0.875rem]">schedule</span> Sprint 4</span>
+<span class="text-tertiary font-medium">0 Tkn</span>
+</div>
+</div>
+</article>
+<!-- Task Card 1.2 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-115</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-on-surface-variant">P2 Med</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[1.125rem]">drag_indicator</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Tích hợp Google Cloud KMS mã hóa Token Session
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Tạo adapter dịch vụ xoay vòng khóa đối xứng tự động theo chu kỳ 90 ngày cho dịch vụ Auth.
+        </p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Checklist</span>
+<span>1/3 (33%)</span>
+</div>
+<div class="w-full h-1 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary" style="width: 33%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<img alt="Backend AI Avatar" class="w-5 h-5 rounded-full object-cover" data-alt="Technical avatar icon of an AI Security and Backend agent with glowing indigo nodes and minimal cyber shield emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzUcNfYXKjjcaOkMDZTZzN0XjI8AcEnYJJBlWVECfUuLt_kxEV7Kti6ia77n2psSIJE3K9l65Oq7TuMekGex3KJKX-BfCVSV1d00dACh5GStH7XcsYLMjCGPUWh_8DJGtCiq3eBNGCTJODC9Nq8tBk3CuLF4eqUVViX2gFreG9_ysRl-yPDMhjLlNROkwYKeYh7a1KjUNJgv3wCMqIaiwiGDM3QLUi3ydv4wsxZZY"/>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Backend Dev AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-outline">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[0.875rem]">schedule</span> 24 Thg 5</span>
+<span class="text-tertiary font-medium">1.2K</span>
+</div>
+</div>
+</article>
+<!-- Task Card 1.3 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-118</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-outline">P3 Low</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[1.125rem]">drag_indicator</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Viết OpenAPI Specification cho API Vouchers &amp; Khuyến mãi
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Chuẩn hóa Swagger 3.1 bao gồm mock examples và validation rules cho voucher stacking.
+        </p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Checklist</span>
+<span>0/2 (0%)</span>
+</div>
+<div class="w-full h-1 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-outline" style="width: 0%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<img alt="BA AI Avatar" class="w-5 h-5 rounded-full object-cover" data-alt="Modern geometric avatar icon of a Business Analyst AI agent with teal glowing documents and logic graph lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHjbDCYE3cnkCnoOWIM1w_Fu4cK8m2b51Rw33TeIVNZR8c6Zy6UGFU7BYF1Cekm9yVcehMNbK24vb_EYwXsjOdgLt5Xdu92elp2RCbCH7yK652frsz0oWd38Uw93MS0ibEX3Ve70iEtu6YWgwZSlxxjyDlxaX-g_DHAIhe5undv7UDghNAshDs4HQ4TArc_nkaPFcupHSYCS0G9FFBtE7vRbuO8-QOSXhpQTsFxLs"/>
+<span class="font-label-mono text-label-mono text-on-surface-variant">BA AI Agent</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-outline">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[0.875rem]">schedule</span> 26 Thg 5</span>
+<span class="text-tertiary font-medium">850</span>
+</div>
+</div>
+</article>
+</div>
+<!-- ==================== CỘT 2: ĐANG THỰC HIỆN (IN PROGRESS) ==================== -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest min-w-[290px] shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Đang thực hiện</h2>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container font-label-mono text-label-mono text-tertiary font-bold">4</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-mono text-label-mono text-tertiary animate-pulse">EXECUTING</span>
+</div>
+</div>
+<!-- Task Card 2.1 (Active Execution with live glow) -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container-high shadow-lg transition-all relative overflow-hidden">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-bold">#TASK-104</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-mono text-label-mono font-bold">P0 Critical</span>
+</div>
+<!-- Live pulse badge -->
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-lowest text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+<span>Gen Code</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Tích hợp Stripe Webhook Idempotency Key
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Khắc phục lỗi trùng lặp đơn thanh toán khi webhook retry nhiều lần. Sử dụng Redis atomic lock TTL 300s.
+        </p>
+<!-- Live Agent Telemetry Stream Box -->
+<div class="p-2 rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-1 font-label-mono text-label-mono">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1 text-tertiary"><span class="material-symbols-outlined text-[0.875rem]">terminal</span> Stream diff:</span>
+<span>src/payments/stripe.ts</span>
+</div>
+<div class="text-tertiary font-code-sm text-code-sm truncate">
+            + await redis.set(`idemp:${eventId}`, 1, "EX", 300, "NX");
+          </div>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Tiến độ thực thi</span>
+<span class="text-primary font-bold">4/5 Checklist (80%)</span>
+</div>
+<div class="w-full h-1.5 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-mono text-label-mono text-on-surface font-medium">Backend Dev AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono">
+<span class="text-tertiary font-semibold">14.2K tkn</span>
+<span class="text-outline">Hôm nay</span>
+</div>
+</div>
+</article>
+<!-- Task Card 2.2 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-106</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-error font-medium">P1 High</span>
+</div>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-lowest text-secondary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Running AST</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Tối ưu React Re-render trong CartDrawer
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Tách memoized selector từ Zustand store và thay thế inline callback để tránh re-render 48 lần khi cập nhật số lượng item.
+        </p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Tiến độ thực thi</span>
+<span class="text-secondary font-bold">2/3 Checklist (66%)</span>
+</div>
+<div class="w-full h-1.5 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary" style="width: 66%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-label-mono text-on-surface font-medium">Frontend Dev AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono">
+<span class="text-tertiary font-semibold">8.7K tkn</span>
+<span class="text-outline">18:00</span>
+</div>
+</div>
+</article>
+<!-- Task Card 2.3 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-107</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-on-surface-variant">P2 Med</span>
+</div>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-lowest text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span>Auto Testing</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Sinh Bộ Kiểm Thử Tự Động Cypress E2E Luồng Thanh Toán VNPAY
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Mô phỏng 12 kịch bản mã lỗi phản hồi từ Sandbox Gateway bao gồm mã timeout và sai chữ ký số HMAC.
+        </p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Tiến độ thực thi</span>
+<span class="text-primary font-bold">5/12 Scenarios (41%)</span>
+</div>
+<div class="w-full h-1.5 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 41%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-mono text-label-mono text-on-surface font-medium">QA Tester AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono">
+<span class="text-tertiary font-semibold">19.4K tkn</span>
+<span class="text-outline">Sprint 4</span>
+</div>
+</div>
+</article>
+<!-- Task Card 2.4 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-semibold">#TASK-109</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest font-label-mono text-label-mono text-error font-medium">P1 High</span>
+</div>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-lowest text-primary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>Parsing AST</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+          Refactor Module Order Pricing Service theo Clean Architecture
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Tách biệt hoàn toàn Domain Entity tính thuế VAT và Coupon discount ra khỏi HTTP Handler.
+        </p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant">
+<span>Tiến độ thực thi</span>
+<span class="text-primary font-bold">1/4 Checklist (25%)</span>
+</div>
+<div class="w-full h-1.5 rounded-DEFAULT bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary" style="width: 25%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-mono text-label-mono text-on-surface font-medium">Architect AI</span>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono">
+<span class="text-tertiary font-semibold">6.1K tkn</span>
+<span class="text-outline">Sprint 4</span>
+</div>
+</div>
+</article>
+</div>
+<!-- ==================== CỘT 3: CHỜ PHÊ DUYỆT (WAITING APPROVAL) ==================== -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest min-w-[290px] shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Chờ phê duyệt</h2>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container font-label-mono text-label-mono text-error font-bold">2</span>
+</div>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-error font-label-mono text-label-mono">HUMAN GATE</span>
+</div>
+<!-- Task Card 3.1 (High Alert Human Approval) -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-bold">#TASK-108</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-mono text-label-mono font-bold">P0 Critical</span>
+</div>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-error font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[0.875rem]">security</span>
+<span>Cần TechLead</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Viết Migration Script PostgreSQL bảng user_wallets
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Thêm ràng buộc `balance_cents &gt;= 0` có khóa `ACCESS EXCLUSIVE`. Yêu cầu kiểm tra rủi ro lock table trên production.
+        </p>
+<!-- Review Warning Container -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-mono text-label-mono">
+<span class="text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">verified_user</span>
+<span>Diff đã kiểm chứng bởi Reviewer AI</span>
+</span>
+<span class="text-on-surface font-semibold">+42 / -3 lines</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Agent đề xuất triển khai với thuật toán `CONCURRENTLY` để triệt tiêu thời gian downtime.
+          </p>
+</div>
+<!-- Quick Approval Controls -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1rem]">visibility</span>
+<span>So sánh Diff</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-primary text-on-primary-fixed hover:bg-primary-fixed-dim font-label-md text-label-md font-semibold transition-colors">
+<span class="material-symbols-outlined text-[1rem]">check_circle</span>
+<span>Phê duyệt</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-on-surface-variant">Reviewer AI: Ready</span>
+</div>
+<span class="text-tertiary font-semibold">21.8K tkn</span>
+</div>
+</article>
+<!-- Task Card 3.2 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-primary font-bold">#TASK-110</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-error font-label-mono text-label-mono font-medium">P1 High</span>
+</div>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-primary font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[0.875rem]">merge_type</span>
+<span>PR #384</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+          Đổi Endpoint Microservice Auth từ REST sang gRPC
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          PR hoàn tất bởi Backend AI. Cần xác nhận tương thích ngược với API Gateway v2.4 trước khi merge nhánh main.
+        </p>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md">
+<span>Yêu cầu sửa</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-primary text-on-primary-fixed hover:bg-primary-fixed-dim font-label-md text-label-md font-semibold">
+<span>Chấp thuận PR</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Backend &amp; QA approved</span>
+<span class="text-tertiary font-semibold">16.3K tkn</span>
+</div>
+</article>
+</div>
+<!-- ==================== CỘT 4: ĐÃ HOÀN THÀNH (COMPLETED) ==================== -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest min-w-[290px] shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Đã hoàn thành</h2>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container font-label-mono text-label-mono text-tertiary font-bold">8</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[1.125rem]">task_alt</span>
+</div>
+<!-- Completed Task 4.1 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container opacity-90 hover:opacity-100 transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-outline line-through">#TASK-092</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-tertiary font-label-mono text-label-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">check</span> Đã triển khai
+            </span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[1rem]">done_all</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+          Tối ưu hóa Dockerfile Multi-stage Build cho Dịch vụ Checkout
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Giảm dung lượng image từ 840MB xuống còn 48MB trên môi trường Alpine Linux.
+        </p>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[0.875rem]">smart_toy</span> DevOps AI</span>
+<span class="text-tertiary">9.4K tkn</span>
+</div>
+</article>
+<!-- Completed Task 4.2 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container opacity-90 hover:opacity-100 transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-outline line-through">#TASK-095</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-tertiary font-label-mono text-label-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">check</span> Đã merge
+            </span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[1rem]">done_all</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+          Cài đặt Rate Limiting Redis Bucket cho API Login &amp; OTP
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Áp dụng thuật toán Token Bucket giới hạn tối đa 5 lần thử/phút cho mỗi địa chỉ IP.
+        </p>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[0.875rem]">smart_toy</span> Backend AI</span>
+<span class="text-tertiary">11.1K tkn</span>
+</div>
+</article>
+<!-- Completed Task 4.3 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container opacity-90 hover:opacity-100 transition-all shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-outline line-through">#TASK-098</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-tertiary font-label-mono text-label-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">check</span> Đã đóng
+            </span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[1rem]">done_all</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+          Xây dựng Bộ Thư Viện UI Button, Input và Dropdown cho Design System
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Tuân thủ nguyên tắc WCAG 2.1 AA với Tailwind CSS và kiểm thử với bàn phím.
+        </p>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[0.875rem]">smart_toy</span> Frontend AI</span>
+<span class="text-tertiary">15.8K tkn</span>
+</div>
+</article>
+<!-- Collapsed indicator for remaining 5 items -->
+<button class="flex items-center justify-center gap-1.5 py-2 px-space-sm rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-mono text-label-mono transition-colors">
+<span class="material-symbols-outlined text-[1rem]">unfold_more</span>
+<span>Xem thêm 5 tác vụ đã hoàn thành...</span>
+</button>
+</div>
+<!-- ==================== CỘT 5: THẤT BẠI / LỖI (FAILED) ==================== -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest min-w-[290px] shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Thất bại / Lỗi</h2>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-mono text-label-mono font-bold">1</span>
+</div>
+<span class="material-symbols-outlined text-error text-[1.125rem]">error</span>
+</div>
+<!-- Failed Task Card 5.1 -->
+<article class="task-card flex flex-col gap-space-sm p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-error font-bold">#TASK-101</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-mono text-label-mono font-bold">Rollback</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-error font-label-mono text-label-mono">Exit Code 1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Tự động Đồng bộ Dữ liệu Kafka sang ClickHouse Analytics
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Dịch vụ Consumer bị OOMKilled khi stream lượng tin nhắn lớn (&gt;25.000 msg/sec). Đã tự động kích hoạt circuit breaker.
+        </p>
+<!-- Error Stack Preview -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-1 font-label-mono text-label-mono">
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[0.875rem]">bug_report</span>
+<span class="font-semibold">KafkaConsumerGroupException:</span>
+</div>
+<p class="font-code-sm text-code-sm text-error/90 line-clamp-2">
+            CommitFailedException: The offset storage could not be rebalanced within heartbeat interval.
+          </p>
+</div>
+<!-- Failure Action Toolbar -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1rem]">terminal</span>
+<span>Xem Trace Log</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-DEFAULT bg-error text-on-error hover:bg-on-error-container font-label-md text-label-md font-semibold transition-colors">
+<span class="material-symbols-outlined text-[1rem]">replay</span>
+<span>Chạy Lại Agent</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-mono text-label-mono">
+<span class="text-on-surface-variant">DevOps Agent + QA</span>
+<span class="text-error font-semibold">32.4K tkn (lãng phí)</span>
+</div>
+</article>
+<!-- Empty/Drop Area Hint for Failed Lane -->
+<div class="flex flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-low text-outline font-label-mono text-label-mono text-center">
+<span class="material-symbols-outlined text-[1.5rem] mb-1">security</span>
+<span>Hệ thống tự động cô lập tác vụ lỗi</span>
+</div>
+</div>
+</div>
+<!-- Bottom Workspace Metrics & Agent Activity Feed Bar -->
+<section class="mt-space-lg p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-semibold">DevTeam Swarm Pulse:</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-mono text-label-mono">
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container">Tốc độ hoàn thành: <strong class="text-primary">3.2 task/ngày</strong></span>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container">Tỷ lệ duyệt thành công: <strong class="text-tertiary">96.8%</strong></span>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container">Độ chính xác Unit Test: <strong class="text-tertiary">99.1%</strong></span>
+</div>
+</div>
+<!-- Quick Terminal Drawer Shortcut -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-label-mono text-label-mono transition-colors">
+<span class="material-symbols-outlined text-primary text-[1rem]">terminal</span>
+<span>Bảng điều khiển Swarm CLI (⌥T)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-DEFAULT bg-primary text-on-primary-fixed hover:bg-primary-fixed-dim font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1rem]">sync</span>
+<span>Đồng bộ Git Trực tiếp</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Simple client-side micro-interaction for Agent Filter Pills
+  document.querySelectorAll('.agent-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.agent-filter-btn').forEach(b => {
+        b.classList.remove('bg-surface-container-highest', 'text-primary');
+        b.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-highest', 'text-primary');
+      btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    });
+  });
+
+  // Client-side quick filter for search box
+  const searchInput = document.getElementById('kanban-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      document.querySelectorAll('.task-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Toggle View State
+  const kanbanBtn = document.getElementById('view-kanban-btn');
+  const listBtn = document.getElementById('view-list-btn');
+  if (kanbanBtn && listBtn) {
+    listBtn.addEventListener('click', () => {
+      listBtn.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+      listBtn.classList.remove('text-on-surface-variant');
+      kanbanBtn.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+      kanbanBtn.classList.add('text-on-surface-variant');
+    });
+    kanbanBtn.addEventListener('click', () => {
+      kanbanBtn.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+      kanbanBtn.classList.remove('text-on-surface-variant');
+      listBtn.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+      listBtn.classList.add('text-on-surface-variant');
+    });
+  }
+</script></main></div></body></html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html><html class="dark" lang="vi"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#001a42","on-surface-variant":"#c2c6d6","error":"#ffb4ab","on-secondary":"#1000a9","inverse-on-surface":"#2c3039","tertiary-fixed":"#acedff","secondary-container":"#3131c0","error-container":"#93000a","on-surface":"#dfe2ee","outline":"#8c909f","primary-fixed":"#d8e2ff","primary-fixed-dim":"#adc6ff","primary-container":"#4d8eff","on-primary":"#002e6a","inverse-primary":"#005ac2","secondary-fixed":"#e1e0ff","surface-container-high":"#262a33","on-background":"#dfe2ee","on-error":"#690005","surface-tint":"#adc6ff","on-error-container":"#ffdad6","surface-variant":"#31353e","surface-container-lowest":"#0a0e16","primary":"#adc6ff","background":"#0f131c","on-tertiary-fixed":"#001f26","on-tertiary-container":"#002f38","on-secondary-fixed-variant":"#2f2ebe","secondary":"#c0c1ff","on-secondary-container":"#b0b2ff","on-primary-container":"#00285d","on-tertiary-fixed-variant":"#004e5c","tertiary":"#4cd7f6","on-primary-fixed-variant":"#004395","surface-container-low":"#181c24","tertiary-container":"#009eb9","inverse-surface":"#dfe2ee","surface":"#0f131c","surface-dim":"#0f131c","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c2028","secondary-fixed-dim":"#c0c1ff","on-tertiary":"#003640","surface-bright":"#353942","surface-container-highest":"#31353e","outline-variant":"#424754"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","margin":"1rem","space-xs":"0.25rem","space-md":"0.75rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-desktop":"1.5rem"},fontFamily:{"body-md":["Inter"],"display-lg":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-mono":["JetBrains Mono"],"label-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-sm":["Inter"]},fontSize:{"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-xl":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-mono":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"500"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"400"}],"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.-bottom-1{bottom:-0.25rem}.-bottom-24{bottom:-6rem}.-right-1{right:-0.25rem}.-right-16{right:-4rem}.-top-24{top:-6rem}.left-0{left:0px}.left-1\/3{left:33.333333%}.left-3{left:0.75rem}.left-\[260px\]{left:260px}.right-0{right:0px}.right-1\.5{right:0.375rem}.right-2{right:0.5rem}.top-0{top:0px}.top-1\.5{top:0.375rem}.z-40{z-index:40}.z-50{z-index:50}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-space-md{margin-bottom:0.75rem}.mb-space-sm{margin-bottom:0.5rem}.mb-space-xl{margin-bottom:1.5rem}.mb-space-xs{margin-bottom:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-space-xl{margin-top:1.5rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-32{height:8rem}.h-8{height:2rem}.h-80{height:20rem}.h-9{height:2.25rem}.h-96{height:24rem}.h-full{height:100%}.min-h-\[1024px\]{min-height:1024px}.w-1\.5{width:0.375rem}.w-12{width:3rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-8{width:2rem}.w-80{width:20rem}.w-96{width:24rem}.w-\[260px\]{width:260px}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-space-lg{gap:1rem}.gap-space-md{gap:0.75rem}.gap-space-sm{gap:0.5rem}.gap-space-xl{gap:1.5rem}.gap-space-xs{gap:0.25rem}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-lg{border-radius:0.25rem}.rounded-xl{border-radius:0.5rem}.border-t{border-top-width:1px}.border-surface-container{--tw-border-opacity:1;border-color:rgb(28 32 40 / var(--tw-border-opacity, 1))}.bg-outline{--tw-bg-opacity:1;background-color:rgb(140 144 159 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(77 142 255 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(173 198 255 / 0.1)}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(192 193 255 / var(--tw-bg-opacity, 1))}.bg-surface{--tw-bg-opacity:1;background-color:rgb(15 19 28 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.bg-surface-container-highest{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(24 28 36 / var(--tw-bg-opacity, 1))}.bg-surface-container-low\/95{background-color:rgb(24 28 36 / 0.95)}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(10 14 22 / var(--tw-bg-opacity, 1))}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(0 158 185 / var(--tw-bg-opacity, 1))}.bg-tertiary\/10{background-color:rgb(76 215 246 / 0.1)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-space-lg{padding:1rem}.p-space-md{padding:0.75rem}.p-space-sm{padding:0.5rem}.p-space-xs{padding:0.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-space-lg{padding-left:1rem;padding-right:1rem}.px-space-md{padding-left:0.75rem;padding-right:0.75rem}.px-space-sm{padding-left:0.5rem;padding-right:0.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-space-sm{padding-top:0.5rem;padding-bottom:0.5rem}.py-space-xs{padding-top:0.25rem;padding-bottom:0.25rem}.pb-space-2xl{padding-bottom:2rem}.pl-9{padding-left:2.25rem}.pl-\[260px\]{padding-left:260px}.pr-12{padding-right:3rem}.pt-1{padding-top:0.25rem}.pt-16{padding-top:4rem}.pt-space-md{padding-top:0.75rem}.pt-space-sm{padding-top:0.5rem}.font-body-md{font-family:Inter}.font-body-sm{font-family:Inter}.font-code-md{font-family:JetBrains Mono}.font-code-sm{font-family:JetBrains Mono}.font-display-lg{font-family:Inter}.font-headline-lg{font-family:Inter}.font-headline-sm{font-family:Inter}.font-headline-xl{font-family:Inter}.font-label-md{font-family:Inter}.font-label-mono{font-family:JetBrains Mono}.text-\[0\.875rem\]{font-size:0.875rem}.text-\[1\.125rem\]{font-size:1.125rem}.text-\[1\.25rem\]{font-size:1.25rem}.text-\[1\.5rem\]{font-size:1.5rem}.text-\[1rem\]{font-size:1rem}.text-body-md{font-size:0.875rem;line-height:1.375rem;letter-spacing:-0.005em;font-weight:400}.text-body-sm{font-size:0.75rem;line-height:1.125rem;letter-spacing:0em;font-weight:400}.text-code-md{font-size:0.8125rem;line-height:1.25rem;letter-spacing:-0.01em;font-weight:400}.text-code-sm{font-size:0.6875rem;line-height:1rem;letter-spacing:0em;font-weight:400}.text-display-lg{font-size:2.25rem;line-height:2.75rem;letter-spacing:-0.025em;font-weight:600}.text-headline-lg{font-size:1.25rem;line-height:1.75rem;letter-spacing:-0.015em;font-weight:600}.text-headline-sm{font-size:1rem;line-height:1.5rem;letter-spacing:-0.01em;font-weight:600}.text-headline-xl{font-size:1.75rem;line-height:2.25rem;letter-spacing:-0.02em;font-weight:600}.text-label-md{font-size:0.8125rem;line-height:1.125rem;letter-spacing:0em;font-weight:500}.text-label-mono{font-size:0.6875rem;line-height:0.875rem;letter-spacing:0.02em;font-weight:500}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-on-primary{--tw-text-opacity:1;color:rgb(0 46 106 / var(--tw-text-opacity, 1))}.text-on-primary-fixed{--tw-text-opacity:1;color:rgb(0 26 66 / var(--tw-text-opacity, 1))}.text-on-secondary{--tw-text-opacity:1;color:rgb(16 0 169 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(194 198 214 / var(--tw-text-opacity, 1))}.text-on-tertiary-container{--tw-text-opacity:1;color:rgb(0 47 56 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.text-outline-variant{--tw-text-opacity:1;color:rgb(66 71 84 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(173 198 255 / var(--tw-text-opacity, 1))}.text-primary-container{--tw-text-opacity:1;color:rgb(77 142 255 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(192 193 255 / var(--tw-text-opacity, 1))}.text-surface-container-highest{--tw-text-opacity:1;color:rgb(49 53 62 / var(--tw-text-opacity, 1))}.text-surface-variant{--tw-text-opacity:1;color:rgb(49 53 62 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.text-tertiary-container{--tw-text-opacity:1;color:rgb(0 158 185 / var(--tw-text-opacity, 1))}.text-tertiary-fixed{--tw-text-opacity:1;color:rgb(172 237 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-75{opacity:0.75}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.3\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.3);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.4\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.4);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-surface-container{--tw-ring-opacity:1;--tw-ring-color:rgb(28 32 40 / var(--tw-ring-opacity, 1))}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.placeholder\:text-outline::placeholder{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.hover\:bg-primary-fixed-dim:hover{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-bright:hover{--tw-bg-opacity:1;background-color:rgb(53 57 66 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-highest:hover{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.hover\:text-error:hover{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.hover\:opacity-90:hover{opacity:0.9}.hover\:opacity-95:hover{opacity:0.95}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(173 198 255 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 768px){.md\:w-auto{width:auto}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:flex-row{flex-direction:row}.lg\:items-end{align-items:flex-end}.lg\:self-auto{align-self:auto}.lg\:p-space-xl{padding:1.5rem}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:w-96{width:24rem}.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.xl\:flex-row{flex-direction:row}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.-bottom-1{bottom:-0.25rem}.-bottom-24{bottom:-6rem}.-right-1{right:-0.25rem}.-right-16{right:-4rem}.-top-24{top:-6rem}.left-0{left:0px}.left-1\/3{left:33.333333%}.left-3{left:0.75rem}.left-\[260px\]{left:260px}.right-0{right:0px}.right-1\.5{right:0.375rem}.right-2{right:0.5rem}.top-0{top:0px}.top-1\.5{top:0.375rem}.z-40{z-index:40}.z-50{z-index:50}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-space-md{margin-bottom:0.75rem}.mb-space-sm{margin-bottom:0.5rem}.mb-space-xl{margin-bottom:1.5rem}.mb-space-xs{margin-bottom:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-space-xl{margin-top:1.5rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-32{height:8rem}.h-8{height:2rem}.h-80{height:20rem}.h-9{height:2.25rem}.h-96{height:24rem}.h-full{height:100%}.min-h-\[1024px\]{min-height:1024px}.w-1\.5{width:0.375rem}.w-12{width:3rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-8{width:2rem}.w-80{width:20rem}.w-96{width:24rem}.w-\[260px\]{width:260px}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-space-lg{gap:1rem}.gap-space-md{gap:0.75rem}.gap-space-sm{gap:0.5rem}.gap-space-xl{gap:1.5rem}.gap-space-xs{gap:0.25rem}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-lg{border-radius:0.25rem}.rounded-xl{border-radius:0.5rem}.border-t{border-top-width:1px}.border-surface-container{--tw-border-opacity:1;border-color:rgb(28 32 40 / var(--tw-border-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(77 142 255 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(173 198 255 / 0.1)}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(192 193 255 / var(--tw-bg-opacity, 1))}.bg-surface{--tw-bg-opacity:1;background-color:rgb(15 19 28 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.bg-surface-container-highest{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(24 28 36 / var(--tw-bg-opacity, 1))}.bg-surface-container-low\/95{background-color:rgb(24 28 36 / 0.95)}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(10 14 22 / var(--tw-bg-opacity, 1))}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(0 158 185 / var(--tw-bg-opacity, 1))}.bg-tertiary\/10{background-color:rgb(76 215 246 / 0.1)}.bg-outline{--tw-bg-opacity:1;background-color:rgb(140 144 159 / var(--tw-bg-opacity, 1))}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-space-lg{padding:1rem}.p-space-md{padding:0.75rem}.p-space-sm{padding:0.5rem}.p-space-xs{padding:0.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-space-lg{padding-left:1rem;padding-right:1rem}.px-space-md{padding-left:0.75rem;padding-right:0.75rem}.px-space-sm{padding-left:0.5rem;padding-right:0.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-space-sm{padding-top:0.5rem;padding-bottom:0.5rem}.py-space-xs{padding-top:0.25rem;padding-bottom:0.25rem}.pb-space-2xl{padding-bottom:2rem}.pl-9{padding-left:2.25rem}.pl-\[260px\]{padding-left:260px}.pr-12{padding-right:3rem}.pt-1{padding-top:0.25rem}.pt-16{padding-top:4rem}.pt-space-md{padding-top:0.75rem}.pt-space-sm{padding-top:0.5rem}.font-body-md{font-family:Inter}.font-body-sm{font-family:Inter}.font-code-md{font-family:JetBrains Mono}.font-code-sm{font-family:JetBrains Mono}.font-display-lg{font-family:Inter}.font-headline-lg{font-family:Inter}.font-headline-sm{font-family:Inter}.font-headline-xl{font-family:Inter}.font-label-md{font-family:Inter}.font-label-mono{font-family:JetBrains Mono}.text-\[0\.875rem\]{font-size:0.875rem}.text-\[1\.125rem\]{font-size:1.125rem}.text-\[1\.25rem\]{font-size:1.25rem}.text-\[1\.5rem\]{font-size:1.5rem}.text-\[1rem\]{font-size:1rem}.text-body-md{font-size:0.875rem;line-height:1.375rem;letter-spacing:-0.005em;font-weight:400}.text-body-sm{font-size:0.75rem;line-height:1.125rem;letter-spacing:0em;font-weight:400}.text-code-md{font-size:0.8125rem;line-height:1.25rem;letter-spacing:-0.01em;font-weight:400}.text-code-sm{font-size:0.6875rem;line-height:1rem;letter-spacing:0em;font-weight:400}.text-display-lg{font-size:2.25rem;line-height:2.75rem;letter-spacing:-0.025em;font-weight:600}.text-headline-lg{font-size:1.25rem;line-height:1.75rem;letter-spacing:-0.015em;font-weight:600}.text-headline-sm{font-size:1rem;line-height:1.5rem;letter-spacing:-0.01em;font-weight:600}.text-headline-xl{font-size:1.75rem;line-height:2.25rem;letter-spacing:-0.02em;font-weight:600}.text-label-md{font-size:0.8125rem;line-height:1.125rem;letter-spacing:0em;font-weight:500}.text-label-mono{font-size:0.6875rem;line-height:0.875rem;letter-spacing:0.02em;font-weight:500}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-on-primary{--tw-text-opacity:1;color:rgb(0 46 106 / var(--tw-text-opacity, 1))}.text-on-primary-fixed{--tw-text-opacity:1;color:rgb(0 26 66 / var(--tw-text-opacity, 1))}.text-on-secondary{--tw-text-opacity:1;color:rgb(16 0 169 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(194 198 214 / var(--tw-text-opacity, 1))}.text-on-tertiary-container{--tw-text-opacity:1;color:rgb(0 47 56 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.text-outline-variant{--tw-text-opacity:1;color:rgb(66 71 84 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(173 198 255 / var(--tw-text-opacity, 1))}.text-primary-container{--tw-text-opacity:1;color:rgb(77 142 255 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(192 193 255 / var(--tw-text-opacity, 1))}.text-surface-container-highest{--tw-text-opacity:1;color:rgb(49 53 62 / var(--tw-text-opacity, 1))}.text-surface-variant{--tw-text-opacity:1;color:rgb(49 53 62 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.text-tertiary-container{--tw-text-opacity:1;color:rgb(0 158 185 / var(--tw-text-opacity, 1))}.text-tertiary-fixed{--tw-text-opacity:1;color:rgb(172 237 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-75{opacity:0.75}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.3\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.3);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.4\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.4);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-surface-container{--tw-ring-opacity:1;--tw-ring-color:rgb(28 32 40 / var(--tw-ring-opacity, 1))}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.placeholder\:text-outline::placeholder{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.hover\:bg-primary-fixed-dim:hover{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-bright:hover{--tw-bg-opacity:1;background-color:rgb(53 57 66 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-highest:hover{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.hover\:text-error:hover{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.hover\:opacity-90:hover{opacity:0.9}.hover\:opacity-95:hover{opacity:0.95}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(173 198 255 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 768px){.md\:w-auto{width:auto}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:flex-row{flex-direction:row}.lg\:items-end{align-items:flex-end}.lg\:self-auto{align-self:auto}.lg\:p-space-xl{padding:1.5rem}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:w-96{width:24rem}.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.xl\:flex-row{flex-direction:row}}</style></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-[1024px]" data-stitch-vh="min-h-[1024px]===min-h-screen" data-mode="connect"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="DevTeam AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMVQYBDBjnqtSP-LFHw8UcfA1enxprIJuC9ORDuNED4tKFikZbdn_bvEk8_rs_wBclZyd1YRWnYRX1lQsr-CxwQs1m_2FfLgZjOf2p8nPyGsr5QcNWxVO79x_nceC1qFltC8fz9YTGUNL7DNPO3lgd_WoXPb3ti-cX8PhvR7FYIkhsohtE1vkBw8l_APZvHwXmNRSKXnLoAWK3ft3IFBVBXIhRhZtOFnihytAsDBc"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">DevTeam AI</span><span class="font-label-mono text-label-mono text-primary leading-none mt-1">v2.4 Enterprise</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">space_dashboard</span><span class="font-label-md text-label-md">Tổng quan</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="projects" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">folder_code</span><span class="font-label-md text-label-md">Dự án</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workspace" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">terminal</span><span class="font-label-md text-label-md">Không gian Dự án</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-colors bg-surface-container-high text-on-surface font-headline-sm" data-path="ai-agents" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">smart_toy</span><span class="font-label-md text-label-md">Quản lý AI Agent</span></div><span class="bg-surface-container px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-tertiary">7 Agents</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workflow" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">hub</span><span class="font-label-md text-label-md">Quy trình Phối hợp</span></div><span class="flex items-center gap-1 bg-surface-container-high px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-tertiary-fixed"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Live</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">checklist</span><span class="font-label-md text-label-md">Quản lý Tác vụ</span></div><span class="bg-surface-container px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-on-surface-variant">12</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="approvals" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">verified</span><span class="font-label-md text-label-md">Trung tâm Phê duyệt</span></div><span class="bg-surface-container-highest px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-primary">3 Chờ duyệt</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="execution-logs" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">reorder</span><span class="font-label-md text-label-md">Lịch sử Thực thi</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="usage-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">query_stats</span><span class="font-label-md text-label-md">Phân tích &amp; Chi phí</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">tune</span><span class="font-label-md text-label-md">Cài đặt Hệ thống</span></div></a></nav></div><div class="flex flex-col gap-space-sm p-space-sm bg-surface-container-lowest"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-label-mono text-label-mono leading-tight">Engine: 7 Agents Online</span></div><div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Bằng Nguyễn</span><span class="font-label-mono text-label-mono text-on-surface-variant leading-none">Tech Lead</span></div></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button class="hover:text-on-surface p-1 rounded-DEFAULT hover:bg-surface-container" title="Settings" type="button"><span class="material-symbols-outlined text-[1rem]">settings</span></button><button class="hover:text-error p-1 rounded-DEFAULT hover:bg-surface-container" title="Logout" type="button"><span class="material-symbols-outlined text-[1rem]">logout</span></button></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant"><span class="material-symbols-outlined text-[1rem]">dashboard</span><span>/</span><span class="text-on-surface font-headline-sm text-headline-sm">Workspace Matrix</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest cursor-pointer"><span class="material-symbols-outlined text-primary text-[1.125rem]">domain</span><span class="font-label-md text-label-md">E-commerce Microservices (Prod)</span><span class="material-symbols-outlined text-on-surface-variant text-[1rem]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[1.125rem]">search</span><input class="w-80 h-9 pl-9 pr-12 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tìm dự án, mã tác vụ, Agent hoặc logs..." type="text"><span class="absolute right-2 font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-surface-variant">⌘K</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container font-label-mono text-label-mono text-tertiary-fixed"><span class="material-symbols-outlined text-tertiary text-[1rem]">toll</span><span>125K / 500K Tokens ($2.45)</span></div><button class="relative p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" title="Notifications" type="button"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container"></span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors" type="button"><span class="material-symbols-outlined text-[1.125rem]">add_circle</span><span>+ Yêu cầu Tính năng</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"></div></header><main class="relative pt-16 bg-surface min-h-[1024px] w-full px-space-lg" data-stitch-vh="min-h-[1024px]===min-h-screen"><div class="flex flex-col w-full pb-space-2xl">
+<!-- SECTION HEADER WITH ASYMMETRIC METRICS ACCENT -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider bg-surface-container-high px-2 py-0.5 rounded-DEFAULT">Autonomous Architecture v2.4</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> 7/7 Tác nhân đồng bộ
+        </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-none mb-space-xs">
+        Đội ngũ AI Agents Chuyên trách <span class="text-primary font-light">(7 Tác nhân)</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed">
+        Kiến trúc Multi-Agent tự hành: AI Manager điều phối 6 kỹ sư AI chuyên sâu theo quy trình phát triển phần mềm chuẩn doanh nghiệp, giám sát phụ thuộc tự động và chốt chặn an toàn code.
+      </p>
+</div>
+<!-- Quick Action / Global Control Toolbar -->
+<div class="flex items-center gap-space-sm self-start lg:self-auto shrink-0">
+<button class="group flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[1.125rem] text-tertiary">tune</span>
+<span class="font-label-md text-label-md">Tham số Pipeline</span>
+</button>
+<button class="group flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">extension</span>
+<span class="font-label-md text-label-md">+ Tùy biến Prompt &amp; Thêm Công cụ</span>
+</button>
+</div>
+</div>
+<!-- CENTRAL COORDINATOR: FEATURED TOP CARD -->
+<div class="relative w-full rounded-xl bg-surface-container-low shadow-xl overflow-hidden mb-space-xl">
+<!-- Ambient coordinator glow effect -->
+<div class="absolute -right-16 -top-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-24 w-80 h-80 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Inner content split: Profile & Stream Telemetry -->
+<div class="relative p-space-lg lg:p-space-xl flex flex-col xl:flex-row gap-space-xl">
+<!-- Left side: Nexus Profile & Live Responsibility -->
+<div class="flex-1 flex flex-col justify-between">
+<div class="">
+<!-- Header Bar with Status Pill -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-tertiary bg-surface-container-highest px-2 py-0.5 rounded-DEFAULT">CORE-TIER 00</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">ID: #MGR-NEXUS-7X</span>
+</div>
+<!-- Live Status Pill -->
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-tertiary-fixed shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-mono text-label-mono font-semibold">Đang điều phối (Active Orchestration)</span>
+</div>
+</div>
+<!-- Avatar + Titles -->
+<div class="flex items-start gap-space-md mb-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover shadow-md bg-surface-container" data-alt="Cybernetic artificial intelligence conductor hologram avatar with electric blue geometric neurons and neural matrix nodes against an ultra-dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABgqJPqYzlFwGZOCTK3Z7DCQ7ZM3oJaloqBceX5M_8X6bl1FjMPeFFqBiOxJvr0JumiHD_zzb6cu60zVUKsEIqLMVtyf4CaPVZL0I3T5XhixPVDMeXULJSkCBMVr7-JxtFNdk00BESxM0MDZr4wCrD-VkdoioqR4LDiz_7gIIMvDtWg5lmMS6lIrrXxNPEG9fF7dr3vd-p1PY6oV62Iuo1xkWCzHK4g8r6e_PJwLg">
+<div class="absolute -bottom-1 -right-1 p-1 bg-surface-container-lowest rounded-full text-tertiary shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[1rem]">neurology</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Nexus AI Manager</h2>
+<span class="font-label-md text-label-md text-primary font-medium">Trưởng nhóm Điều phối &amp; Giám sát Toàn diện Pipeline</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-snug">
+                Phân rã yêu cầu phần mềm, lập kế hoạch sprint, phân bổ tác vụ cho 6 Agent chuyên môn, giám sát đồ thị phụ thuộc DAG và kiểm soát chất lượng bàn giao.
+              </p>
+</div>
+</div>
+<!-- Current In-Flight Directive -->
+<div class="rounded-lg bg-surface-container p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[0.875rem] text-tertiary">alt_route</span>
+                LỆNH ĐIỀU PHỐI THỜI GIAN THỰC (ACTIVE DIRECTIVE)
+              </span>
+<span class="font-label-mono text-label-mono text-primary">Sprint #28 • Microservices</span>
+</div>
+<p class="font-code-md text-code-md text-on-surface bg-surface-container-lowest px-3 py-2 rounded-lg">
+              Phân bổ tác vụ <span class="text-tertiary">#TASK-104</span> cho Backend Dev &amp; đồng bộ hóa 34 test cases tự sinh của QA Tester
+            </p>
+</div>
+</div>
+<!-- Telemetry Numbers Row -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-sm">
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Tác vụ điều phối</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-0.5">142</span>
+<span class="font-code-sm text-code-sm text-tertiary mt-0.5">↑ 18 hôm nay</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Độ chính xác kế hoạch</span>
+<span class="font-headline-lg text-headline-lg text-tertiary mt-0.5">99.2%</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-0.5">0 xung đột logic</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Tokens đã sử dụng</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-0.5">45.2K</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-0.5">Quota còn 91%</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Độ trễ trung bình</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-0.5">1.2s</span>
+<span class="font-code-sm text-code-sm text-tertiary mt-0.5">P99: 1.8s</span>
+</div>
+</div>
+</div>
+<!-- Right side: Real-time Orchestration Visualizer + Quick Panel -->
+<div class="w-full xl:w-96 flex flex-col justify-between rounded-lg bg-surface-container p-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-mono text-label-mono text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">hub</span>
+              GRAPH TRUYỀN DỮ LIỆU AGENTS
+            </span>
+<span class="font-label-mono text-label-mono text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded-DEFAULT">LIVE MESH</span>
+</div>
+<!-- Mini Inline SVG Topology Mesh Diagram (Lightweight < 2KB) -->
+<div class="relative bg-surface-container-lowest rounded-lg p-3 mb-space-sm">
+<svg class="w-full h-32" fill="none" viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid Dots -->
+<circle class="text-surface-variant" cx="20" cy="20" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="80" cy="20" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="170" cy="20" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="260" cy="20" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="320" cy="20" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="20" cy="100" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="80" cy="100" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="170" cy="100" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="260" cy="100" fill="currentColor" r="1.5"></circle>
+<circle class="text-surface-variant" cx="320" cy="100" fill="currentColor" r="1.5"></circle>
+<!-- Interconnecting Splines -->
+<path class="text-outline-variant" d="M170 20 L60 90" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<path class="text-tertiary" d="M170 20 L115 90" stroke="currentColor" stroke-width="2"></path>
+<path class="text-tertiary" d="M170 20 L170 90" stroke="currentColor" stroke-width="2"></path>
+<path class="text-tertiary" d="M170 20 L225 90" stroke="currentColor" stroke-width="2"></path>
+<path class="text-tertiary" d="M170 20 L280 90" stroke="currentColor" stroke-width="2"></path>
+<path class="text-outline-variant" d="M170 20 L320 90" stroke="currentColor" stroke-width="1.5"></path>
+<!-- Central Node: Manager -->
+<circle class="text-primary-container" cx="170" cy="20" fill="currentColor" r="12"></circle>
+<circle class="text-on-primary" cx="170" cy="20" fill="currentColor" r="6"></circle>
+<!-- Leaf Agent Nodes -->
+<!-- BA -->
+<circle class="text-surface-variant" cx="60" cy="90" fill="currentColor" r="7"></circle>
+<!-- Architect -->
+<circle class="text-surface-container-highest" cx="115" cy="90" fill="currentColor" r="7"></circle>
+<circle class="text-secondary" cx="115" cy="90" fill="currentColor" r="3"></circle>
+<!-- Backend -->
+<circle class="text-tertiary-container" cx="170" cy="90" fill="currentColor" r="8"></circle>
+<circle class="text-on-tertiary-container" cx="170" cy="90" fill="currentColor" r="3"></circle>
+<!-- Frontend -->
+<circle class="text-surface-container-highest" cx="225" cy="90" fill="currentColor" r="7"></circle>
+<circle class="text-tertiary" cx="225" cy="90" fill="currentColor" r="3"></circle>
+<!-- QA -->
+<circle class="text-surface-container-highest" cx="280" cy="90" fill="currentColor" r="7"></circle>
+<circle class="text-primary" cx="280" cy="90" fill="currentColor" r="3"></circle>
+<!-- Reviewer -->
+<circle class="text-surface-variant" cx="320" cy="90" fill="currentColor" r="6"></circle>
+</svg>
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 px-1">
+<span>MGR (Master)</span>
+<span class="text-tertiary">Active Flow: Backend &amp; QA</span>
+</div>
+</div>
+<!-- Micro Spec Controls -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Động cơ suy luận</span>
+<span class="font-label-mono text-label-mono text-on-surface bg-surface-container-highest px-1.5 py-0.5 rounded-DEFAULT">Claude 3.5 Sonnet (200K)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Quyền thực thi độc lập</span>
+<span class="font-label-mono text-label-mono text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded-DEFAULT">Autonomous + Human Gate</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md">
+<button class="flex-1 py-2 px-space-sm rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright transition-colors font-label-md text-label-md flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">terminal</span>
+<span>Trace Console</span>
+</button>
+<button class="flex-1 py-2 px-space-sm rounded-lg bg-tertiary-container text-on-tertiary-container hover:opacity-90 transition-opacity font-label-md text-label-md flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[1rem]">pause_circle</span>
+<span>Tạm dừng Điều phối</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION TITLE FOR SPECIALIZED CREW -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">diversity_3</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Kỹ sư AI Chuyên môn (Specialized Engineering Crew)</h3>
+</div>
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Bộ lọc:</span>
+<button class="px-2 py-1 rounded-DEFAULT bg-surface-container-high text-on-surface" type="button">Tất cả (6)</button>
+<button class="px-2 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">Đang xử lý (4)</button>
+<button class="px-2 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">Chờ duyệt (1)</button>
+<button class="px-2 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">Rảnh (1)</button>
+</div>
+</div>
+<!-- GRID OF 6 SPECIALIZED AI AGENTS (2 COLUMNS ON DESKTOP, RESPONSIVE) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg">
+<!-- AGENT 1: Business Analyst Agent -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="">
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[1.5rem]">assignment</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Business Analyst AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: BA-SPEC-01</span>
+</div>
+</div>
+<!-- Status Badge -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-mono text-label-mono">Đang làm việc</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Phân tích PRD, chuyển đổi yêu cầu người dùng thành User Stories kỹ thuật và Acceptance Criteria rõ ràng.
+        </p>
+<!-- Current Task Container -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TÁC VỤ HIỆN TẠI</span>
+<span class="font-code-sm text-code-sm text-primary">PRD-882</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface line-clamp-2">
+            Soạn thảo tài liệu đặc tả chức năng Hoàn tiền (Refund API) &amp; Rule kiểm duyệt
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token</span>
+<span class="text-on-surface font-semibold">18.4K / 50K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 36.8%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-primary">description</span> 32 PRD xong
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">schedule</span> 3 phút trước
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm border-t border-surface-container">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Xem Nhật ký" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">history</span>
+<span>Logs</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>GPT-4o</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-error transition-colors flex items-center justify-center" title="Tạm dừng Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">pause</span>
+</button>
+</div>
+</div>
+<!-- AGENT 2: Software Architect Agent (WAITING APPROVAL) -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[1.5rem]">architecture</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Software Architect AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: ARCH-SYS-02</span>
+</div>
+</div>
+<!-- Status Badge: Amber Pending Approval -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-label-mono">Chờ phê duyệt</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Thiết kế kiến trúc Microservices, Database Schema, API Contracts (OpenAPI/Swagger) &amp; Security Baseline.
+        </p>
+<!-- Current Task Container with Action Pill -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TÁC VỤ CHỜ XÁC NHẬN</span>
+<span class="font-code-sm text-code-sm text-secondary">DB-SCHEMA</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface line-clamp-2">
+            Đề xuất cấu trúc bảng PostgreSQL cho Order Ledger &amp; Partitioning Strategy
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token</span>
+<span class="text-on-surface font-semibold">24.1K / 50K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 48.2%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-secondary">schema</span> 28 Bản thiết kế
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-on-surface-variant">schedule</span> 12 phút trước
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="flex-1 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-1 hover:opacity-95 transition-opacity" title="Xem Sơ đồ Diff" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">rule</span>
+<span>Duyệt Schema</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>Claude 3.5</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant transition-colors flex items-center justify-center" title="Nhật ký" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">history</span>
+</button>
+</div>
+</div>
+<!-- AGENT 3: Backend Developer Agent (WRITING CODE) -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[1.5rem]">terminal</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Backend Developer AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: BACKEND-GO-03</span>
+</div>
+</div>
+<!-- Status Badge: Coding Radar Pulse -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-tertiary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-mono text-label-mono">Đang viết code</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Lập trình API, xử lý business logic, tối ưu query SQL, tích hợp Redis caching &amp; RabbitMQ events.
+        </p>
+<!-- Current Task Container -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TÁC VỤ HIỆN TẠI</span>
+<span class="font-code-sm text-code-sm text-tertiary">API-CORE</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface line-clamp-2">
+            Hiện thực hóa endpoint POST /api/v1/orders/checkout với idempotency key
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token (Cao)</span>
+<span class="text-tertiary font-semibold">48.6K / 60K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 81%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">api</span> 84 Endpoints
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">bolt</span> Vừa xong
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Xem Nhật ký" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">terminal</span>
+<span>Live Diff</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>Claude 3.5</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-error transition-colors flex items-center justify-center" title="Tạm dừng Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">pause</span>
+</button>
+</div>
+</div>
+<!-- AGENT 4: Frontend Developer Agent -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[1.5rem]">web</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Frontend Developer AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: FE-REACT-04</span>
+</div>
+</div>
+<!-- Status Badge -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-mono text-label-mono">Đang làm việc</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Thiết kế UI Components (Next.js/React/Tailwind), quản lý state, responsive layout và tối ưu hiệu năng render.
+        </p>
+<!-- Current Task Container -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TÁC VỤ HIỆN TẠI</span>
+<span class="font-code-sm text-code-sm text-primary">UI-COMP-12</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface line-clamp-2">
+            Xây dựng Component hiển thị trạng thái giao dịch thời gian thực (OrderTracker.tsx)
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token</span>
+<span class="text-on-surface font-semibold">32.5K / 50K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-primary">widgets</span> 56 Components
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">schedule</span> 1 phút trước
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Xem Nhật ký" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">preview</span>
+<span>Preview UI</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>GPT-4o</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-error transition-colors flex items-center justify-center" title="Tạm dừng Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">pause</span>
+</button>
+</div>
+</div>
+<!-- AGENT 5: QA Tester Agent (TESTING) -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[1.5rem]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">QA Tester AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: QA-AUTOM-05</span>
+</div>
+</div>
+<!-- Status Badge: Testing Radar -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-tertiary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-mono text-label-mono">Đang chạy test</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Tự động sinh Unit Test, Integration Test, chạy kịch bản Mock API và phát hiện các trường hợp ngoại lệ (Edge Cases).
+        </p>
+<!-- Current Task Container -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TÁC VỤ HIỆN TẠI</span>
+<span class="font-code-sm text-code-sm text-tertiary">RUNNER: 34/34</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface line-clamp-2">
+            Thực thi bộ 34 test cases cho Payment Webhook &amp; Idempotency Re-entrancy
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token</span>
+<span class="text-on-surface font-semibold">15.2K / 40K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 38%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">verified</span> 312 Tests passed
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">bolt</span> Vừa xong
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Xem Test Suite" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">rule</span>
+<span>Coverage</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>GPT-4o Mini</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-error transition-colors flex items-center justify-center" title="Tạm dừng Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">pause</span>
+</button>
+</div>
+</div>
+<!-- AGENT 6: Code Reviewer & Debugger Agent (IDLE) -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<!-- Agent Card Top Header -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[1.5rem]">shield</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Code Reviewer AI</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-0.5">AGENT: SEC-AUDIT-06</span>
+</div>
+</div>
+<!-- Status Badge: Idle Neutral -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-DEFAULT bg-surface-container-high text-outline">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-mono text-label-mono">Rảnh (Sẵn sàng)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-2">
+          Rà soát mã nguồn theo chuẩn Clean Code, phát hiện lỗ hổng bảo mật OWASP, tối ưu độ phức tạp Big-O.
+        </p>
+<!-- Current Task Container -->
+<div class="rounded-lg bg-surface-container p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">TRẠNG THÁI CHỜ</span>
+<span class="font-code-sm text-code-sm text-outline">STANDBY</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant line-clamp-2">
+            Đang lắng nghe webhook: Chờ Pull Request hoàn tất từ Backend Developer Agent...
+          </p>
+</div>
+<!-- Token Progress Meter -->
+<div class="mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono mb-1 text-on-surface-variant">
+<span>Tiêu thụ Token</span>
+<span class="text-on-surface font-semibold">9.8K / 40K</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline" style="width: 24.5%;"></div>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex items-center justify-between font-label-mono text-label-mono text-on-surface-variant pt-1 mb-space-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">check_circle</span> 74 PRs Audited
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-on-surface-variant">verified_user</span> 0 Lỗ hổng bỏ sót
+          </span>
+</div>
+</div>
+<!-- Agent Card Footer Actions -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Xem Nhật ký" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">history</span>
+<span>Logs</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" title="Cấu hình Model" type="button">
+<span class="material-symbols-outlined text-[0.875rem]">psychology</span>
+<span>Claude 3.5</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-tertiary transition-colors flex items-center justify-center" title="Kích hoạt kiểm tra thủ công" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- COLLABORATIVE FEED & EVENT DISPATCH FOOTER DOCK -->
+<div class="mt-space-xl p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="p-2 rounded-lg bg-surface-container shrink-0 text-primary">
+<span class="material-symbols-outlined text-[1.25rem]">sync_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Kênh trao đổi nội bộ Multi-Agent (Inter-Agent Bus)</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-high text-tertiary">TCP Stream Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Giao thức trao đổi dữ liệu JSON-RPC phân cấp giữa AI Manager và 6 Worker Nodes với xác thực SHA-256 mã nguồn.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto shrink-0 justify-end">
+<div class="font-label-mono text-label-mono text-on-surface-variant hidden xl:block">
+        Trạng thái: <span class="text-tertiary">0 Deadlock detected</span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[1rem]">tune</span>
+<span>Cài đặt Agent Pool</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction handlers for pause and inspect triggers
+  document.querySelectorAll('button[title*="Tạm dừng"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isPaused = btn.getAttribute('data-paused') === 'true';
+      if (!isPaused) {
+        btn.setAttribute('data-paused', 'true');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[1.125rem] text-primary">play_arrow</span>';
+        btn.classList.add('bg-primary/20');
+      } else {
+        btn.setAttribute('data-paused', 'false');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[1.125rem]">pause</span>';
+        btn.classList.remove('bg-primary/20');
+      }
+    });
+  });
+</script></main></div></body></html>

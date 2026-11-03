@@ -1,0 +1,826 @@
+<!DOCTYPE html><html class="dark" lang="vi"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#001a42","on-surface-variant":"#c2c6d6","error":"#ffb4ab","on-secondary":"#1000a9","inverse-on-surface":"#2c3039","tertiary-fixed":"#acedff","secondary-container":"#3131c0","error-container":"#93000a","on-surface":"#dfe2ee","outline":"#8c909f","primary-fixed":"#d8e2ff","primary-fixed-dim":"#adc6ff","primary-container":"#4d8eff","on-primary":"#002e6a","inverse-primary":"#005ac2","secondary-fixed":"#e1e0ff","surface-container-high":"#262a33","on-background":"#dfe2ee","on-error":"#690005","surface-tint":"#adc6ff","on-error-container":"#ffdad6","surface-variant":"#31353e","surface-container-lowest":"#0a0e16","primary":"#adc6ff","background":"#0f131c","on-tertiary-fixed":"#001f26","on-tertiary-container":"#002f38","on-secondary-fixed-variant":"#2f2ebe","secondary":"#c0c1ff","on-secondary-container":"#b0b2ff","on-primary-container":"#00285d","on-tertiary-fixed-variant":"#004e5c","tertiary":"#4cd7f6","on-primary-fixed-variant":"#004395","surface-container-low":"#181c24","tertiary-container":"#009eb9","inverse-surface":"#dfe2ee","surface":"#0f131c","surface-dim":"#0f131c","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c2028","secondary-fixed-dim":"#c0c1ff","on-tertiary":"#003640","surface-bright":"#353942","surface-container-highest":"#31353e","outline-variant":"#424754"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","margin":"1rem","space-xs":"0.25rem","space-md":"0.75rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-lg":"1rem","margin-desktop":"1.5rem"},fontFamily:{"body-md":["Inter"],"display-lg":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-mono":["JetBrains Mono"],"label-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-sm":["Inter"]},fontSize:{"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-xl":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-mono":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"500"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"400"}],"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.left-0{left:0px}.left-3{left:0.75rem}.left-\[260px\]{left:260px}.right-0{right:0px}.right-1\.5{right:0.375rem}.right-2{right:0.5rem}.right-3{right:0.75rem}.top-0{top:0px}.top-1\.5{top:0.375rem}.top-2\.5{top:0.625rem}.z-40{z-index:40}.z-50{z-index:50}.mb-1{margin-bottom:0.25rem}.mb-space-2xl{margin-bottom:2rem}.mb-space-lg{margin-bottom:1rem}.mb-space-md{margin-bottom:0.75rem}.mb-space-sm{margin-bottom:0.5rem}.mb-space-xl{margin-bottom:1.5rem}.mb-space-xs{margin-bottom:0.25rem}.ml-1{margin-left:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-space-md{margin-top:0.75rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[100\%\]{height:100%}.h-\[60\%\]{height:60%}.h-\[85\%\]{height:85%}.h-\[95\%\]{height:95%}.h-full{height:100%}.min-h-\[1024px\]{min-height:1024px}.min-h-\[360px\]{min-height:360px}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-2{width:0.5rem}.w-36{width:9rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-80{width:20rem}.w-\[260px\]{width:260px}.w-auto{width:auto}.w-full{width:100%}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.border-collapse{border-collapse:collapse}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:0.125rem}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-space-lg{gap:1rem}.gap-space-md{gap:0.75rem}.gap-space-sm{gap:0.5rem}.gap-space-xs{gap:0.25rem}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-transparent > :not([hidden]) ~ :not([hidden]){border-color:transparent}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-lg{border-radius:0.25rem}.rounded-xl{border-radius:0.5rem}.bg-on-primary-fixed\/20{background-color:rgb(0 26 66 / 0.2)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(77 142 255 / var(--tw-bg-opacity, 1))}.bg-primary-container\/20{background-color:rgb(77 142 255 / 0.2)}.bg-primary-fixed{--tw-bg-opacity:1;background-color:rgb(216 226 255 / var(--tw-bg-opacity, 1))}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(192 193 255 / var(--tw-bg-opacity, 1))}.bg-secondary-container\/30{background-color:rgb(49 49 192 / 0.3)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(15 19 28 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.bg-surface-container-highest{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(24 28 36 / var(--tw-bg-opacity, 1))}.bg-surface-container-low\/50{background-color:rgb(24 28 36 / 0.5)}.bg-surface-container-low\/95{background-color:rgb(24 28 36 / 0.95)}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(10 14 22 / var(--tw-bg-opacity, 1))}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.bg-tertiary-container\/20{background-color:rgb(0 158 185 / 0.2)}.bg-transparent{background-color:transparent}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-space-lg{padding:1rem}.p-space-md{padding:0.75rem}.p-space-sm{padding:0.5rem}.p-space-xl{padding:1.5rem}.p-space-xs{padding:0.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-space-lg{padding-left:1rem;padding-right:1rem}.px-space-md{padding-left:0.75rem;padding-right:0.75rem}.px-space-sm{padding-left:0.5rem;padding-right:0.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-space-lg{padding-top:1rem;padding-bottom:1rem}.py-space-sm{padding-top:0.5rem;padding-bottom:0.5rem}.py-space-xs{padding-top:0.25rem;padding-bottom:0.25rem}.pb-1{padding-bottom:0.25rem}.pb-space-2xl{padding-bottom:2rem}.pl-9{padding-left:2.25rem}.pl-\[260px\]{padding-left:260px}.pr-12{padding-right:3rem}.pt-16{padding-top:4rem}.pt-space-sm{padding-top:0.5rem}.pt-space-xs{padding-top:0.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-body-md{font-family:Inter}.font-body-sm{font-family:Inter}.font-code-sm{font-family:JetBrains Mono}.font-headline-lg{font-family:Inter}.font-headline-sm{font-family:Inter}.font-headline-xl{font-family:Inter}.font-label-md{font-family:Inter}.font-label-mono{font-family:JetBrains Mono}.font-label-sm{font-family:Inter}.text-\[0\.875rem\]{font-size:0.875rem}.text-\[1\.125rem\]{font-size:1.125rem}.text-\[1\.25rem\]{font-size:1.25rem}.text-\[1\.75rem\]{font-size:1.75rem}.text-\[1rem\]{font-size:1rem}.text-body-md{font-size:0.875rem;line-height:1.375rem;letter-spacing:-0.005em;font-weight:400}.text-body-sm{font-size:0.75rem;line-height:1.125rem;letter-spacing:0em;font-weight:400}.text-code-sm{font-size:0.6875rem;line-height:1rem;letter-spacing:0em;font-weight:400}.text-headline-lg{font-size:1.25rem;line-height:1.75rem;letter-spacing:-0.015em;font-weight:600}.text-headline-sm{font-size:1rem;line-height:1.5rem;letter-spacing:-0.01em;font-weight:600}.text-headline-xl{font-size:1.75rem;line-height:2.25rem;letter-spacing:-0.02em;font-weight:600}.text-label-md{font-size:0.8125rem;line-height:1.125rem;letter-spacing:0em;font-weight:500}.text-label-mono{font-size:0.6875rem;line-height:0.875rem;letter-spacing:0.02em;font-weight:500}.text-label-sm{font-size:0.6875rem;line-height:0.875rem;letter-spacing:0.03em;font-weight:600}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-error{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.text-on-primary-fixed{--tw-text-opacity:1;color:rgb(0 26 66 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(194 198 214 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.text-outline-variant{--tw-text-opacity:1;color:rgb(66 71 84 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(173 198 255 / var(--tw-text-opacity, 1))}.text-primary-fixed{--tw-text-opacity:1;color:rgb(216 226 255 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(192 193 255 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.text-tertiary-fixed{--tw-text-opacity:1;color:rgb(172 237 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.3\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.3);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.4\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.4);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-surface-container{--tw-ring-opacity:1;--tw-ring-color:rgb(28 32 40 / var(--tw-ring-opacity, 1))}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.placeholder\:text-outline::placeholder{--tw-text-opacity:1;color:rgb(140 144 159 / var(--tw-text-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.hover\:bg-primary-fixed-dim:hover{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(28 32 40 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high\/60:hover{background-color:rgb(38 42 51 / 0.6)}.hover\:bg-surface-container-highest:hover{--tw-bg-opacity:1;background-color:rgb(49 53 62 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-low:hover{--tw-bg-opacity:1;background-color:rgb(24 28 36 / var(--tw-bg-opacity, 1))}.hover\:text-error:hover{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.hover\:text-on-primary-fixed:hover{--tw-text-opacity:1;color:rgb(0 26 66 / var(--tw-text-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(223 226 238 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(173 198 255 / var(--tw-text-opacity, 1))}.focus\:bg-surface-container-high:focus{--tw-bg-opacity:1;background-color:rgb(38 42 51 / var(--tw-bg-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(173 198 255 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.disabled\:opacity-40:disabled{opacity:0.4}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(173 198 255 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary-fixed{--tw-text-opacity:1;color:rgb(0 26 66 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-primary{--tw-text-opacity:1;color:rgb(173 198 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}.lg\:pb-0{padding-bottom:0px}}</style></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-[1024px]" data-stitch-vh="min-h-[1024px]===min-h-screen" data-mode="connect"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="DevTeam AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMVQYBDBjnqtSP-LFHw8UcfA1enxprIJuC9ORDuNED4tKFikZbdn_bvEk8_rs_wBclZyd1YRWnYRX1lQsr-CxwQs1m_2FfLgZjOf2p8nPyGsr5QcNWxVO79x_nceC1qFltC8fz9YTGUNL7DNPO3lgd_WoXPb3ti-cX8PhvR7FYIkhsohtE1vkBw8l_APZvHwXmNRSKXnLoAWK3ft3IFBVBXIhRhZtOFnihytAsDBc"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">DevTeam AI</span><span class="font-label-mono text-label-mono text-primary leading-none mt-1">v2.4 Enterprise</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">space_dashboard</span><span class="font-label-md text-label-md">Tổng quan</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-colors bg-surface-container-high text-on-surface font-headline-sm" data-path="projects" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">folder_code</span><span class="font-label-md text-label-md">Dự án</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workspace" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">terminal</span><span class="font-label-md text-label-md">Không gian Dự án</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-agents" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">smart_toy</span><span class="font-label-md text-label-md">Quản lý AI Agent</span></div><span class="bg-surface-container px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-tertiary">7 Agents</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="workflow" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">hub</span><span class="font-label-md text-label-md">Quy trình Phối hợp</span></div><span class="flex items-center gap-1 bg-surface-container-high px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-tertiary-fixed"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Live</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">checklist</span><span class="font-label-md text-label-md">Quản lý Tác vụ</span></div><span class="bg-surface-container px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-on-surface-variant">12</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="approvals" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">verified</span><span class="font-label-md text-label-md">Trung tâm Phê duyệt</span></div><span class="bg-surface-container-highest px-1.5 py-0.5 rounded-DEFAULT font-label-mono text-label-mono text-primary">3 Chờ duyệt</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="execution-logs" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">reorder</span><span class="font-label-md text-label-md">Lịch sử Thực thi</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="usage-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">query_stats</span><span class="font-label-md text-label-md">Phân tích &amp; Chi phí</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">tune</span><span class="font-label-md text-label-md">Cài đặt Hệ thống</span></div></a></nav></div><div class="flex flex-col gap-space-sm p-space-sm bg-surface-container-lowest"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-label-mono text-label-mono leading-tight">Engine: 7 Agents Online</span></div><div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Bằng Nguyễn</span><span class="font-label-mono text-label-mono text-on-surface-variant leading-none">Tech Lead</span></div></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button class="hover:text-on-surface p-1 rounded-DEFAULT hover:bg-surface-container" title="Settings" type="button"><span class="material-symbols-outlined text-[1rem]">settings</span></button><button class="hover:text-error p-1 rounded-DEFAULT hover:bg-surface-container" title="Logout" type="button"><span class="material-symbols-outlined text-[1rem]">logout</span></button></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant"><span class="material-symbols-outlined text-[1rem]">dashboard</span><span>/</span><span class="text-on-surface font-headline-sm text-headline-sm">Workspace Matrix</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest cursor-pointer"><span class="material-symbols-outlined text-primary text-[1.125rem]">domain</span><span class="font-label-md text-label-md">E-commerce Microservices (Prod)</span><span class="material-symbols-outlined text-on-surface-variant text-[1rem]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[1.125rem]">search</span><input class="w-80 h-9 pl-9 pr-12 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tìm dự án, mã tác vụ, Agent hoặc logs..." type="text"><span class="absolute right-2 font-label-mono text-label-mono px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-surface-variant">⌘K</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container font-label-mono text-label-mono text-tertiary-fixed"><span class="material-symbols-outlined text-tertiary text-[1rem]">toll</span><span>125K / 500K Tokens ($2.45)</span></div><button class="relative p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" title="Notifications" type="button"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container"></span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors" type="button"><span class="material-symbols-outlined text-[1.125rem]">add_circle</span><span class="">+ Yêu cầu Tính năng</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJH9cqL00G6_uoOA91j8TvcpBvhk3l_q5c37MH5ObHRTUrFvpJTFkhKImLshY3EMY4ehDysbr4go6Weeikfpgr4FHPsCXS3WGuJyrM4y2dYNTzIpLg00WVgb9TYEf4yHf089saNZA_FWUWAYPbnfgxUMYRxMiIbulorxFmPOQYJkH3zNJIEUuQaP0_vxs4zp3Z8vFm3J59hbYLUeU1YAmj50pCxZjhGRElITF2Vg"></div></header><main class="relative pt-16 bg-surface min-h-[1024px] w-full px-space-lg" data-stitch-vh="min-h-[1024px]===min-h-screen"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Header / Action Control Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md py-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-tertiary uppercase tracking-wider mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Hệ sinh thái mã nguồn mở &amp; vi dịch vụ</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Quản lý Dự án Phát triển Phần mềm</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Giám sát toàn bộ kho lưu trữ, tiến độ sprint và đội ngũ Agent được chỉ định trong thời gian thực.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-inner">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md shadow-sm transition-all" id="viewCardBtn" onclick="switchView('card')" type="button">
+<span class="material-symbols-outlined text-[1rem]">grid_view</span>
+<span>Dạng Thẻ</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="viewTableBtn" onclick="switchView('table')" type="button">
+<span class="material-symbols-outlined text-[1rem]">table_rows</span>
+<span>Dạng Bảng</span>
+</button>
+</div>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-xl bg-primary text-on-primary-fixed font-headline-sm text-label-md hover:bg-primary-fixed-dim transition-all shadow-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">add_circle</span>
+<span>Khởi tạo Dự án Mới</span>
+<span class="font-label-mono text-label-mono bg-on-primary-fixed/20 px-1 rounded-DEFAULT text-on-primary-fixed ml-1">⌘N</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Bar & Quick Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[1.25rem]">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface leading-tight font-semibold">5 Dự án</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Đang phát triển</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-tertiary bg-surface-container px-2 py-0.5 rounded-DEFAULT">+1 tuần này</span>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[1.25rem]">cloud_done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface leading-tight font-semibold">2 Môi trường</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Production Live</span>
+</div>
+</div>
+<span class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>99.98%
+      </span>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[1.25rem]">commit</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface leading-tight font-semibold">125 Commits</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tự động tuần này</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-primary bg-surface-container px-2 py-0.5 rounded-DEFAULT">24 Agent PRs</span>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[1.25rem]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface leading-tight font-semibold">98.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Test Coverage</span>
+</div>
+</div>
+<div class="w-12 h-6 flex items-end gap-0.5 bg-surface-container p-1 rounded-DEFAULT">
+<div class="w-2 bg-tertiary h-[60%] rounded-DEFAULT"></div>
+<div class="w-2 bg-tertiary h-[85%] rounded-DEFAULT"></div>
+<div class="w-2 bg-tertiary h-[100%] rounded-DEFAULT"></div>
+<div class="w-2 bg-tertiary h-[95%] rounded-DEFAULT"></div>
+</div>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md bg-surface-container-low p-space-sm rounded-xl mb-space-lg shadow-sm">
+<div class="flex flex-1 items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[1.125rem]">search</span>
+<input class="w-full h-10 pl-9 pr-12 rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="projectSearchInput" onkeyup="filterCards()" placeholder="Lọc theo tên dự án, tag, stack, hoặc ID repo..." type="text">
+<span class="absolute right-3 top-2.5 font-label-mono text-label-mono text-outline-variant">/</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1 lg:pb-0">
+<div class="flex items-center gap-1 bg-surface-container px-3 py-2 rounded-lg text-on-surface">
+<span class="material-symbols-outlined text-[1rem] text-outline">tune</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option class="bg-surface-container" value="all">Tất cả trạng thái (5)</option>
+<option class="bg-surface-container" value="active">Đang hoạt động (3)</option>
+<option class="bg-surface-container" value="pending">Chờ phê duyệt (1)</option>
+<option class="bg-surface-container" value="done">Hoàn thành (1)</option>
+</select>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-3 py-2 rounded-lg text-on-surface">
+<span class="material-symbols-outlined text-[1rem] text-outline">memory</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option class="bg-surface-container" value="all">Tất cả công nghệ</option>
+<option class="bg-surface-container" value="nextjs">Next.js / React</option>
+<option class="bg-surface-container" value="golang">Go Gin</option>
+<option class="bg-surface-container" value="python">Python FastAPI</option>
+<option class="bg-surface-container" value="rust">Rust</option>
+</select>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-3 py-2 rounded-lg text-on-surface">
+<span class="material-symbols-outlined text-[1rem] text-outline">sort</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option class="bg-surface-container" value="recent">Hoạt động gần nhất</option>
+<option class="bg-surface-container" value="progress">Tiến độ Sprint</option>
+<option class="bg-surface-container" value="name">Tên A-Z</option>
+</select>
+</div>
+</div>
+</div>
+<!-- SECTION 1: PROJECT CARDS GRID (DEFAULT VIEW) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg mb-space-2xl" id="projectGridContainer">
+<!-- Dự án 1: E-Commerce Microservices Platform -->
+<div class="project-card flex flex-col justify-between bg-surface-container-low rounded-xl p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col">
+<!-- Card Header: Code & Status -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-primary bg-primary-container/20 px-2 py-0.5 rounded-DEFAULT">PRJ-ECOMM</span>
+<span class="font-label-mono text-code-sm text-outline-variant">v3.12-rc</span>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Đang hoạt động
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="Dark abstract vector microservice network graph symbol with neon cyan connections on charcoal slate background for modern e-commerce distributed cloud computing architecture software dashboard representation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7cLVi7ET5-dUnV5E811yoQoVGWSSB-KT6V_wMcMCGXEjdy0K15av8fHG5e6A1L1islaaBaajYks-X3CiCwIM_iGgjV8NRuTFKHgYzOFFAXAAhCQ7dAfMiQ7-ICvja0bT4dqkwgHEp36ierERATHGEgM7H1BU-weY8bhNHrcIVcUcQnC6Ydsuf5ytsU0x6M43rCKsiDiEAvImCK5PWiEbBOABlkvtNGBAv6US15UM">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold hover:text-primary transition-colors cursor-pointer">
+            E-Commerce Microservices Platform
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+          Hệ thống lõi thương mại điện tử với kiến trúc phân tán phục vụ thanh toán phân luồng cao, quản lý giỏ hàng và danh mục sản phẩm thời gian thực.
+        </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary">Next.js 14</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-tertiary">Go Gin</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-error">Redis</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-secondary">PostgreSQL</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary-fixed">Kubernetes</span>
+</div>
+<!-- Progress Tracker -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Tiến độ Sprint 14</span>
+<span class="text-on-surface font-semibold">78%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Assigned Agents Bar -->
+<div class="flex items-center justify-between pt-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">4 Agents Phụ trách</span>
+<div class="flex items-center -space-x-2">
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-label-mono text-label-mono shadow-sm" title="AI Lead Manager">LM</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-tertiary font-label-mono text-label-mono shadow-sm" title="System Architect">AR</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-label-mono text-label-mono shadow-sm" title="Go Backend Agent">BE</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-error font-label-mono text-label-mono shadow-sm" title="QA Automated Testing">QA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low">
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>2 phút trước</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Mở Workspace" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">terminal</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Xem Git Repository" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">code</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Cấu hình Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">smart_toy</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Tùy chọn khác" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dự án 2: AI-Powered Customer Support CRM -->
+<div class="project-card flex flex-col justify-between bg-surface-container-low rounded-xl p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-tertiary bg-tertiary-container/20 px-2 py-0.5 rounded-DEFAULT">PRJ-AICRM</span>
+<span class="font-label-mono text-code-sm text-outline-variant">v1.4.0</span>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Đang hoạt động
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="Sleek neural network nodes with glowing purple and cyan synapses representing high-performance AI customer reasoning chat agent engine in an engineering studio environment dark theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBomen2PzCFNccjCxVs1vqvXsQqTK3k5hqJRn0vyh8Iv4-NkuCpouxe8S9wVdLRXdVzme3AW8kQt3XqeofGfEAEERA0SzQsUXL9C85ePlIiSVpMn5meTLEUBSmLDz17hEGrO_T_hEcrB5Huev3V-qnA2fSZQaj4hd-uqS0sK6N2n3Kty9VuGgyq_tF-Pj352SSIPWAmjG09sXVPAH3AI_hQO2xQsXj5EP_NuydjKk">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold hover:text-primary transition-colors cursor-pointer">
+            AI-Powered Customer Support CRM
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+          Nền tảng hỗ trợ khách hàng tự động đa kênh sử dụng Vector Database Pinecone và cơ chế Agentic RAG để phản hồi tự động.
+        </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary">React 18</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-tertiary">Python FastAPI</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-secondary">Pinecone</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary-fixed">OpenAI API</span>
+</div>
+<!-- Progress Tracker -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Tiến độ Sprint 6</span>
+<span class="text-on-surface font-semibold">45%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full transition-all duration-500" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Assigned Agents Bar -->
+<div class="flex items-center justify-between pt-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">5 Agents Phụ trách</span>
+<div class="flex items-center -space-x-2">
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-label-mono text-label-mono shadow-sm" title="Prompt Engineer">PE</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-label-mono text-label-mono shadow-sm" title="FastAPI Dev">PY</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-tertiary font-label-mono text-label-mono shadow-sm" title="React Frontend">UI</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-fixed font-label-mono text-label-mono shadow-sm" title="Vector DB Specialist">DB</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-error font-label-mono text-label-mono shadow-sm" title="Eval Agent">EV</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low">
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>15 phút trước</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Mở Workspace" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">terminal</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Xem Git Repository" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">code</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Cấu hình Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">smart_toy</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Tùy chọn khác" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dự án 3: Fintech Payment Gateway & Ledger -->
+<div class="project-card flex flex-col justify-between bg-surface-container-low rounded-xl p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-DEFAULT">PRJ-FINTECH</span>
+<span class="font-label-mono text-code-sm text-outline-variant">v2.0.0-audit</span>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Chờ phê duyệt
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="High precision cryptographic ledger lock symbol with mathematical algorithmic lines in subtle sapphire blue on dark matte metallic graphite background representing banking compliance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWBhRc5ccLPZ26dwU2fkM0HtPCkBfNfwCBWtv0_HvRS8FJmb9xF5Oix_RlqToIfY9ja_S2GSsRvWjoyyRTLjE5mgbMHSP85lfQ6MEk_BWZp9Utbyj0pt3drj_MKOLeJaCpaWeiHIlUX0mdkGzgsuNkaoL7o89TNpfvkEUiELlnifmjX23eLXmGXgGZg8PtSeKOtzR7lq3fEhljw3jpYp0Mtojoc5m43zPz22DALBc">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold hover:text-primary transition-colors cursor-pointer">
+            Fintech Payment Gateway &amp; Ledger
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+          Cổng thanh toán bảo mật chuẩn PCI-DSS cấp độ 1 cùng hệ thống sổ cái kế toán phân tán chịu tải cao bằng ngôn ngữ Rust.
+        </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-error">Rust</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary">Node.js</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-tertiary">Kafka</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-secondary">ClickHouse</span>
+</div>
+<!-- Progress Tracker -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Kiểm định An toàn (Audit)</span>
+<span class="text-on-surface font-semibold">92%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 92%;"></div>
+</div>
+</div>
+<!-- Assigned Agents Bar -->
+<div class="flex items-center justify-between pt-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">3 Agents Phụ trách</span>
+<div class="flex items-center -space-x-2">
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-error font-label-mono text-label-mono shadow-sm" title="Security &amp; PenTest Agent">SEC</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-label-mono text-label-mono shadow-sm" title="Rust Core Dev">RS</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-tertiary font-label-mono text-label-mono shadow-sm" title="Compliance Auditor">AUD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low">
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>1 giờ trước</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Mở Workspace" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">terminal</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Xem Git Repository" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">code</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Cấu hình Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">smart_toy</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Tùy chọn khác" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dự án 4: Healthcare Patient Portal Mobile API -->
+<div class="project-card flex flex-col justify-between bg-surface-container-low rounded-xl p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-primary bg-primary-container/20 px-2 py-0.5 rounded-DEFAULT">PRJ-HLTH</span>
+<span class="font-label-mono text-code-sm text-outline-variant">v0.8.2-alpha</span>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Đang hoạt động
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="Healthcare telemedicine application telemetry symbol cross combined with pulse wave cardiogram on deep navy tech backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBSBzHVcSsOy5WOkcASc6Bp-lBC61GcUyB3I95-6CyDLCVoBalCyeKWnHtEWw441aTRsNCSSE8--m6ING6C_Nadp7DPA_8v6VZ-5LyJZhx-HJkxctEVKuOXbcQhuIUnJLs7ss_zudBKH-nTVSR8D0wzlPuk95ncDuXzxF1tlNoyXLLilLZ83hztz1PYZQYQjdpJ1WMW9EYBJODib3vrTyoUWV_qVgVope0gzmAQEY">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold hover:text-primary transition-colors cursor-pointer">
+            Healthcare Patient Portal Mobile API
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+          Cổng ứng dụng di động khám chữa bệnh từ xa, đồng bộ hồ sơ y tế bệnh nhân tương thích bảo mật chuẩn HIPAA và HL7 FHIR.
+        </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-tertiary">Flutter</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary">Django</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary-fixed">AWS Lambda</span>
+</div>
+<!-- Progress Tracker -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Tiến độ Sprint 3</span>
+<span class="text-on-surface font-semibold">30%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 30%;"></div>
+</div>
+</div>
+<!-- Assigned Agents Bar -->
+<div class="flex items-center justify-between pt-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">3 Agents Phụ trách</span>
+<div class="flex items-center -space-x-2">
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-tertiary font-label-mono text-label-mono shadow-sm" title="Mobile App Dev Agent">MB</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-label-mono text-label-mono shadow-sm" title="Python Backend Agent">BE</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-label-mono text-label-mono shadow-sm" title="Cloud Infra Agent">OPS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low">
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>3 giờ trước</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Mở Workspace" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">terminal</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Xem Git Repository" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">code</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Cấu hình Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">smart_toy</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Tùy chọn khác" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dự án 5: Internal Developer Platform (IDP) -->
+<div class="project-card flex flex-col justify-between bg-surface-container-low rounded-xl p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-surface bg-surface-container-highest px-2 py-0.5 rounded-DEFAULT">PRJ-DEVPORT</span>
+<span class="font-label-mono text-code-sm text-outline-variant">v1.0.0-final</span>
+</div>
+<span class="flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+            Hoàn thành
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="Developer tools portal command interface stylized terminal gear icon in cool slate blue metallic tint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqHg94aWvgknWNm2bGAJddU_6-o8sk3OoyRNy2lmAODWN1t_V4GSsrV9gR--2wYQVsUiSer5NNeWkhi3mpiAiNhcsP_OCy1F1hTIve9J0flxRyArOE4icyzH1vimh-Afi0CQBqoBot7phAPkaASjGe82hWtJU6D-VeU7D_qrFzVfZvlnwdZUxS2UZcyvEge2MT7JWmehZG6uHySlW55vMhzoj7eUB02RZkW9gUkU">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold hover:text-primary transition-colors cursor-pointer">
+            Internal Developer Platform (IDP)
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+          Cổng tự phục vụ dành cho kỹ sư toàn công ty (Self-service Developer Portal), tự động tạo môi trường staging và CI/CD templates.
+        </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary">TypeScript</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-tertiary">Go</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-secondary">Helm</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2 py-0.5 rounded-DEFAULT text-primary-fixed">Docker</span>
+</div>
+<!-- Progress Tracker -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="text-on-surface-variant">Đã nghiệm thu (Shipped)</span>
+<span class="text-on-surface font-semibold">100%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full rounded-full transition-all duration-500" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Assigned Agents Bar -->
+<div class="flex items-center justify-between pt-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">2 Agents Giám sát</span>
+<div class="flex items-center -space-x-2">
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-label-mono text-label-mono shadow-sm" title="DevOps Specialist">OPS</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-label-mono text-label-mono shadow-sm" title="Security Sentinel">SEC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low">
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>Hôm qua</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Mở Workspace" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">terminal</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Xem Git Repository" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">code</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors" title="Cấu hình Agent" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">smart_toy</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Tùy chọn khác" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Add New Project Card / Callout Slot -->
+<div class="flex flex-col items-center justify-center p-space-xl rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-all cursor-pointer group min-h-[360px] text-center">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary-fixed flex items-center justify-center text-primary mb-space-sm transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[1.75rem]">add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Tạo kho lưu trữ hoặc Nhập dự án</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">Kết nối GitHub, GitLab hoặc để AI Agent tự khởi tạo boilerplate mẫu theo đặc tả kiến trúc của bạn.</p>
+<div class="mt-space-md flex gap-2">
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2.5 py-1 rounded-DEFAULT text-on-surface-variant">git clone</span>
+<span class="font-code-sm text-code-sm bg-surface-container-high px-2.5 py-1 rounded-DEFAULT text-on-surface-variant">ai scaffold</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2: TABLE OVERVIEW VIEW (SUMMARY WITH SORTING) -->
+<div class="flex flex-col bg-surface-container-low rounded-xl shadow-md overflow-hidden" id="projectTableContainer">
+<div class="flex items-center justify-between p-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">table_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Bảng Tóm tắt Thực thi Kỹ thuật</h3>
+</div>
+<div class="flex items-center gap-space-xs font-label-mono text-label-mono text-outline">
+<span>Hiển thị 5 / 5 dự án</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-mono text-label-mono uppercase tracking-wider">
+<th class="py-3 px-space-md font-medium cursor-pointer hover:text-on-surface">
+<div class="flex items-center gap-1">Tên Dự án <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium cursor-pointer hover:text-on-surface">
+<div class="flex items-center gap-1">Trạng thái <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium cursor-pointer hover:text-on-surface">
+<div class="flex items-center gap-1">Tiến độ <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium text-right cursor-pointer hover:text-on-surface">
+<div class="flex items-center justify-end gap-1">Tác vụ xong <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium text-right cursor-pointer hover:text-on-surface">
+<div class="flex items-center justify-end gap-1">Chi phí Token <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium cursor-pointer hover:text-on-surface">
+<div class="flex items-center gap-1">Cập nhật lần cuối <span class="material-symbols-outlined text-[0.875rem]">swap_vert</span></div>
+</th>
+<th class="py-3 px-space-md font-medium text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-primary bg-surface-container px-1.5 py-0.5 rounded-DEFAULT">PRJ-ECOMM</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">E-Commerce Microservices Platform</span>
+<span class="font-code-sm text-code-sm text-outline">Next.js 14, Go Gin, Kubernetes</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Đang hoạt động
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm w-36">
+<div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%;"></div>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface">78%</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-on-surface">
+              42 / 54
+            </td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-primary">
+              1.24M ($4.96)
+            </td>
+<td class="py-3 px-space-md font-label-mono text-code-sm text-outline">
+              2 phút trước
+            </td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary-fixed text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Workspace
+              </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-tertiary bg-surface-container px-1.5 py-0.5 rounded-DEFAULT">PRJ-AICRM</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">AI-Powered Customer Support CRM</span>
+<span class="font-code-sm text-code-sm text-outline">React, FastAPI, Pinecone</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Đang hoạt động
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm w-36">
+<div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 45%;"></div>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface">45%</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-on-surface">
+              18 / 40
+            </td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-primary">
+              840K ($3.36)
+            </td>
+<td class="py-3 px-space-md font-label-mono text-code-sm text-outline">
+              15 phút trước
+            </td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary-fixed text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Workspace
+              </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-secondary bg-surface-container px-1.5 py-0.5 rounded-DEFAULT">PRJ-FINTECH</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Fintech Payment Gateway &amp; Ledger</span>
+<span class="font-code-sm text-code-sm text-outline">Rust, Node.js, Kafka, ClickHouse</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container text-on-surface font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Chờ phê duyệt
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm w-36">
+<div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 92%;"></div>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface">92%</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-on-surface">
+              76 / 82
+            </td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-primary">
+              2.10M ($8.40)
+            </td>
+<td class="py-3 px-space-md font-label-mono text-code-sm text-outline">
+              1 giờ trước
+            </td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary-fixed text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Workspace
+              </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-primary bg-surface-container px-1.5 py-0.5 rounded-DEFAULT">PRJ-HLTH</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Healthcare Patient Portal Mobile API</span>
+<span class="font-code-sm text-code-sm text-outline">Flutter, Django, AWS Lambda</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container text-tertiary font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Đang hoạt động
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm w-36">
+<div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 30%;"></div>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface">30%</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-on-surface">
+              9 / 30
+            </td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-primary">
+              430K ($1.72)
+            </td>
+<td class="py-3 px-space-md font-label-mono text-code-sm text-outline">
+              3 giờ trước
+            </td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary-fixed text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Workspace
+              </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-on-surface bg-surface-container px-1.5 py-0.5 rounded-DEFAULT">PRJ-DEVPORT</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Internal Developer Platform (IDP)</span>
+<span class="font-code-sm text-code-sm text-outline">TypeScript, Go, Helm, Docker</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container text-on-surface font-label-mono text-label-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+                Hoàn thành
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm w-36">
+<div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface">100%</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-on-surface">
+              68 / 68
+            </td>
+<td class="py-3 px-space-md text-right font-label-mono text-label-mono text-primary">
+              1.88M ($7.52)
+            </td>
+<td class="py-3 px-space-md font-label-mono text-code-sm text-outline">
+              Hôm qua
+            </td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary-fixed text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Workspace
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low font-body-sm text-body-sm">
+<span class="text-on-surface-variant font-label-mono text-code-sm">Trang 1 / 1 (Tổng chi phí token: $25.96)</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container text-outline hover:text-on-surface disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">chevron_left</span>
+</button>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface">1</span>
+<button class="p-1 rounded bg-surface-container text-outline hover:text-on-surface disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[1.125rem]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchView(mode) {
+    const grid = document.getElementById('projectGridContainer');
+    const table = document.getElementById('projectTableContainer');
+    const cardBtn = document.getElementById('viewCardBtn');
+    const tableBtn = document.getElementById('viewTableBtn');
+
+    if (mode === 'card') {
+      grid.classList.remove('hidden');
+      table.classList.add('hidden');
+      cardBtn.classList.add('bg-surface-container-high', 'text-on-surface');
+      cardBtn.classList.remove('text-on-surface-variant');
+      tableBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+      tableBtn.classList.add('text-on-surface-variant');
+    } else {
+      grid.classList.add('hidden');
+      table.classList.remove('hidden');
+      tableBtn.classList.add('bg-surface-container-high', 'text-on-surface');
+      tableBtn.classList.remove('text-on-surface-variant');
+      cardBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+      cardBtn.classList.add('text-on-surface-variant');
+    }
+  }
+
+  function filterCards() {
+    const input = document.getElementById('projectSearchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      if (text.includes(input)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script></main></div></body></html>
