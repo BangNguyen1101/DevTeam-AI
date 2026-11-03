@@ -15,6 +15,7 @@ export function useRealtime(topics: string[], onEvent: (event: RealtimeEvent) =>
   const topicKey = topics.join(',')
 
   useEffect(() => {
+    if (!topicKey) return
     let ws: WebSocket | null = null
     let retry = 0
     let stopped = false

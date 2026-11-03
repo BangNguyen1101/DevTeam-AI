@@ -1,5 +1,7 @@
 # Kế hoạch triển khai (4 tuần)
 
+> **Cập nhật 2026-11-03:** dự án không còn chia theo tuần; làm liên tục theo mốc chức năng. Toàn bộ giao diện 10 phân hệ và các API đọc đã xong trước (xem PROGRESS.md). Thứ tự còn lại: AI Manager + Workflow Engine + BA/Architect → Backend/Frontend Dev + Execution Engine + QA/Reviewer + phê duyệt tự động → hoàn thiện demo. Các bảng bên dưới giữ lại làm tham chiếu phạm vi.
+
 Mục tiêu MVP: trình diễn được một Run thật từ yêu cầu → AI Manager → BA → Architect → Backend ∥ Frontend → QA → Reviewer → QA → tổng hợp, với dữ liệu thật trong SQL Server và cập nhật realtime.
 
 ## Tuần 1 – Nền tảng ✅

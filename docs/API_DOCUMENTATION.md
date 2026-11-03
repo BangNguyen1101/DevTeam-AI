@@ -63,10 +63,43 @@ Danh sách 7 agent theo thứ tự id, kèm `permissions: string[]`.
 
 Topic không hợp lệ → đóng kết nối với code `1008`.
 
+### `PATCH /agents/{id}`
+Body (tùy chọn): `model` (1–100 ký tự), `max_output_tokens` (256–128000), `is_enabled`, `instructions`. 200 `Agent` · 404 · 422. Phát `agent.updated` trên topic `agents`.
+
+### `GET /agents/stats`
+Mỗi agent: `tasks_total`, `tasks_completed`, `tasks_failed`, `current_task_title`/`current_task_status` (task running/chờ duyệt mới nhất), `total_tokens`, `cost_usd`, `last_active_at`.
+
+## Workspace files (chỉ đọc)
+
+| Endpoint | Mô tả |
+|---|---|
+| `GET /projects/{id}/files` | Cây file của workspace (tối đa 2000 mục; bỏ qua `.git`, `node_modules`, `.venv`…; không theo symlink) |
+| `GET /projects/{id}/files/content?path=` | Nội dung text (tối đa 200 KB, `truncated` nếu dài hơn). 403 nếu path thoát workspace · 404 · 415 với file nhị phân |
+
+## Workflow (đọc dữ liệu do engine ghi)
+
+| Endpoint | Mô tả |
+|---|---|
+| `GET /runs?project_id&status&limit` | Danh sách run kèm `tasks_total`, `tasks_completed` |
+| `GET /runs/{id}` | Run + `tasks[]` (có `depends_on` theo `task_key`, token/chi phí cộng từ `llm_usage`) |
+| `GET /runs/{id}/artifacts` | Sản phẩm của các agent |
+| `GET /tasks?project_id&run_id&agent_code&status` | Tác vụ (tối đa 500) |
+| `GET /events?project_id&run_id&agent_code&event_type&q&before_id&limit` | Nhật ký thực thi, mới nhất trước, phân trang bằng `before_id` → `{items, total, next_before_id}`. `q` tìm theo nội dung, ký tự `% _ [` được hiểu theo nghĩa đen |
+| `GET /approvals?status` | Yêu cầu phê duyệt |
+| `POST /approvals/{id}/approve` · `/reject` | Body `{note?}`. 409 nếu đã quyết định. Ghi `execution_events` (`approval.approved/rejected`), phát `approval.decided` trên `approvals` và `runs:{run_id}` |
+
+## Analytics & Settings
+
+| Endpoint | Mô tả |
+|---|---|
+| `GET /dashboard` | Số liệu tổng: dự án, run đang chạy, task theo trạng thái, tỉ lệ thành công, agent bật, token/chi phí, phê duyệt chờ, tiến độ run mới nhất của từng dự án |
+| `GET /usage/summary?days=1..365&project_id` | `totals`, `by_agent`, `by_day`, `by_model`, `by_project`, `monthly_budget_usd`, `month_cost_usd` |
+| `GET /settings` | `limits`, `pricing` (USD/1M token theo model), `openai_key_configured` (chỉ true/false, không trả key) |
+| `PUT /settings/limits` | `max_task_attempts` 1–10, `max_fix_iterations` 0–10, `command_timeout_seconds` 5–1800, `default_run_budget_usd`, `monthly_budget_usd?` |
+| `PUT /settings/pricing` | `{ "<model>": {input_per_1m, cached_input_per_1m, output_per_1m} }` |
+
+Topic WebSocket hợp lệ: `projects`, `agents`, `approvals`, `settings`, `events`, `runs:<id>`.
+
 ## Sắp có
 
-| Tuần | Endpoint |
-|---|---|
-| 2 | `POST /projects/{id}/runs`, `GET /runs/{id}`, `GET /runs/{id}/tasks`, `GET /runs/{id}/artifacts`, `GET /runs/{id}/events`, `GET /usage/summary` |
-| 3 | `GET /approvals`, `POST /approvals/{id}/approve`, `POST /approvals/{id}/reject`, `GET /projects/{id}/files` |
-| 4 | `PATCH /agents/{id}`, `GET/PUT /settings`, `GET /dashboard` |
+`POST /projects/{id}/runs` (gửi yêu cầu cho AI Manager) cùng Workflow Engine, OpenAI Agents và Execution Engine. Đây là các thành phần sẽ ghi dữ liệu vào những bảng mà các API đọc ở trên đang hiển thị.

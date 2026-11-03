@@ -27,18 +27,20 @@ User → AI Manager (lập kế hoạch)
 
 ## Phân hệ
 
-| # | Phân hệ | Tuần hoạt động |
+| # | Phân hệ | Trạng thái |
 |---|---|---|
-| 1 | Dashboard | 4 |
-| 2 | Project Management | **1 (đã có)** |
-| 3 | Project Workspace | 1 (tạo thư mục), 3 (duyệt file) |
-| 4 | AI Agent Management | **1 (xem)**, 4 (sửa cấu hình) |
-| 5 | Workflow | 2 |
-| 6 | Task Management | 2 |
-| 7 | Approval Center | 3 |
-| 8 | Execution History | 2–4 |
-| 9 | Usage & Cost Analytics | 2 (ghi nhận), 4 (biểu đồ) |
-| 10 | Settings | 4 |
+| 1 | Dashboard | ✅ Giao diện + số liệu thật |
+| 2 | Project Management | ✅ |
+| 3 | Project Workspace | ✅ Xem tiến độ, file, log · ⏳ gửi yêu cầu cho AI Manager |
+| 4 | AI Agent Management | ✅ Xem + sửa model/token/bật-tắt/chỉ dẫn |
+| 5 | Workflow | ✅ Hiển thị DAG · ⏳ engine thực thi |
+| 6 | Task Management | ✅ Kanban + danh sách |
+| 7 | Approval Center | ✅ Duyệt/từ chối + audit log · ⏳ engine tạo yêu cầu |
+| 8 | Execution History | ✅ |
+| 9 | Usage & Cost Analytics | ✅ Hiển thị · ⏳ engine ghi `llm_usage` |
+| 10 | Settings | ✅ Model, giới hạn, bảng giá |
+
+Giao diện theo thiết kế Stitch trong `stitch_devteam_ai_workspace/` (xem `devteam_ai_platform_system/DESIGN.md`).
 
 ## Phạm vi MVP (4 tuần)
 

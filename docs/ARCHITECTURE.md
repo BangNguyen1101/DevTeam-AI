@@ -39,7 +39,8 @@ Lỗi nghiệp vụ dùng `AppError` → JSON `{"error": {"code", "message"}}`.
 ## 4. Realtime
 
 - Client mở `ws://<host>/ws?topics=projects,runs:42`.
-- Topic hợp lệ: `projects`, `approvals`, `runs:<id>` (regex whitelist).
+- Topic hợp lệ: `projects`, `agents`, `approvals`, `settings`, `events`, `runs:<id>` (regex whitelist).
+- Frontend: hook `useApi(fetcher, deps, topics)` tải dữ liệu và tự tải lại khi có sự kiện trên topic; `ShellProvider` giữ dữ liệu dùng chung cho sidebar/top bar (dự án hiện tại lưu ở localStorage).
 - Message: `{"topic", "type", "data", "timestamp"}`. Client gửi `ping` → `{"type":"pong"}`.
 - Code đồng bộ (service, worker thread) phát sự kiện bằng `hub.publish_threadsafe(...)`, an toàn giữa các thread.
 - Hub chạy trong một process (MVP). Nếu chạy nhiều worker uvicorn sẽ cần broker ngoài – ngoài phạm vi MVP.

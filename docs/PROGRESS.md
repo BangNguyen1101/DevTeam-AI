@@ -1,5 +1,39 @@
 # Tiến độ dự án
 
+> Từ 2026-11-03 dự án không chia theo tuần nữa; tiến độ ghi theo từng mốc chức năng.
+
+## Giao diện theo thiết kế Stitch + API đọc dữ liệu · ✅ (2026-11-03)
+
+### Đã làm
+
+| Hạng mục | Chi tiết |
+|---|---|
+| Thiết kế | Áp dụng `stitch_devteam_ai_workspace/` (13 màn hình + `DESIGN.md`): theme tối, Inter + JetBrains Mono (tự host qua fontsource), token màu surface/brand/telemetry/agent, badge trạng thái tiếng Việt |
+| Layout | Sidebar 260px có badge số liệu thật (agent bật, task đang chạy, phê duyệt chờ, “Live” khi có run), top bar với bộ chọn dự án hiện tại, tìm kiếm nhật ký, bộ đếm token/chi phí; menu trượt trên mobile |
+| 10 trang | Tổng quan · Dự án (thẻ + bảng) · Không gian dự án (tiến độ, timeline task, duyệt file workspace, live log) · AI Agents (Manager + 6 agent, sửa cấu hình) · Quy trình phối hợp (DAG theo phụ thuộc, chi tiết node) · Tác vụ (Kanban + danh sách) · Phê duyệt (duyệt/từ chối + audit log) · Lịch sử thực thi (lọc, tìm kiếm, phân trang, trace viewer) · Phân tích chi phí (biểu đồ ngày, theo agent/model/dự án, ngân sách) · Cài đặt (model theo agent, giới hạn, bảng giá) |
+| Backend | `GET /dashboard`, `/usage/summary`, `/agents/stats`, `/runs`, `/runs/{id}`, `/runs/{id}/artifacts`, `/tasks`, `/events`, `/approvals` + approve/reject, `/settings` + PUT limits/pricing, `PATCH /agents/{id}`, `/projects/{id}/files` + content |
+| Nguyên tắc dữ liệu | Không dùng số liệu mẫu của Stitch. Phần chưa có dữ liệu hiện trạng thái trống; nút “Bắt đầu phát triển bằng AI” bị khóa kèm ghi chú vì AI engine chưa có. Chi phí chỉ tính theo bảng giá người dùng nhập |
+
+### Kiểm thử đã chạy
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `pytest` (SQL Server `DevTeamAI_Test`) | ✅ 34/34 (thêm 8 test API đọc, phê duyệt, settings, agent, file workspace, tìm kiếm có ký tự `[ % _`) |
+| `npm run build`, `npm run lint` | ✅ (0 lỗi; 5 cảnh báo fast-refresh) |
+| Trình duyệt 1440px: 10 trang với một run kiểm thử gắn nhãn chèn tạm vào DB (6 task, DAG 5 tầng, usage, event, 1 phê duyệt) | ✅ Hiển thị đúng; bấm “Từ chối” → audit log + badge sidebar cập nhật realtime. Run kiểm thử đã xóa, cascade dọn sạch toàn bộ bảng con |
+| Trình duyệt 375px: 10 trang không tràn ngang | ✅ |
+
+### Phát hiện kỹ thuật
+
+- SQL Server: cột `BIT` không dùng trực tiếp làm điều kiện trong `CASE WHEN` → so sánh `= 1`.
+- SQL Server `LIKE` coi `[` là tập ký tự; `autoescape` của SQLAlchemy không xử lý → thay `[` bằng `[[]` khi tìm kiếm nhật ký.
+- Grid item mặc định `min-width: auto` khiến bảng rộng kéo giãn trang trên điện thoại → đặt `min-width: 0` cho con của `.grid`.
+
+### Tiếp theo
+
+- AI Manager + Workflow Engine + OpenAI Agents SDK (cần `OPENAI_API_KEY` trong `backend/.env`), `POST /projects/{id}/runs`, ghi `llm_usage` theo bảng giá.
+- Execution Engine (allowlist) và tạo yêu cầu phê duyệt tự động.
+
 ## Tuần 1 – Nền tảng · ✅ Hoàn thành (2026-11-03)
 
 ### Đã làm

@@ -6,7 +6,7 @@ from app.realtime.hub import hub
 
 router = APIRouter()
 
-TOPIC_PATTERN = re.compile(r"^(projects|runs:\d+|approvals)$")
+TOPIC_PATTERN = re.compile(r"^(projects|agents|approvals|settings|events|runs:\d+)$")
 
 
 @router.websocket("/ws")
