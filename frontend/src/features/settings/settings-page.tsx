@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { AgentEditDialog } from '@/features/agents/agent-edit-dialog'
+import { useAuth } from '@/features/auth/auth-gate'
 import { useApi } from '@/hooks/use-api'
 import { useShell } from '@/hooks/use-shell'
 import { api, errorMessage } from '@/lib/api'
@@ -99,7 +100,7 @@ export function SettingsPage() {
               ['Migration hiện tại', health?.database.migration ?? '—'],
               ['Nhà cung cấp LLM', settings.data.llm_endpoint],
               ['LLM API key', settings.data.llm_configured ? 'Đã cấu hình trong backend/.env' : 'Chưa cấu hình — thêm LLM_API_KEY vào backend/.env rồi khởi động lại backend'],
-              ['Xác thực người dùng', 'Chế độ 1 người dùng (chưa bật đăng nhập)'],
+              ['Xác thực người dùng', 'Đăng nhập bằng session cookie (httpOnly, SameSite=Strict), mật khẩu hash scrypt'],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-wrap justify-between gap-2 rounded bg-surface-container px-3 py-2">
                 <span className="text-outline">{k}</span>
@@ -107,9 +108,53 @@ export function SettingsPage() {
               </div>
             ))}
           </div>
+          <PasswordForm />
         </Section>
       )}
     </div>
+  )
+}
+
+function PasswordForm() {
+  const { logout } = useAuth()
+  const [current, setCurrent] = useState('')
+  const [next, setNext] = useState('')
+  const [confirm, setConfirm] = useState('')
+  const [saving, setSaving] = useState(false)
+  const mismatch = confirm.length > 0 && confirm !== next
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault()
+    setSaving(true)
+    try {
+      await api.auth.changePassword(current, next)
+      toast.success('Đã đổi mật khẩu, hãy đăng nhập lại')
+      await logout()
+    } catch (err) {
+      toast.error(errorMessage(err))
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  return (
+    <form onSubmit={submit} className="grid gap-3 rounded-md bg-surface-container p-3 md:grid-cols-4 md:items-end">
+      <div className="grid gap-1.5">
+        <Label htmlFor="pw-current">Mật khẩu hiện tại</Label>
+        <Input id="pw-current" type="password" value={current} onChange={(e) => setCurrent(e.target.value)} autoComplete="current-password" required />
+      </div>
+      <div className="grid gap-1.5">
+        <Label htmlFor="pw-new">Mật khẩu mới (≥ 10 ký tự)</Label>
+        <Input id="pw-new" type="password" minLength={10} value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" required />
+      </div>
+      <div className="grid gap-1.5">
+        <Label htmlFor="pw-confirm">Nhập lại</Label>
+        <Input id="pw-confirm" type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" required aria-invalid={mismatch} />
+      </div>
+      <Button type="submit" disabled={saving || mismatch || next.length < 10 || !current}>
+        <KeyRound /> Đổi mật khẩu
+      </Button>
+    </form>
   )
 }
 

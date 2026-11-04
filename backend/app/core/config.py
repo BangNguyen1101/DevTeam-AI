@@ -31,6 +31,13 @@ class Settings(BaseSettings):
 
     workspaces_root: Path = Field(default=Path("../workspaces"))
 
+    # Authentication. ADMIN_* creates the first account when the users table is empty.
+    admin_username: str = "admin"
+    admin_password: SecretStr = SecretStr("")
+    session_hours: int = 12
+    # true when served over HTTPS (e.g. behind a tunnel); keeps the cookie off plain HTTP
+    cookie_secure: bool = False
+
     llm_base_url: str = ""
     llm_api_key: SecretStr = SecretStr("")
     openai_api_key: SecretStr = SecretStr("")

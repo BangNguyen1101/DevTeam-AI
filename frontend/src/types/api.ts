@@ -147,6 +147,7 @@ export interface Approval {
   payload: Record<string, unknown> | unknown[] | null
   status: ApprovalStatus
   decision_note: string | null
+  decided_by: string | null
   decided_at: string | null
   created_at: string
 }
@@ -228,6 +229,14 @@ export interface FileContent {
   size: number
   content: string
   truncated: boolean
+}
+
+export interface PreviewStatus {
+  running: boolean
+  url: string | null
+  api_running: boolean
+  started_at: number | null
+  log_tail: string | null
 }
 
 export interface Health {

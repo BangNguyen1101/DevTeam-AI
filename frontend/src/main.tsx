@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { AgentsPage } from '@/features/agents/agents-page'
 import { AnalyticsPage } from '@/features/analytics/analytics-page'
 import { ApprovalsPage } from '@/features/approvals/approvals-page'
+import { AuthGate } from '@/features/auth/auth-gate'
 import { DashboardPage } from '@/features/dashboard/dashboard-page'
 import { HistoryPage } from '@/features/history/history-page'
 import { ProjectsPage } from '@/features/projects/projects-page'
@@ -21,9 +22,11 @@ import './index.css'
 const router = createBrowserRouter([
   {
     element: (
-      <ShellProvider>
-        <AppLayout />
-      </ShellProvider>
+      <AuthGate>
+        <ShellProvider>
+          <AppLayout />
+        </ShellProvider>
+      </AuthGate>
     ),
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },

@@ -16,6 +16,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': BACKEND_URL,
+      '/preview': BACKEND_URL,
       '/ws': { target: BACKEND_URL, ws: true },
     },
   },

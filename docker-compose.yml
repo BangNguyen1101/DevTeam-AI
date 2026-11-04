@@ -1,0 +1,60 @@
+# DevTeam AI — full stack: SQL Server 2022 + FastAPI backend + nginx (built frontend)
+#   cp .env.example .env   # fill in passwords and LLM key
+#   docker compose up -d --build
+#   open http://localhost:8080
+name: devteam-ai
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?set MSSQL_SA_PASSWORD in .env}
+      MSSQL_PID: Developer
+    volumes:
+      - mssql-data:/var/opt/mssql
+    # Not published to the host: only the backend talks to the database
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -Q 'SELECT 1' -b -o /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      DB_SERVER: db
+      DB_NAME: DevTeamAI
+      DB_DRIVER: ODBC Driver 18 for SQL Server
+      DB_TRUSTED_CONNECTION: "false"
+      DB_USER: sa
+      DB_PASSWORD: ${MSSQL_SA_PASSWORD}
+      DB_TRUST_SERVER_CERTIFICATE: "true"
+      WORKSPACES_ROOT: /data/workspaces
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://generativelanguage.googleapis.com/v1beta/openai/}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    volumes:
+      - workspaces:/data/workspaces
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8080}:80"
+    restart: unless-stopped
+
+volumes:
+  mssql-data:
+  workspaces:

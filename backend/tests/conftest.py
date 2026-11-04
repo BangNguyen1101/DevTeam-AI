@@ -8,15 +8,18 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import text
+from sqlalchemy import select, text
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.ai_core.orchestrator import registry
 from app.ai_core.workspace.manager import WorkspaceManager
 from app.api.deps import get_workspace_manager
 from app.core.config import get_settings
+from app.core.security import hash_password, login_limiter
 from app.db.session import build_engine, get_db
 from app.main import app
+from app.models import User
+from app.realtime.routes import get_session_factory
 
 settings = get_settings()
 test_engine = build_engine(settings.database_url(settings.db_test_name))
@@ -66,9 +69,21 @@ def workspace_root(tmp_path: Path) -> Path:
     return tmp_path / "workspaces"
 
 
+TEST_USER, TEST_PASSWORD = "tester", "test-password-123"
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _test_user(_check_test_database) -> None:
+    with TestSession() as db:
+        if not db.scalar(select(User).where(User.username == TEST_USER)):
+            db.add(User(username=TEST_USER, password_hash=hash_password(TEST_PASSWORD)))
+            db.commit()
+
+
 @pytest.fixture
-def client(workspace_root: Path) -> Iterator[TestClient]:
-    workspace_root.mkdir()
+def anon_client(workspace_root: Path) -> Iterator[TestClient]:
+    """Client without a session cookie."""
+    workspace_root.mkdir(exist_ok=True)
 
     def _get_db() -> Iterator[Session]:
         session = TestSession()
@@ -77,8 +92,18 @@ def client(workspace_root: Path) -> Iterator[TestClient]:
         finally:
             session.close()
 
+    login_limiter.reset(f"user:{TEST_USER}", "ip:testclient")
     app.dependency_overrides[get_db] = _get_db
     app.dependency_overrides[get_workspace_manager] = lambda: WorkspaceManager(workspace_root)
+    app.dependency_overrides[get_session_factory] = lambda: TestSession
     with TestClient(app) as c:
         yield c
     app.dependency_overrides.clear()
+
+
+@pytest.fixture
+def client(anon_client: TestClient) -> TestClient:
+    """Client signed in as the test user (cookie kept by the client)."""
+    res = anon_client.post("/api/v1/auth/login", json={"username": TEST_USER, "password": TEST_PASSWORD})
+    assert res.status_code == 200, res.text
+    return anon_client

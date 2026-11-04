@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, Query, status
 from app.ai_core.llm import provider
 from app.ai_core.orchestrator import registry
 from app.ai_core.orchestrator.engine import WorkflowEngine
-from app.api.deps import DbSession
+from app.api.deps import CurrentUser, DbSession
 from app.models.enums import ApprovalStatus, RunStatus, TaskStatus
 from app.schemas.workflow import (
     ApprovalDecision,
@@ -82,10 +82,10 @@ def list_approvals(db: DbSession, status: ApprovalStatus | None = None):
 
 
 @router.post("/approvals/{approval_id}/approve", response_model=ApprovalRead)
-def approve(approval_id: int, data: ApprovalDecision, db: DbSession):
-    return WorkflowQueryService(db).decide(approval_id, True, data.note)
+def approve(approval_id: int, data: ApprovalDecision, db: DbSession, user: CurrentUser):
+    return WorkflowQueryService(db).decide(approval_id, True, data.note, decided_by=user.username)
 
 
 @router.post("/approvals/{approval_id}/reject", response_model=ApprovalRead)
-def reject(approval_id: int, data: ApprovalDecision, db: DbSession):
-    return WorkflowQueryService(db).decide(approval_id, False, data.note)
+def reject(approval_id: int, data: ApprovalDecision, db: DbSession, user: CurrentUser):
+    return WorkflowQueryService(db).decide(approval_id, False, data.note, decided_by=user.username)

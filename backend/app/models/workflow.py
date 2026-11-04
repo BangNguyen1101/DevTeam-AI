@@ -108,6 +108,7 @@ class Approval(Base):
         str_enum(ApprovalStatus, "approval_status"), server_default=ApprovalStatus.PENDING.value, nullable=False
     )
     decision_note: Mapped[str | None] = mapped_column(UnicodeText)
+    decided_by: Mapped[str | None] = mapped_column(Unicode(100))
     decided_at: Mapped[datetime | None] = mapped_column(DateTime2())
     created_at: Mapped[datetime] = mapped_column(DateTime2(), server_default=func.sysutcdatetime(), nullable=False)
 

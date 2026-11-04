@@ -230,7 +230,7 @@ class WorkflowQueryService:
         return ApprovalRead(
             id=a.id, run_id=a.run_id, project_id=project_id, project_name=project_name, task_id=a.task_id,
             agent_code=agent_code, kind=a.kind, title=a.title, payload=a.payload, status=a.status,
-            decision_note=a.decision_note, decided_at=a.decided_at, created_at=a.created_at,
+            decision_note=a.decision_note, decided_by=a.decided_by, decided_at=a.decided_at, created_at=a.created_at,
         )
 
     def list_approvals(self, status: ApprovalStatus | None = None, limit: int = 200) -> list[ApprovalRead]:
@@ -239,7 +239,7 @@ class WorkflowQueryService:
             stmt = stmt.where(Approval.status == status)
         return [self._approval(*row) for row in self.db.execute(stmt)]
 
-    def decide(self, approval_id: int, approve: bool, note: str | None) -> ApprovalRead:
+    def decide(self, approval_id: int, approve: bool, note: str | None, decided_by: str | None = None) -> ApprovalRead:
         approval = self.db.get(Approval, approval_id)
         if approval is None:
             raise NotFoundError(f"Approval {approval_id} not found")
@@ -247,6 +247,7 @@ class WorkflowQueryService:
             raise ConflictError(f"Approval {approval_id} was already {approval.status.value}")
         approval.status = ApprovalStatus.APPROVED if approve else ApprovalStatus.REJECTED
         approval.decision_note = note
+        approval.decided_by = decided_by
         approval.decided_at = datetime.now(UTC).replace(tzinfo=None)
         self.db.add(
             ExecutionEvent(

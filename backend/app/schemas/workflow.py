@@ -97,6 +97,7 @@ class ApprovalRead(BaseModel):
     payload: dict[str, Any] | list[Any] | None
     status: ApprovalStatus
     decision_note: str | None
+    decided_by: str | None
     decided_at: datetime | None
     created_at: datetime
 

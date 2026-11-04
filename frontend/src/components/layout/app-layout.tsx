@@ -9,6 +9,7 @@ import {
   LayoutDashboard,
   ListChecks,
   ListTree,
+  LogOut,
   Menu,
   Network,
   Search,
@@ -18,6 +19,7 @@ import {
   X,
 } from 'lucide-react'
 
+import { useAuth } from '@/features/auth/auth-gate'
 import { useShell } from '@/hooks/use-shell'
 import { formatCompact, formatUsd } from '@/lib/format'
 import { cn } from '@/lib/utils'
@@ -100,6 +102,7 @@ function Logo() {
 
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const shell = useShell()
+  const { username, logout } = useAuth()
   const dbOk = !shell.healthFailed && shell.health?.database.ok
   return (
     <div className="flex h-full flex-col justify-between">
@@ -148,13 +151,22 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           )}
         </div>
         <div className="flex items-center gap-2 rounded-md bg-surface-low p-2">
-          <span className="flex size-8 items-center justify-center rounded-full bg-surface-highest font-mono text-label-sm text-on-surface">
-            AD
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-surface-highest font-mono text-label-sm uppercase text-on-surface">
+            {username.slice(0, 2)}
           </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-label-md text-on-surface">Quản trị viên</span>
-            <span className="font-mono text-label-sm text-outline">Chế độ 1 người dùng</span>
+          <span className="flex min-w-0 flex-1 flex-col leading-tight">
+            <span className="truncate text-label-md text-on-surface">{username}</span>
+            <span className="font-mono text-label-sm text-outline">Quản trị viên</span>
           </span>
+          <button
+            type="button"
+            onClick={logout}
+            className="rounded p-1.5 text-outline hover:bg-surface-high hover:text-on-surface"
+            title="Đăng xuất"
+            aria-label="Đăng xuất"
+          >
+            <LogOut className="size-4" />
+          </button>
         </div>
       </div>
     </div>

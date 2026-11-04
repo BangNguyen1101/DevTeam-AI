@@ -12,6 +12,7 @@ import type {
   Health,
   Limits,
   ModelPrice,
+  PreviewStatus,
   Project,
   ProjectCreate,
   ProjectStatus,
@@ -45,12 +46,19 @@ function qs(params: Query = {}): string {
   return entries.length ? `?${new URLSearchParams(entries.map(([k, v]) => [k, String(v)]))}` : ''
 }
 
+/** Fired when the backend answers 401 so the app can show the login screen. */
+export const UNAUTHORIZED_EVENT = 'devteam:unauthorized'
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(BASE + path, {
     ...init,
+    credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json', ...init?.headers },
   })
   const body = res.status === 204 ? null : await res.json().catch(() => null)
+  if (res.status === 401 && !path.startsWith('/auth/login')) {
+    window.dispatchEvent(new Event(UNAUTHORIZED_EVENT))
+  }
   if (!res.ok) {
     // AppError -> {error: {code, message}}; validation -> {detail: [...]}
     const message =
@@ -70,6 +78,14 @@ export function errorMessage(err: unknown): string {
 }
 
 export const api = {
+  auth: {
+    me: () => request<{ username: string }>('/auth/me'),
+    login: (username: string, password: string) =>
+      send<{ username: string }>('POST', '/auth/login', { username, password }),
+    logout: () => send<null>('POST', '/auth/logout'),
+    changePassword: (current_password: string, new_password: string) =>
+      send<null>('POST', '/auth/password', { current_password, new_password }),
+  },
   health: () => request<Health>('/health'),
   dashboard: () => request<DashboardSummary>('/dashboard'),
   projects: {
@@ -79,6 +95,9 @@ export const api = {
     update: (id: number, data: ProjectUpdate) => send<Project>('PATCH', `/projects/${id}`, data),
     files: (id: number) => request<FileEntry[]>(`/projects/${id}/files`),
     file: (id: number, path: string) => request<FileContent>(`/projects/${id}/files/content${qs({ path })}`),
+    preview: (id: number) => request<PreviewStatus>(`/projects/${id}/preview`),
+    startPreview: (id: number) => send<PreviewStatus>('POST', `/projects/${id}/preview`),
+    stopPreview: (id: number) => send<null>('DELETE', `/projects/${id}/preview`),
   },
   agents: {
     list: () => request<Agent[]>('/agents'),

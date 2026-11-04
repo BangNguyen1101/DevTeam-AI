@@ -66,3 +66,5 @@ Xem chi tiết tại [AI_AGENT_DESIGN.md](AI_AGENT_DESIGN.md). Tóm tắt:
 | Giới hạn retry / vòng sửa lỗi / ngân sách run | ✅ |
 | Sandbox/container cho code sinh ra | ❌ chưa có (rủi ro đã biết, xem AI_AGENT_DESIGN.md §5) |
 | WebSocket whitelist topic | ✅ |
+| Đăng nhập: scrypt, session phía server (lưu SHA-256 token), cookie httpOnly + SameSite=Strict, rate limit 5/5 phút | ✅ áp dụng cho mọi API trừ health/login và cho WebSocket |
+| Triển khai Docker: DB không mở cổng, web chỉ bind 127.0.0.1, backend chạy user không phải root | ✅ |

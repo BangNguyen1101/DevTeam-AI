@@ -10,6 +10,19 @@ OpenAPI/Swagger tự sinh: `http://localhost:8000/docs`.
 | Lỗi nghiệp vụ | 404 / 409 / 403 | `{"error": {"code": "not_found" \| "conflict" \| "workspace_access_denied", "message": "..."}}` |
 | Lỗi validate | 422 | `{"detail": [{"loc": [...], "msg": "..."}]}` (chuẩn FastAPI) |
 
+## Xác thực
+
+Mọi endpoint dưới đây (trừ `/health`, `/auth/login`) và WebSocket `/ws` yêu cầu cookie phiên `devteam_session`; thiếu/hết hạn → 401 `{"error":{"code":"unauthorized"}}`.
+
+| Endpoint | Mô tả |
+|---|---|
+| `POST /auth/login` | `{username, password}` → 200 `{username}` + `Set-Cookie: devteam_session` (httpOnly, SameSite=Strict, Secure nếu `COOKIE_SECURE=true`). Sai → 401 (cùng thông báo cho sai tài khoản/mật khẩu). 5 lần sai / 5 phút theo tài khoản hoặc IP → 429 `too_many_attempts` |
+| `POST /auth/logout` | 204, xóa phiên phía server |
+| `GET /auth/me` | `{username}` |
+| `POST /auth/password` | `{current_password, new_password}` (≥ 10 ký tự) → 204, đăng xuất mọi phiên |
+
+`ApprovalRead` có thêm `decided_by` (tên người duyệt).
+
 ## System
 
 ### `GET /health`
@@ -99,6 +112,16 @@ Mỗi agent: `tasks_total`, `tasks_completed`, `tasks_failed`, `current_task_tit
 | `PUT /settings/pricing` | `{ "<model>": {input_per_1m, cached_input_per_1m, output_per_1m} }` |
 
 Topic WebSocket hợp lệ: `projects`, `agents`, `approvals`, `settings`, `events`, `runs:<id>`.
+
+## Xem trước ứng dụng
+
+| Endpoint | Mô tả |
+|---|---|
+| `GET /projects/{id}/preview` | `{running, url, api_running, started_at, log_tail}` |
+| `POST /projects/{id}/preview` | Chạy backend do AI viết (nếu có `backend/app/main.py`) và trả `url` = `/preview/{token}/`. 409 nếu thiếu `frontend/index.html`, đã đủ 2 bản chạy, hoặc backend không khởi động được (kèm log) |
+| `DELETE /projects/{id}/preview` | 204, dừng tiến trình |
+| `GET /preview/{token}/{path}` (công khai theo token) | File trong `frontend/`, header `Content-Security-Policy: sandbox …` |
+| `* /preview/{token}/api/{path}` | Proxy tới backend của ứng dụng, có CORS `*` cho origin sandbox |
 
 ## Runs (AI engine)
 

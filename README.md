@@ -35,7 +35,36 @@ DevTeam-AI/
 └── rules.md
 ```
 
-## Yêu cầu môi trường
+## Chạy bằng Docker (khuyên dùng)
+
+Yêu cầu: Docker Desktop đang chạy, máy còn trống khoảng 3 GB RAM.
+
+```powershell
+Copy-Item .env.example .env      # điền MSSQL_SA_PASSWORD, ADMIN_PASSWORD, LLM_API_KEY
+docker compose up -d --build     # lần đầu mất vài phút (tải SQL Server, build image)
+docker compose logs -f backend   # đợi dòng "Application startup complete"
+```
+
+Mở **http://localhost:8080** và đăng nhập bằng `ADMIN_USERNAME` / `ADMIN_PASSWORD`.
+
+| Dịch vụ | Vai trò |
+|---|---|
+| `db` | SQL Server 2022 (Linux), dữ liệu trong volume `mssql-data`, không mở cổng ra ngoài |
+| `backend` | FastAPI; lúc khởi động tự tạo database, chạy `alembic upgrade head`, tạo admin đầu tiên. Chạy bằng user không phải root; code do agent sinh ra nằm trong volume `workspaces` |
+| `web` | nginx phục vụ frontend đã build và proxy `/api`, `/ws` tới backend (cùng origin); chỉ lắng nghe trên `127.0.0.1` |
+
+Các lệnh khác: `docker compose down` (dừng, giữ dữ liệu) · `docker compose down -v` (**xóa** cả database và workspace) · `docker compose exec backend python -m app.cli set-password admin` (đặt lại mật khẩu).
+
+## Bảo mật đăng nhập
+
+- Mọi API (trừ `/api/v1/health`, `/api/v1/auth/login`) và WebSocket đều yêu cầu đăng nhập.
+- Mật khẩu hash bằng **scrypt** (N=2^17); session lưu phía server, cookie `httpOnly` + `SameSite=Strict`; DB chỉ lưu SHA-256 của token.
+- Sai mật khẩu 5 lần / 5 phút (theo tài khoản và theo IP) → khóa tạm (429). Thông báo lỗi không tiết lộ tài khoản có tồn tại hay không.
+- Đổi mật khẩu trong **Cài đặt → Hệ thống** (đăng xuất mọi phiên). Người duyệt được ghi vào nhật ký phê duyệt.
+
+## Chạy trực tiếp trên Windows (phát triển)
+
+### Yêu cầu môi trường
 
 - Windows 10/11, Node.js ≥ 20, Python 3.11, Git
 - SQL Server 2022 (instance có TCP bật), SSMS
@@ -51,7 +80,7 @@ sqlcmd -S localhost\BANG -E -i scripts\create_db.sql
 cd backend
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-Copy-Item .env.example .env          # rồi chỉnh DB_SERVER, DB_DRIVER... nếu cần
+Copy-Item .env.example .env          # chỉnh DB_SERVER, DB_DRIVER, đặt ADMIN_PASSWORD và LLM_API_KEY
 .\.venv\Scripts\alembic.exe upgrade head
 .\.venv\Scripts\alembic.exe -x db=DevTeamAI_Test upgrade head
 

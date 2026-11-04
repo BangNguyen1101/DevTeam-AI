@@ -63,7 +63,7 @@ export function ApprovalsPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-white/[0.06] hover:bg-transparent">
-                  {['Mã', 'Hành động', 'Agent đề xuất', 'Dự án', 'Thời gian', 'Kết quả'].map((h) => (
+                  {['Mã', 'Hành động', 'Agent đề xuất', 'Dự án', 'Người duyệt', 'Thời gian', 'Kết quả'].map((h) => (
                     <TableHead key={h} className="micro-label">{h}</TableHead>
                   ))}
                 </TableRow>
@@ -78,6 +78,7 @@ export function ApprovalsPage() {
                     </TableCell>
                     <TableCell>{a.agent_code ? <span className="flex items-center gap-2"><AgentAvatar code={a.agent_code} size="sm" />{a.agent_code}</span> : '—'}</TableCell>
                     <TableCell className="text-label-md">{a.project_name}</TableCell>
+                    <TableCell className="font-mono text-label-sm">{a.decided_by ?? 'hệ thống'}</TableCell>
                     <TableCell className="font-mono text-label-sm text-outline">{a.decided_at ? formatDate(a.decided_at) : '—'}</TableCell>
                     <TableCell><StatusBadge status={a.status} /></TableCell>
                   </TableRow>

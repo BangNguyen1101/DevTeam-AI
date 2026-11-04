@@ -2,6 +2,41 @@
 
 > Từ 2026-11-03 dự án không chia theo tuần nữa; tiến độ ghi theo từng mốc chức năng.
 
+## Xem trước ứng dụng do đội AI tạo · ✅ (2026-11-04)
+
+Tab **Không gian dự án → Xem trước ứng dụng**: bấm "Chạy xem trước" → backend FastAPI của workspace chạy bằng subprocess (`uvicorn`, 127.0.0.1, port ngẫu nhiên, môi trường không có bí mật, user không phải root trong Docker) → `frontend/` được phục vụ tại `/preview/{token}/`, `http://localhost:8001` trong HTML/JS được thay bằng `/preview/{token}/api` (proxy tới backend của ứng dụng).
+
+| Biện pháp bảo mật | Chi tiết |
+|---|---|
+| Cô lập origin | iframe `sandbox="allow-scripts allow-forms allow-modals"` (không `allow-same-origin`) + header `Content-Security-Policy: sandbox …` → JS do AI viết chạy ở opaque origin, không đọc được DOM/cookie của DevTeam; cookie `SameSite=Strict` không gửi kèm |
+| Quyền truy cập | Bật/tắt cần đăng nhập; trang xem trước dùng token ngẫu nhiên 24 byte; tối đa 2 bản chạy cùng lúc; tự dừng sau 15 phút không dùng; dừng hết khi backend tắt |
+| File | Chỉ phục vụ trong `frontend/` (chặn path traversal, symlink) |
+
+Kiểm thử: `pytest` **94/94** (6 test xem trước chạy uvicorn thật: phục vụ + thay URL API, proxy GET/POST/OPTIONS, không lộ biến môi trường bí mật, path traversal, cần đăng nhập để bật, backend lỗi trả log, chỉ có frontend, tự dừng khi idle).
+Trình duyệt: trên Docker, Edge thật mở `/preview/{token}/` → CSS tải, JS trong sandbox gọi API qua proxy và hiển thị danh sách việc (gạch ngang việc đã xong). Browser pane của Claude chặn tài nguyên từ origin sandbox (`ERR_BLOCKED_BY_CLIENT`); phần nhúng iframe trong DevTeam được người dùng xác nhận hiển thị tốt trên trình duyệt của họ. Lỗi phát hiện khi kiểm tra: `frame-ancestors 'self'` trong CSP sandbox chặn nhúng (origin opaque) → bỏ, giới hạn nhúng bằng `X-Frame-Options: SAMEORIGIN` của nginx.
+
+## Đăng nhập + triển khai Docker Compose · ✅ (2026-11-03 → 2026-11-04)
+
+### Chạy thật bằng Docker (2026-11-04)
+| Kiểm tra | Kết quả |
+|---|---|
+| `docker compose up -d --build` | ✅ db healthy → backend tạo DB `DevTeamAI`, chạy 3 migration, tạo admin → web |
+| Phơi bày cổng | ✅ chỉ `web` trên `127.0.0.1:8080`; db/backend chỉ trong mạng Docker; backend chạy uid 10001 |
+| nginx | ✅ SPA 200, `/api/v1/health` 200, API chưa đăng nhập 401, header `X-Frame-Options`/`nosniff` |
+| Gemini từ container | ✅ 3 model flash-lite trả lời đúng |
+| Run "Demo Docker" (Todo app) | ✅ 7 task, 132s, 13.432/6.891 token; pytest trong container **6 passed** (2 lần, mỗi lần có phê duyệt, người duyệt ghi `admin (duyệt hộ bởi Claude)`); quét tĩnh phát hiện XSS → review sửa `frontend/app.js` (0 innerHTML) → retest đạt; Gemini 503 một lần ở bước tổng hợp, backoff xử lý |
+
+Ghi chú: DB trong container bắt đầu trống nên 7 agent mang model mặc định `gpt-5*` của seed; đã đổi sang Gemini flash-lite bằng lệnh quản trị trong container. Môi trường cần bật **Virtual Machine Platform** của Windows cho WSL2; mật khẩu SA của container phải đạt chính sách độ phức tạp của SQL Server.
+
+| Hạng mục | Chi tiết |
+|---|---|
+| Đăng nhập | Bảng `users`, `user_sessions` (migration `a15aa5a93ca7`), scrypt, cookie httpOnly/SameSite=Strict, rate limit, đổi mật khẩu, `python -m app.cli set-password/delete-user`, admin đầu tiên từ `ADMIN_*` |
+| Phạm vi bảo vệ | Mọi router trừ health/login; WebSocket kiểm tra cookie khi bắt tay; `approvals.decided_by` ghi người duyệt |
+| Frontend | Màn hình đăng nhập, tự về màn hình đăng nhập khi 401, nút đăng xuất ở sidebar, form đổi mật khẩu |
+| Docker | `docker-compose.yml` (db SQL Server 2022, backend có ODBC 18 + entrypoint tạo DB + migrate, web nginx), `.env.example` ở gốc, `.gitattributes` giữ LF cho `.sh` |
+
+Kiểm thử: `pytest` **88/88** (25 test xác thực mới: 14 endpoint cần đăng nhập, cookie, chống dò tài khoản, rate limit, đăng xuất/hết hạn, WebSocket không cookie/cookie giả, đổi mật khẩu, người duyệt). Trình duyệt: sai mật khẩu → thông báo; đúng → vào app, API 200, WebSocket kết nối, `document.cookie` không thấy cookie; đăng xuất → 401 (tài khoản kiểm thử tạm đã xóa).
+
 ## Review bắt buộc + quét bảo mật tĩnh + hỗ trợ cải tiến lặp · ✅ code & test (2026-11-03)
 
 ### Đã làm

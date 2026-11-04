@@ -3,6 +3,7 @@
 from app.models.agent import Agent, AgentPermission
 from app.models.project import Project
 from app.models.setting import AppSetting
+from app.models.user import User, UserSession
 from app.models.workflow import (
     Approval,
     Artifact,
@@ -26,5 +27,7 @@ __all__ = [
     "Project",
     "Task",
     "TaskDependency",
+    "User",
+    "UserSession",
     "WorkflowRun",
 ]

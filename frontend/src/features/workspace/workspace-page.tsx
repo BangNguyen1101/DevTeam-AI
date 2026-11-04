@@ -12,6 +12,7 @@ import {
   LayoutDashboard,
   ListChecks,
   Loader2,
+  MonitorPlay,
   Radio,
   Sparkles,
   TriangleAlert,
@@ -27,6 +28,8 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { EventLogLine } from '@/features/history/event-item'
 import { TaskTable } from '@/features/tasks/task-table'
+
+import { AppPreview } from './app-preview'
 import { useApi } from '@/hooks/use-api'
 import { useShell } from '@/hooks/use-shell'
 import { api, errorMessage } from '@/lib/api'
@@ -34,12 +37,13 @@ import { formatBytes, formatCompact, formatRelative, formatUsd, percent } from '
 import { cn } from '@/lib/utils'
 import type { FileContent, Project, RunDetail, Task } from '@/types/api'
 
-type Tab = 'overview' | 'tasks' | 'files' | 'history'
+type Tab = 'overview' | 'tasks' | 'files' | 'preview' | 'history'
 
 const TABS: { value: Tab; label: string; icon: typeof Bot }[] = [
   { value: 'overview', label: 'Tổng quan', icon: LayoutDashboard },
   { value: 'tasks', label: 'Tác vụ', icon: ListChecks },
   { value: 'files', label: 'Tệp tin & Mã nguồn', icon: FolderTree },
+  { value: 'preview', label: 'Xem trước ứng dụng', icon: MonitorPlay },
   { value: 'history', label: 'Lịch sử & Logs', icon: History },
 ]
 
@@ -114,6 +118,7 @@ export function WorkspacePage() {
       {tab === 'overview' && <Overview project={p} run={run.data} />}
       {tab === 'tasks' && <TaskTable params={{ project_id: p.id }} />}
       {tab === 'files' && <FileBrowser project={p} />}
+      {tab === 'preview' && <AppPreview project={p} />}
       {tab === 'history' && <ProjectLog projectId={p.id} />}
     </div>
   )
